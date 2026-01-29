@@ -1,0 +1,35 @@
+{
+  "courseId": "01-react-fundamentals",
+  "courseName": "React Fundamentals",
+  "description": "Component-based UI development with modern React patterns",
+  "version": "1.0.0",
+  "challenges": [
+    {
+      "id": "01-user-profile",
+      "name": "User Profile Component",
+      "weight": 0.33
+    },
+    {
+      "id": "02-todo-list",
+      "name": "Todo List Application",
+      "weight": 0.33
+    },
+    {
+      "id": "03-state-management",
+      "name": "State Management with Context",
+      "weight": 0.34
+    }
+  ],
+  "scoring": {
+    "functionalTests": 0.35,
+    "codeQuality": 0.20,
+    "architecture": 0.15,
+    "bestPractices": 0.10,
+    "e2eTests": 0.15,
+    "aiReview": 0.05
+  },
+  "requirements": {
+    "minScore": 60,
+    "minCompletion": 100
+  }
+}

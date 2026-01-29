@@ -1,0 +1,204 @@
+[
+  {
+    "challengeId": "01-user-profile",
+    "challengeName": "User Profile Component",
+    "timestamp": "2026-01-29T10:52:45.206Z",
+    "scores": {
+      "functionalTests": 60,
+      "codeQuality": 50,
+      "architecture": 0,
+      "bestPractices": 80,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 39,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 60,
+      "passed": false,
+      "totalTests": 5,
+      "passedTests": 3,
+      "failedTests": 2,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: User Profile Component"
+              ],
+              "fullName": " Challenge 01: User Profile Component should render user name",
+              "status": "passed",
+              "title": "should render user name",
+              "duration": 22,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: User Profile Component"
+              ],
+              "fullName": " Challenge 01: User Profile Component should render user email",
+              "status": "passed",
+              "title": "should render user email",
+              "duration": 4,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: User Profile Component"
+              ],
+              "fullName": " Challenge 01: User Profile Component should render follow button",
+              "status": "passed",
+              "title": "should render follow button",
+              "duration": 79,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: User Profile Component"
+              ],
+              "fullName": " Challenge 01: User Profile Component should toggle follow button state",
+              "status": "failed",
+              "title": "should toggle follow button state",
+              "duration": 75,
+              "failureMessages": [
+                "expect(element).toHaveTextContent()\n\nExpected element to have text content:\n  /following/i\nReceived:\n  Follow"
+              ],
+              "location": {
+                "line": 36,
+                "column": 20
+              }
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: User Profile Component"
+              ],
+              "fullName": " Challenge 01: User Profile Component should use useState for button state",
+              "status": "failed",
+              "title": "should use useState for button state",
+              "duration": 2,
+              "failureMessages": [
+                "expected '/**\\n * Challenge 01: User Profile Co…' to contain 'useState'"
+              ],
+              "location": {
+                "line": 48,
+                "column": 27
+              }
+            }
+          ],
+          "startTime": 1769683967664,
+          "endTime": 1769683967846,
+          "status": "failed",
+          "message": "",
+          "name": "D:/Workspace/Projects/SOLO/Challenge-Engine/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx"
+        }
+      ],
+      "error": "Command failed: npm test -- D:\\Workspace\\Projects\\SOLO\\Challenge-Engine\\courses\\01-react-fundamentals\\project\\tests\\challenge-01.test.tsx --run --reporter=json"
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 0,
+      "passed": false,
+      "patternsFound": [],
+      "patternsMissing": [
+        "functionalComponent",
+        "useState",
+        "props",
+        "functionalComponent",
+        "useState",
+        "props"
+      ],
+      "details": [
+        {
+          "file": "src/components/UserProfile.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "functionalComponent",
+            "useState",
+            "props"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "functionalComponent",
+            "useState",
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 80,
+      "passed": true,
+      "issues": [],
+      "details": [
+        {
+          "file": "src/components/UserProfile.tsx",
+          "issues": [
+            {
+              "type": "commented-code",
+              "message": "Found 1 large comment block(s)",
+              "severity": "info"
+            }
+          ],
+          "score": 80
+        },
+        {
+          "file": "src/App.tsx",
+          "issues": [
+            {
+              "type": "typescript",
+              "message": "Missing type annotations",
+              "severity": "warning"
+            }
+          ],
+          "score": 80
+        }
+      ]
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "Command failed: npx playwright test D:\\Workspace\\Projects\\SOLO\\Challenge-Engine\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts --reporter=json",
+      "details": [],
+      "note": "E2E tests require the app to be running. Make sure to run \"npm run dev\" first, or tests will run automatically via Playwright webServer config."
+    },
+    "aiReviewResults": {
+      "challengeId": "01-user-profile",
+      "timestamp": "2026-01-29T10:52:53.488Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "First argument to String.prototype.includes must not be a regular expression"
+    },
+    "aiResults": {
+      "challengeId": "01-user-profile",
+      "timestamp": "2026-01-29T10:52:53.488Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "First argument to String.prototype.includes must not be a regular expression"
+    }
+  }
+]
