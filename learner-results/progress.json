@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-01-29T11:32:19.675Z",
+  "lastUpdated": "2026-01-29T14:45:58.721Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 29.3,
+    "overallScore": 35.3,
     "completionPercentage": 0,
     "badgeLevel": "none",
     "totalChallenges": 9,
@@ -39,7 +39,7 @@
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 22.15,
+      "averageScore": 40.281666666666666,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -49,15 +49,45 @@
           "challengeId": "01-api-setup",
           "challengeName": "API Setup and Basic Fetching",
           "passed": false,
-          "score": 22.15,
-          "lastRun": "2026-01-29T11:32:13.671Z",
+          "score": 59.525,
+          "lastRun": "2026-01-29T14:44:41.111Z",
           "scores": {
-            "functionalTests": 0,
+            "functionalTests": 100,
             "codeQuality": 50,
-            "architecture": 0,
-            "bestPractices": 80,
+            "architecture": 12.5,
+            "bestPractices": 85,
             "e2eTests": 0,
             "aiReview": 83
+          }
+        },
+        "02-data-display": {
+          "challengeId": "02-data-display",
+          "challengeName": "Data Display and Caching",
+          "passed": false,
+          "score": 31.57,
+          "lastRun": "2026-01-29T14:45:38.160Z",
+          "scores": {
+            "functionalTests": 25,
+            "codeQuality": 50,
+            "architecture": 0,
+            "bestPractices": 86.7,
+            "e2eTests": 0,
+            "aiReview": 83
+          }
+        },
+        "03-mutations": {
+          "challengeId": "03-mutations",
+          "challengeName": "Mutations and Optimistic Updates",
+          "passed": false,
+          "score": 29.75,
+          "lastRun": "2026-01-29T14:45:48.298Z",
+          "scores": {
+            "functionalTests": 20,
+            "codeQuality": 50,
+            "architecture": 0,
+            "bestPractices": 90,
+            "e2eTests": 0,
+            "aiReview": 75
           }
         }
       }

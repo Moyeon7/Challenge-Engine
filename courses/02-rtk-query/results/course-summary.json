@@ -1,22 +1,36 @@
 {
   "courseId": "02-rtk-query",
   "courseName": "RTK Query",
-  "lastUpdated": "2026-01-29T11:32:19.564Z",
+  "lastUpdated": "2026-01-29T14:45:58.572Z",
   "totalChallenges": 3,
   "completedChallenges": 0,
-  "averageScore": 22.15,
+  "averageScore": 40.281666666666666,
   "completionPercentage": 0,
   "badgeLevel": "none",
   "challengeResults": [
     {
       "challengeId": "01-api-setup",
       "challengeName": "API Setup and Basic Fetching",
-      "score": 22.15,
+      "score": 59.525,
+      "passed": false
+    },
+    {
+      "challengeId": "02-data-display",
+      "challengeName": "Data Display and Caching",
+      "score": 31.57,
+      "passed": false
+    },
+    {
+      "challengeId": "03-mutations",
+      "challengeName": "Mutations and Optimistic Updates",
+      "score": 29.75,
       "passed": false
     }
   ],
   "skillStrengths": [],
   "improvementAreas": [
-    "API Setup and Basic Fetching"
+    "API Setup and Basic Fetching",
+    "Data Display and Caching",
+    "Mutations and Optimistic Updates"
   ]
 }

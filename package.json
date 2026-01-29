@@ -29,5 +29,8 @@
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.28.6"
   }
 }

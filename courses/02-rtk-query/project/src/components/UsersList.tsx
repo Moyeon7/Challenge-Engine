@@ -1,15 +1,22 @@
-/**
- * Challenge 01: API Setup and Basic Fetching
- * Replace this stub with your implementation.
- * Requirements: Use RTK Query's useGetUsersQuery hook to fetch and display users.
- */
+import { useGetUsersQuery } from '../api/usersApi'
 
-export default function UsersList() {
+const UsersList = () => {
+  const { data, isLoading, isError } = useGetUsersQuery()
+
+  if (isLoading) return <p>Loading…</p>
+  if (isError) return <p>Error</p>
+
   return (
-    <div data-testid="users-list">
-      {/* TODO: Implement per challenges/01-api-setup/README.md */}
-      {/* Use useGetUsersQuery from your usersApi slice */}
-      <p>Users list - implement using RTK Query</p>
-    </div>
-  );
+    <ul>
+      {data?.map((user) => (
+        <li key={user.id}>
+          <strong>{user.name}</strong><br />
+          @{user.username}<br />
+          {user.email}
+        </li>
+      ))}
+    </ul>
+  )
 }
+
+export default UsersList
