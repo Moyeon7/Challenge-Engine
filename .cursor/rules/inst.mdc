@@ -129,8 +129,7 @@ Inside each challenge:
 
 ```
 challenge-folder/
-├── README.md            → Problem statement
-├── requirements.md      → Acceptance criteria
+├── README.md            → Problem statement + Technical Requirements (acceptance criteria)
 ├── starter/             → Starter code
 ├── tests/               → Deterministic evaluation tests
 └── metadata.json        → Scoring rules
@@ -371,8 +370,7 @@ Tech stack expectations:
 
 Each challenge must include:
 
-- README.md (problem statement)
-- requirements.md (acceptance criteria)
+- README.md (problem statement + Technical Requirements section for acceptance criteria)
 - starter/ (editable learner code)
 - tests/ (automated verification)
 - metadata.json (scoring weights)
