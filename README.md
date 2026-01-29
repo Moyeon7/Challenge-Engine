@@ -158,17 +158,73 @@ Each challenge is evaluated using **end-to-end multi-signal scoring**:
 
 ## 📊 Progress Dashboard
 
-From the repo root, start the **Progress Dashboard** to view all courses and challenges, see progress, read instructions, and run reviews from the UI (no code editing in the UI—code in your editor):
+The **Progress Dashboard** is a web UI to view all courses and challenges, see progress, read instructions (with markdown formatting), and run reviews from the browser. **Code editing is done in your editor**; the dashboard is for viewing progress, instructions, and triggering reviews.
 
+### First-Time Setup
+
+**Prerequisites:**
+- Node.js v20+ installed
+- Repository cloned and at root directory
+
+**Steps:**
+
+1. **Install dashboard server dependencies** (one-time):
+   ```bash
+   cd dashboard
+   npm install
+   cd ..
+   ```
+
+2. **Build the dashboard UI** (one-time):
+   ```bash
+   npm run dashboard:build
+   ```
+   This installs UI dependencies and builds the React app. Takes 1-2 minutes.
+
+3. **Start the dashboard server**:
+   ```bash
+   npm run dashboard
+   ```
+
+4. **Open in browser:**
+   - Dashboard runs at: **http://localhost:7700**
+   - The UI loads automatically with all courses and challenges
+
+### What You Can Do in the Dashboard
+
+- ✅ **View pathway summary** – Overall score, completion %, badge level
+- ✅ **Browse courses** – Paginated list (20 per page), supports 50+ courses
+- ✅ **Browse challenges** – Per-course, paginated (50 per page), supports 100+ challenges
+- ✅ **Read instructions** – Challenge README rendered with **markdown formatting** (headings, code blocks, lists)
+- ✅ **View results** – Last review scores, test results, AI feedback
+- ✅ **Run reviews** – Click "Run review" button to trigger review for any challenge
+- ✅ **See progress** – Real-time updates after reviews run
+
+### Dashboard Port
+
+The dashboard uses **port 7700** by default to avoid conflicts with:
+- Course dev servers (Vite: 5173, Next.js: 3000)
+
+To use a different port:
 ```bash
-# Build the dashboard UI once
-npm run dashboard:build
-
-# Start the server (API + UI at http://localhost:7700)
-npm run dashboard
+DASHBOARD_PORT=8080 npm run dashboard
 ```
 
-The dashboard shows pathway summary, per-course progress, per-challenge status (passed/score/last run), challenge instructions, last results, and AI feedback. You can trigger a review for any challenge from the UI. It scales to many courses (50+) and many challenges per course (100+) via pagination.
+### Troubleshooting
+
+**Dashboard won't start:**
+- Ensure you ran `npm run dashboard:build` first
+- Check if port 7700 is already in use
+- Verify Node.js v20+ is installed: `node --version`
+
+**UI shows "Build UI: cd dashboard/app && npm install && npm run build":**
+- Run `npm run dashboard:build` from repo root
+
+**API returns errors:**
+- Ensure you've run at least one review to generate progress data
+- Check that `learner-results/progress.json` exists (run `npm run progress:update` if needed)
+
+For more details, see [dashboard/README.md](./dashboard/README.md).
 
 ## 📊 Results & Evidence
 

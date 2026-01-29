@@ -71,6 +71,54 @@ npm run dev
 # Opens at http://localhost:3000
 ```
 
+## Dashboard Setup
+
+The Progress Dashboard provides a web UI to view all courses, challenges, progress, and run reviews.
+
+### First-Time Dashboard Setup
+
+**Step 1: Install dashboard server dependencies**
+```bash
+cd dashboard
+npm install
+cd ..
+```
+
+**Step 2: Build the dashboard UI** (one-time, takes 1-2 minutes)
+```bash
+npm run dashboard:build
+```
+
+**Step 3: Start the dashboard**
+```bash
+npm run dashboard
+```
+
+**Step 4: Open in browser**
+- Dashboard runs at: **http://localhost:7700**
+- You'll see pathway summary, all courses, and challenges
+
+### Dashboard Features
+
+- View pathway and course progress
+- Browse challenges with pagination (supports 50+ courses, 100+ challenges per course)
+- Read challenge instructions with **markdown formatting**
+- View last review results and AI feedback
+- Trigger reviews from the UI (click "Run review" button)
+
+**Note**: The dashboard uses port **7700** to avoid conflicts with course dev servers (Vite: 5173, Next.js: 3000).
+
+### Troubleshooting Dashboard
+
+**"Build UI: cd dashboard/app && npm install && npm run build" message:**
+- Run `npm run dashboard:build` from repo root
+
+**Port 7700 already in use:**
+- Use a different port: `DASHBOARD_PORT=8080 npm run dashboard`
+
+**No progress shown:**
+- Run at least one review first, or run `npm run progress:update`
+
 ## Running Reviews
 
 ### Individual Challenge Review
