@@ -28,10 +28,11 @@ Create a theme system that allows users to switch between light and dark modes. 
 
 ## How to Verify
 
-1. Run `npm run dev`
-2. Click the theme toggle - the entire app should change theme
-3. Refresh the page - the theme should persist
-4. All components should respect the current theme
+1. Run `npm run dev` and open the app
+2. Navigate to `/challenge/03-state-management` (or click "View Challenge UI" from the home page)
+3. Click the theme toggle - the entire app should change theme
+4. Refresh the page - the theme should persist
+5. All components should respect the current theme
 
 ## Learning Hints (no solution code)
 

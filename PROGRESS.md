@@ -1,16 +1,16 @@
 # Learning Progress
 
-**Last updated:** 1/29/2026, 5:02:19 PM
+**Last updated:** 1/29/2026, 6:36:33 PM
 
 ## Pathway Summary
 
 | Metric | Value |
 |--------|-------|
 | Pathway | Modern React Engineer |
-| Overall Score | 29.3% |
-| Completion | 0% |
+| Overall Score | 38.2% |
+| Completion | 11.1% |
 | Badge | none |
-| Challenges | 0 / 9 |
+| Challenges | 1 / 9 |
 
 ## Courses
 
@@ -18,34 +18,34 @@
 
 | Metric | Value |
 |--------|-------|
-| Score | 39% |
-| Completion | 0% |
+| Score | 70.8% |
+| Completion | 33.3% |
 | Badge | none |
 
 | Challenge | Status | Score | Last Run |
 |-----------|--------|-------|----------|
-| User Profile Component (01-user-profile) | ❌ Not passed | 39% | 1/29/2026, 4:22:45 PM |
+| State Management with Context (03-state-management) | ✅ Passed | 70.8% | 1/29/2026, 6:34:13 PM |
 
 ### RTK Query (02-rtk-query)
 
 | Metric | Value |
 |--------|-------|
-| Score | 22.2% |
+| Score | 21.9% |
 | Completion | 0% |
 | Badge | none |
 
 | Challenge | Status | Score | Last Run |
 |-----------|--------|-------|----------|
-| API Setup and Basic Fetching (01-api-setup) | ❌ Not passed | 22.2% | 1/29/2026, 5:02:13 PM |
+| API Setup and Basic Fetching (01-api-setup) | ❌ Not passed | 21.9% | 1/29/2026, 6:35:49 PM |
 
 ### Next.js App Router (03-nextjs-app-router)
 
 | Metric | Value |
 |--------|-------|
-| Score | 26.8% |
+| Score | 22.5% |
 | Completion | 0% |
 | Badge | none |
 
 | Challenge | Status | Score | Last Run |
 |-----------|--------|-------|----------|
-| Server Components and Basic Routing (01-server-components) | ❌ Not passed | 26.8% | 1/29/2026, 4:16:05 PM |
+| Server Components and Basic Routing (01-server-components) | ❌ Not passed | 22.5% | 1/29/2026, 6:36:24 PM |

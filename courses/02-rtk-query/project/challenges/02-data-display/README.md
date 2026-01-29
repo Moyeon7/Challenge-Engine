@@ -29,10 +29,11 @@ Extend your RTK Query setup to:
 
 ## How to Verify
 
-1. Run `npm run dev`
-2. You should see both users and posts
-3. Open Redux DevTools and observe caching
-4. Refetch data and verify it uses cache when appropriate
+1. Run `npm run dev` and open the app
+2. Navigate to `/challenge/02-data-display` (or click "View Challenge UI" from the home page)
+3. You should see both users and posts
+4. Open Redux DevTools and observe caching
+5. Refetch data and verify it uses cache when appropriate
 
 ## Help & completion
 

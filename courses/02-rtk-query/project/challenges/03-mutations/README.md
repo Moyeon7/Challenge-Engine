@@ -26,11 +26,12 @@ Add mutation endpoints to create, update, and delete users or posts. Implement o
 
 ## How to Verify
 
-1. Run `npm run dev`
-2. Create a new user/post - should appear immediately (optimistic)
-3. Edit an item - should update optimistically
-4. Delete an item - should remove optimistically
-5. Check Redux DevTools for mutation state
+1. Run `npm run dev` and open the app
+2. Navigate to `/challenge/03-mutations` (or click "View Challenge UI" from the home page)
+3. Create a new user/post - should appear immediately (optimistic)
+4. Edit an item - should update optimistically
+5. Delete an item - should remove optimistically
+6. Check Redux DevTools for mutation state
 
 ## Help & completion
 

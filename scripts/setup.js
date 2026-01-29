@@ -1,7 +1,10 @@
 #!/usr/bin/env node
+
 /**
- * Cross-platform setup: install dependencies for all courses and review engines,
- * and Playwright browsers. Use: npm run setup
+ * Complete Setup Script
+ * 
+ * Installs all dependencies and Playwright browsers for all courses.
+ * Run this once after cloning the repository.
  */
 
 import { execSync } from 'child_process';
@@ -11,37 +14,80 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const ROOT = join(__dirname, '..');
+const REPO_ROOT = join(__dirname, '..');
 
 const courses = [
   '01-react-fundamentals',
   '02-rtk-query',
-  '03-nextjs-app-router',
+  '03-nextjs-app-router'
 ];
 
-console.log('🚀 Setting up Challenge Engine...\n');
+console.log('🚀 Challenge Engine - Complete Setup\n');
+console.log('This will install all dependencies and Playwright browsers.');
+console.log('This may take a few minutes...\n');
 
-for (const courseId of courses) {
-  const projectDir = join(ROOT, 'courses', courseId, 'project');
-  const reviewDir = join(ROOT, 'courses', courseId, 'review-engine');
-  console.log(`📦 ${courseId}: project`);
-  if (existsSync(projectDir)) {
-    execSync('npm install', { cwd: projectDir, stdio: 'inherit' });
-  }
-  console.log(`📦 ${courseId}: review-engine`);
-  if (existsSync(reviewDir)) {
-    execSync('npm install', { cwd: reviewDir, stdio: 'inherit' });
-  }
+// Step 1: Install root dependencies (dashboard)
+console.log('📦 Step 1/4: Installing dashboard dependencies...');
+try {
+  execSync('npm install', { cwd: join(REPO_ROOT, 'dashboard', 'app'), stdio: 'inherit' });
+  console.log('✅ Dashboard dependencies installed\n');
+} catch (error) {
+  console.error('❌ Failed to install dashboard dependencies');
+  process.exit(1);
 }
 
-console.log('\n🎭 Installing Playwright browsers (chromium)...');
-for (const courseId of courses) {
-  const projectDir = join(ROOT, 'courses', courseId, 'project');
+// Step 2: Install all course project dependencies
+console.log('📦 Step 2/4: Installing course project dependencies...');
+for (const course of courses) {
+  const projectDir = join(REPO_ROOT, 'courses', course, 'project');
   if (existsSync(join(projectDir, 'package.json'))) {
-    execSync('npx playwright install chromium', { cwd: projectDir, stdio: 'inherit' });
+    console.log(`   Installing dependencies for ${course}...`);
+    try {
+      execSync('npm install', { cwd: projectDir, stdio: 'inherit' });
+      console.log(`   ✅ ${course} dependencies installed`);
+    } catch (error) {
+      console.error(`   ❌ Failed to install ${course} dependencies`);
+    }
   }
 }
+console.log('');
 
-console.log('\n✅ Setup complete!');
-console.log('\nNext: cd courses/01-react-fundamentals/project && npm run dev');
-console.log('Run review: npm run review (from course project) or npm run review:challenge -- --course=01-react-fundamentals --challenge=01-user-profile (from root)');
+// Step 3: Install review engine dependencies
+console.log('📦 Step 3/4: Installing review engine dependencies...');
+for (const course of courses) {
+  const reviewEngineDir = join(REPO_ROOT, 'courses', course, 'review-engine');
+  if (existsSync(join(reviewEngineDir, 'package.json'))) {
+    console.log(`   Installing review engine for ${course}...`);
+    try {
+      execSync('npm install', { cwd: reviewEngineDir, stdio: 'inherit' });
+      console.log(`   ✅ ${course} review engine installed`);
+    } catch (error) {
+      console.error(`   ❌ Failed to install ${course} review engine`);
+    }
+  }
+}
+console.log('');
+
+// Step 4: Install Playwright browsers for all courses
+console.log('🌐 Step 4/4: Installing Playwright browsers (this may take a few minutes)...');
+for (const course of courses) {
+  const projectDir = join(REPO_ROOT, 'courses', course, 'project');
+  if (existsSync(join(projectDir, 'playwright.config.ts')) || existsSync(join(projectDir, 'playwright.config.js'))) {
+    console.log(`   Installing browsers for ${course}...`);
+    try {
+      execSync('npx playwright install', { cwd: projectDir, stdio: 'inherit' });
+      console.log(`   ✅ ${course} browsers installed`);
+    } catch (error) {
+      console.error(`   ❌ Failed to install browsers for ${course}`);
+      console.error(`   You can install them manually later: cd courses/${course}/project && npx playwright install`);
+    }
+  }
+}
+console.log('');
+
+console.log('✅ Setup complete!');
+console.log('\n📋 Next Steps:');
+console.log('1. Build dashboard: npm run dashboard:build');
+console.log('2. Start dashboard: npm run dashboard');
+console.log('3. Work on challenges in course projects');
+console.log('\n🎓 Happy learning!');

@@ -138,9 +138,12 @@ async function reviewChallenge(challenge, config) {
 
     // 2. Code Quality - Linting (25%)
     console.log('\n🔍 Running code quality checks...');
-    const lintResults = await runLinting(challengeMetadata.filesToCheck, PROJECT_DIR);
+    const lintResults = await runLinting(challengeMetadata.filesToCheck, PROJECT_DIR, challengeMetadata);
     result.scores.codeQuality = lintResults.score;
     result.lintResults = lintResults;
+    if (lintResults.note) {
+      console.log(`   ${lintResults.note}`);
+    }
     console.log(`   Score: ${lintResults.score.toFixed(1)}%`);
 
     // 3. Architecture Checks (20%)
@@ -155,6 +158,9 @@ async function reviewChallenge(challenge, config) {
     const bpResults = await checkBestPractices(challengeMetadata, PROJECT_DIR);
     result.scores.bestPractices = bpResults.score;
     result.bestPracticesResults = bpResults;
+    if (bpResults.note) {
+      console.log(`   ${bpResults.note}`);
+    }
     console.log(`   Score: ${bpResults.score.toFixed(1)}%`);
 
     // 5. E2E Tests (Visual/Interaction Verification) - 15%
@@ -226,7 +232,49 @@ function loadChallengeMetadata(challengeId) {
   if (!existsSync(metadataPath)) {
     throw new Error(`Metadata file not found: ${metadataPath}`);
   }
-  return JSON.parse(readFileSync(metadataPath, 'utf-8'));
+  const metadata = JSON.parse(readFileSync(metadataPath, 'utf-8'));
+  
+  // Load requirements.md if it exists
+  const requirementsPath = join(PROJECT_DIR, 'challenges', challengeId, 'requirements.md');
+  if (existsSync(requirementsPath)) {
+    const requirementsContent = readFileSync(requirementsPath, 'utf-8');
+    metadata.requirements = parseRequirements(requirementsContent);
+  }
+  
+  return metadata;
+}
+
+function parseRequirements(content) {
+  const requirements = {
+    functional: [],
+    codeQuality: [],
+    architecture: [],
+    bestPractices: []
+  };
+  
+  let currentSection = null;
+  const lines = content.split('\n');
+  
+  for (const line of lines) {
+    // Detect section headers
+    if (line.includes('## Functional Requirements')) {
+      currentSection = 'functional';
+    } else if (line.includes('## Code Quality Requirements')) {
+      currentSection = 'codeQuality';
+    } else if (line.includes('## Architecture Requirements')) {
+      currentSection = 'architecture';
+    } else if (line.includes('## Best Practices') || line.includes('## Best Practice')) {
+      currentSection = 'bestPractices';
+    } else if (currentSection && line.trim().startsWith('-') || line.trim().match(/^\d+\./)) {
+      // Extract requirement text (remove checkbox, number, etc.)
+      const requirement = line.replace(/^[-*]\s*/, '').replace(/^\d+\.\s*/, '').replace(/✅\s*/, '').trim();
+      if (requirement) {
+        requirements[currentSection].push(requirement);
+      }
+    }
+  }
+  
+  return requirements;
 }
 
 function generateCourseSummary(challengeResults, config) {

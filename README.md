@@ -4,7 +4,24 @@
 
 ---
 
-## 🚀 Quick Start (2 Steps)
+## 🚀 Quick Start (3 Steps)
+
+### Step 0: Initial Setup (One-Time, After Cloning)
+
+**Run this once after cloning the repository:**
+
+```bash
+# Install all dependencies and Playwright browsers
+npm run setup
+```
+
+This will:
+- ✅ Install dashboard dependencies
+- ✅ Install all course project dependencies
+- ✅ Install all review engine dependencies
+- ✅ Install Playwright browsers for E2E tests
+
+**Takes 3-5 minutes** - grab a coffee ☕
 
 ### Step 1: Start Dashboard (Keep Running)
 
@@ -29,21 +46,20 @@ Open **Terminal 2** (new terminal) and pick a course:
 ```bash
 # Course 1: React Fundamentals
 cd courses/01-react-fundamentals/project
-npm install
 npm run dev
 
 # OR Course 2: RTK Query
 cd courses/02-rtk-query/project
-npm install
 npm run dev
 
 # OR Course 3: Next.js App Router
 cd courses/03-nextjs-app-router/project
-npm install
 npm run dev
 ```
 
 ✅ Course app opens in browser (Vite: http://localhost:5173, Next.js: http://localhost:3000)
+
+**Note**: Dependencies are already installed from Step 0, so you can directly run `npm run dev`
 
 **Now you have:**
 - ✅ Dashboard running at http://localhost:7700 (Terminal 1)
@@ -98,6 +114,8 @@ npm run review:changed
 
 - **Dashboard**: Refresh or results appear automatically
 - **Files**: Check `courses/01-react-fundamentals/results/challenge-results.json`
+
+**Note**: Review scores are based **ONLY** on what's specified in each challenge's `requirements.md`. See `REVIEW_SCOPE_CHANGES.md` for details.
 - **Progress**: See `PROGRESS.md` in repo root (auto-updated)
 
 ### 5. Continue Working
@@ -230,6 +248,8 @@ If AI key is not set, AI review is skipped (score = 0) and other layers still ru
 2. **Verify functionality** → Interact with features in browser
 3. **Run review** (dashboard or command) → Get comprehensive scoring
 
+**Important**: Review will **ONLY check what's specified** in each challenge's `requirements.md` file. All code quality guidelines, best practices, and industry standards are clearly listed in the requirements file. No hidden requirements!
+
 ---
 
 ## 📚 Course Structure
@@ -303,7 +323,14 @@ After running a review, results are saved to:
 → Install dependencies: `npm run setup` or `cd {course}/project && npm install`
 
 **E2E tests fail**
-→ Install Playwright browsers: `cd {course}/project && npx playwright install chromium`
+→ Install Playwright browsers: `cd {course}/project && npx playwright install`
+→ This is a one-time setup. After installation, E2E tests will work.
+→ See `REVIEW_SCORING_EXPLAINED.md` for details on why E2E score might be 0%
+
+**Review scores seem low**
+→ Review **ONLY checks what's in challenge `requirements.md`** - no hidden requirements
+→ See `REVIEW_SCOPE_CHANGES.md` for how review scope works
+→ All code quality guidelines and best practices are listed in requirements files
 
 **AI review shows 0%**
 → Set `GROQ_API_KEY` in `.env` file (see "Enable AI Review" above)

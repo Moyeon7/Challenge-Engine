@@ -1,37 +1,37 @@
 {
-  "lastUpdated": "2026-01-29T11:32:19.675Z",
+  "lastUpdated": "2026-01-29T13:06:33.454Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 29.3,
-    "completionPercentage": 0,
+    "overallScore": 38.2,
+    "completionPercentage": 11.1,
     "badgeLevel": "none",
     "totalChallenges": 9,
-    "completedChallenges": 0
+    "completedChallenges": 1
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 39,
-      "completionPercentage": 0,
+      "averageScore": 70.83000000000001,
+      "completionPercentage": 33.33333333333333,
       "badgeLevel": "none",
       "totalChallenges": 3,
-      "completedChallenges": 0,
+      "completedChallenges": 1,
       "challenges": {
-        "01-user-profile": {
-          "challengeId": "01-user-profile",
-          "challengeName": "User Profile Component",
-          "passed": false,
-          "score": 39,
-          "lastRun": "2026-01-29T10:52:45.206Z",
+        "03-state-management": {
+          "challengeId": "03-state-management",
+          "challengeName": "State Management with Context",
+          "passed": true,
+          "score": 70.83000000000001,
+          "lastRun": "2026-01-29T13:04:13.884Z",
           "scores": {
-            "functionalTests": 60,
-            "codeQuality": 50,
-            "architecture": 0,
-            "bestPractices": 80,
+            "functionalTests": 100,
+            "codeQuality": 98,
+            "architecture": 25,
+            "bestPractices": 83.3,
             "e2eTests": 0,
-            "aiReview": 0
+            "aiReview": 83
           }
         }
       }
@@ -39,7 +39,7 @@
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 22.15,
+      "averageScore": 21.875,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -49,15 +49,15 @@
           "challengeId": "01-api-setup",
           "challengeName": "API Setup and Basic Fetching",
           "passed": false,
-          "score": 22.15,
-          "lastRun": "2026-01-29T11:32:13.671Z",
+          "score": 21.875,
+          "lastRun": "2026-01-29T13:05:49.695Z",
           "scores": {
             "functionalTests": 0,
             "codeQuality": 50,
-            "architecture": 0,
-            "bestPractices": 80,
+            "architecture": 12.5,
+            "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 83
+            "aiReview": 0
           }
         }
       }
@@ -65,7 +65,7 @@
     "03-nextjs-app-router": {
       "courseId": "03-nextjs-app-router",
       "courseName": "Next.js App Router",
-      "averageScore": 26.82,
+      "averageScore": 22.464999999999996,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -75,13 +75,13 @@
           "challengeId": "01-server-components",
           "challengeName": "Server Components and Basic Routing",
           "passed": false,
-          "score": 26.82,
-          "lastRun": "2026-01-29T10:46:05.335Z",
+          "score": 22.464999999999996,
+          "lastRun": "2026-01-29T13:06:24.771Z",
           "scores": {
             "functionalTests": 0,
             "codeQuality": 50,
-            "architecture": 25,
-            "bestPractices": 86.7,
+            "architecture": 16.7,
+            "bestPractices": 55.6,
             "e2eTests": 0,
             "aiReview": 88
           }
