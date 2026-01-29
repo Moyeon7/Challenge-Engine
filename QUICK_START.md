@@ -54,9 +54,30 @@ Results are saved to `../results/`:
 5. **Best Practices** (10%) - Code standards
 6. **AI Review** (5%) - Readability & maintainability
 
+## Dashboard (Optional but Recommended)
+
+View all courses, challenges, progress, and run reviews from a web UI:
+
+```bash
+# From repo root - build UI once
+npm run dashboard:build
+
+# Start dashboard
+npm run dashboard
+```
+
+Open **http://localhost:7700** in your browser. You can:
+- View pathway and course progress
+- Read challenge instructions (with markdown formatting)
+- See last review results and AI feedback
+- Trigger reviews from the UI
+
+**Note**: Dashboard uses port 7700 to avoid conflicts with course dev servers.
+
 ## Key Points
 
 - ✅ **Run the app first** - See your changes visually
 - ✅ **Then get scored** - Review verifies technical requirements
 - ✅ **Comprehensive evaluation** - End-to-end testing with E2E + unit tests
 - ✅ **Real workflow** - Matches how real developers work
+- ✅ **Dashboard available** - View progress and run reviews from web UI

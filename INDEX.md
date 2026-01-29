@@ -19,6 +19,7 @@
 ## 📋 Commands & Progress
 - [COMMANDS.md](./COMMANDS.md) - Review and progress commands (review:changed, review:challenge, dashboard)
 - [PROGRESS.md](./PROGRESS.md) - Auto-generated learning progress (updated when you run reviews)
+- [DASHBOARD_QUICK_START.md](./DASHBOARD_QUICK_START.md) - Fast setup guide for the Progress Dashboard
 
 ## 🛠️ Development & Maintenance
 - [CONTRIBUTING.md](./CONTRIBUTING.md) - How to contribute

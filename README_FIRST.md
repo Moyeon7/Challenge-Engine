@@ -31,6 +31,19 @@ This is a **production-ready, automated skill assessment system** for hands-on d
 - **Check results**: See `pathway-review/pathway-summary.json`
 - **Monitor**: Check GitHub Actions workflow
 
+### Dashboard (View Progress & Run Reviews)
+
+**Quick setup:**
+```bash
+# Build UI once
+npm run dashboard:build
+
+# Start dashboard
+npm run dashboard
+```
+
+Then open **http://localhost:7700** in your browser. See [README.md](./README.md#-progress-dashboard) for full details.
+
 ### System Status
 
 ✅ **Complete and Production Ready**
