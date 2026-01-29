@@ -1,277 +1,368 @@
-# Modern React Engineer - Skill Pathway Repository
+# Challenge Engine - Complete Guide
 
-This repository is a **production-grade, automated skill assessment system** for hands-on developer learning. It combines learning, practice, automated evaluation, and verifiable skill evidence generation.
+**Production-ready automated skill assessment system for hands-on developer learning.**
 
-## 🎯 System Overview
+---
 
-This pathway contains **3 courses**, each with standalone projects and automated review systems:
+## 🚀 Quick Start (2 Steps)
 
-1. **React Fundamentals** - Component-based UI development
-2. **RTK Query** - Data-driven dashboard with Redux Toolkit Query
-3. **Next.js App Router** - Fullstack application with App Router
+### Step 1: Start Dashboard (Keep Running)
 
-## 📁 Repository Structure
+Open **Terminal 1** (or Command Prompt) at the repository root:
 
-```
-Challenge-Engine/
-│
-├── courses/                    → Individual skill courses
-│   ├── 01-react-fundamentals/
-│   ├── 02-rtk-query/
-│   └── 03-nextjs-app-router/
-│
-├── pathway-review/             → Pathway-level summaries
-│   ├── pathway-summary.json
-│   ├── skill-breakdown.json
-│   └── pathway-config.json
-│
-├── global-review/              → Pathway aggregation engine
-│   ├── scoring-engine/
-│   ├── ai-review/
-│   └── run-all-reviews.js
-│
-├── learner-results/            → Auto-generated global cache
-│
-└── .github/workflows/          → Automation workflows
-    └── solo-skill-review.yml
-```
-
-## 🚀 Getting Started
-
-### For Learners: Help vs Completion
-
-- **We help** with setup, workflow, requirements, and documentation. See [LEARNER_GUIDE.md](./LEARNER_GUIDE.md).
-- **We do not provide** solution code. Completion is strict: your implementation must pass the automated review. See [LEARNING_PHILOSOPHY.md](./LEARNING_PHILOSOPHY.md) and [COMPLETION_POLICY.md](./COMPLETION_POLICY.md).
-
-### Learner Workflow
-
-**This is a real, runnable application. Work on challenges by modifying the project code.**
-
-1. **Start the project:**
-   ```bash
-   cd courses/01-react-fundamentals/project
-   npm install
-   npm run dev
-   ```
-
-2. **Open the app in your browser** - See your changes in real-time
-
-3. **Work on challenges:**
-   - Read challenge instructions in `project/challenges/01-xxx/README.md`
-   - Modify code in `project/src/` to implement the feature
-   - Run the app to visually confirm it works
-   - Then run review for scoring
-
-4. **Run review for evaluation:**
-   ```bash
-   # Review all challenges
-   npm run review
-   
-   # Review specific challenge
-   npm run review -- --challenge 01
-   ```
-
-### Running Reviews (Root Commands)
-
-From the **repository root** you can run:
-
-| Command | Description |
-|--------|-------------|
-| `npm run review:all` | Run review for all courses (pathway-level). |
-| `npm run review:changed` | Run review **only for challenges whose code changed** (git diff). Updates progress and PROGRESS.md. |
-| `npm run review:course -- --course=<courseId>` | Run review for all challenges in one course. |
-| `npm run review:challenge -- --course=<courseId> --challenge=<challengeId>` | Run review for a single challenge. |
-| `npm run progress:update` | Rebuild `learner-results/progress.json` and `PROGRESS.md` from course results. |
-| `npm run dashboard` | Start the progress dashboard (API + UI). Build UI first: `npm run dashboard:build`. |
-
-**Examples:**
 ```bash
-# Review only what you changed (e.g. before or after push)
-npm run review:changed
+# Build dashboard UI (one-time, takes 1-2 minutes)
+npm run dashboard:build
 
+# Start dashboard (keep this running)
+npm run dashboard
+```
+
+✅ Dashboard is now running at **http://localhost:7700**
+
+**Keep this terminal open** - the dashboard stays running.
+
+### Step 2: Work on a Course
+
+Open **Terminal 2** (new terminal) and pick a course:
+
+```bash
+# Course 1: React Fundamentals
+cd courses/01-react-fundamentals/project
+npm install
+npm run dev
+
+# OR Course 2: RTK Query
+cd courses/02-rtk-query/project
+npm install
+npm run dev
+
+# OR Course 3: Next.js App Router
+cd courses/03-nextjs-app-router/project
+npm install
+npm run dev
+```
+
+✅ Course app opens in browser (Vite: http://localhost:5173, Next.js: http://localhost:3000)
+
+**Now you have:**
+- ✅ Dashboard running at http://localhost:7700 (Terminal 1)
+- ✅ Course app running in browser (Terminal 2)
+- ✅ Hot reload enabled - changes appear instantly
+
+---
+
+## 📋 Your Workflow
+
+### 1. Pick a Challenge
+
+- **Option A**: Open dashboard → Click course → Click challenge → Read instructions
+- **Option B**: Open `project/challenges/01-xxx/README.md` in your editor
+
+### 2. Implement the Challenge
+
+- Edit code in `src/` (or `app/` for Next.js)
+- See changes instantly (hot reload)
+- Test visually in the browser
+
+### 3. Run Review (Get Scored)
+
+**Two ways to run review:**
+
+#### Option A: From Dashboard UI
+1. Open dashboard: http://localhost:7700
+2. Click course → Click challenge → Click **"Run review"** button
+3. Wait for review to complete (shows progress)
+4. See results immediately in dashboard
+
+#### Option B: From Command Line
+In Terminal 2 (course project directory):
+```bash
+# Review all challenges in this course
+npm run review
+
+# Review one specific challenge
+npm run review -- --challenge=01-user-profile
+```
+
+Or from repo root:
+```bash
 # Review one challenge
 npm run review:challenge -- --course=01-react-fundamentals --challenge=01-user-profile
 
-# Review entire course
-npm run review:course -- --course=02-rtk-query
-
-# Update progress and PROGRESS.md
-npm run progress:update
+# Review only changed challenges (smart - only reviews what you modified)
+npm run review:changed
 ```
 
-**Optional: run review on push**  
-Copy `scripts/on-push-review-changed.sh` to `.git/hooks/pre-push` (or use the `.bat` on Windows) so that only changed challenges are reviewed when you push. Or run `npm run review:changed` manually before pushing.
+### 4. See Results
 
-### Running All Reviews (Pathway Level)
+- **Dashboard**: Refresh or results appear automatically
+- **Files**: Check `courses/01-react-fundamentals/results/challenge-results.json`
+- **Progress**: See `PROGRESS.md` in repo root (auto-updated)
 
-From the root directory:
+### 5. Continue Working
+
+- Fix issues based on review feedback
+- Run review again
+- Repeat until you pass (score ≥ 60%)
+
+---
+
+## 🎯 What Gets Evaluated
+
+Each challenge is scored using **6 layers**:
+
+| Layer | Weight | What It Checks |
+|-------|--------|----------------|
+| **Functional Tests** | 35% | Unit/integration tests (Vitest) |
+| **Code Quality** | 20% | ESLint checks |
+| **Architecture** | 15% | Pattern validation (AST parsing) |
+| **Best Practices** | 10% | Code standards & heuristics |
+| **E2E Tests** | 15% | Visual/interaction tests (Playwright) |
+| **AI Review** | 5% | Readability & maintainability (Groq AI) |
+
+**Total Score**: Weighted average of all layers. **Pass = 60%+**
+
+---
+
+## 📊 Dashboard Features
+
+When dashboard is running (http://localhost:7700), you can:
+
+- ✅ **View pathway summary** - Overall score, completion %, badge level
+- ✅ **Browse all courses** - Paginated list (supports 50+ courses)
+- ✅ **Browse challenges** - Per-course, paginated (supports 100+ challenges)
+- ✅ **Read instructions** - Challenge README with **markdown formatting** (headings, code blocks, lists)
+- ✅ **View results** - Last review scores, test details, AI feedback
+- ✅ **Run reviews** - Click "Run review" button (no need to use terminal)
+- ✅ **Track progress** - See which challenges passed/failed, last run time
+
+**No code editing in dashboard** - edit in your editor, use dashboard to view progress and run reviews.
+
+---
+
+## 🔧 Setup (First Time Only)
+
+### Install All Dependencies
+
+From repo root:
 
 ```bash
-npm run review:all
-# or
-node global-review/run-all-reviews.js
+npm run setup
 ```
 
-## 🎯 How Challenges Work
+This installs:
+- All course project dependencies
+- All review engine dependencies
+- Playwright browsers (for E2E tests)
+
+**Or manually:**
+```bash
+# Each course project
+cd courses/01-react-fundamentals/project && npm install && cd ../../..
+cd courses/02-rtk-query/project && npm install && cd ../../..
+cd courses/03-nextjs-app-router/project && npm install && cd ../../..
+
+# Each review engine
+cd courses/01-react-fundamentals/review-engine && npm install && cd ../../..
+cd courses/02-rtk-query/review-engine && npm install && cd ../../..
+cd courses/03-nextjs-app-router/review-engine && npm install && cd ../../..
+```
+
+### Enable AI Review (Optional)
+
+AI review provides qualitative feedback (5% of score). To enable:
+
+1. Get a Groq API key: https://console.groq.com
+2. Create `.env` file in repo root:
+   ```bash
+   GROQ_API_KEY=your_key_here
+   ```
+3. Test connection:
+   ```bash
+   npm run test:ai-review
+   ```
+
+If AI key is not set, AI review is skipped (score = 0) and other layers still run.
+
+---
+
+## 📝 Common Commands
+
+### From Repo Root
+
+| Command | What It Does |
+|---------|--------------|
+| `npm run dashboard:build` | Build dashboard UI (one-time) |
+| `npm run dashboard` | Start dashboard server (port 7700) |
+| `npm run review:all` | Review all courses (pathway-level) |
+| `npm run review:changed` | Review only challenges whose code changed (smart) |
+| `npm run review:course -- --course=01-react-fundamentals` | Review all challenges in one course |
+| `npm run review:challenge -- --course=01-react-fundamentals --challenge=01-user-profile` | Review one challenge |
+| `npm run progress:update` | Rebuild progress.json and PROGRESS.md |
+| `npm run test:ai-review` | Test AI review connection |
+| `npm run setup` | Install all dependencies (first-time setup) |
+
+### From Course Project Directory
+
+| Command | What It Does |
+|---------|--------------|
+| `npm run dev` | Start dev server (hot reload enabled) |
+| `npm run review` | Review all challenges in this course |
+| `npm run review -- --challenge=01-user-profile` | Review one challenge |
+| `npm test` | Run unit tests only |
+| `npm run test:e2e` | Run E2E tests only |
+
+---
+
+## 🎓 How Challenges Work
 
 **Challenges are embedded in the project, not separate puzzles.**
 
 - Each course has **one runnable app**
 - Every challenge **adds or modifies functionality** inside that app
-- You work in the **real codebase** (`project/src/`)
+- You work in the **real codebase** (`project/src/` or `project/app/`)
 - You **run the app** to see your changes (`npm run dev`)
 - Tests verify **technical requirements** (not visual behavior)
 
-**Purpose** | **How you verify**
---- | ---
-"Does my feature work?" | Run the app locally (`npm run dev`)
-"Did I meet all technical requirements?" | Automated tests (`npm run review`)
-"Is my code written well?" | Static + AI review
+**Workflow:**
+1. **Run app** (`npm run dev`) → See changes visually
+2. **Verify functionality** → Interact with features in browser
+3. **Run review** (dashboard or command) → Get comprehensive scoring
 
-## 🔍 Comprehensive Evaluation System
+---
 
-Each challenge is evaluated using **end-to-end multi-signal scoring**:
+## 📚 Course Structure
 
-1. **Functional Correctness** (35%) - Unit/integration tests verify technical requirements
-2. **E2E Tests** (15%) - Playwright tests verify visual output and user interactions
-3. **Code Quality** (20%) - ESLint + static analysis
-4. **Architecture & Patterns** (15%) - AST-based pattern validation
-5. **Best Practices** (10%) - Performance heuristics and code standards
-6. **AI Qualitative Review** (5%) - Code readability and maintainability via Groq AI
+Each course has:
 
-### Review Workflow
-
-**For Learners:**
-1. **Run the app** (`npm run dev`) - See your changes visually
-2. **Verify functionality** - Interact with features in the browser
-3. **Run review** (`npm run review`) - Get comprehensive scoring
-
-**Review Process:**
-- ✅ Runs unit tests (functional correctness)
-- ✅ Runs E2E tests (visual/interaction verification via Playwright)
-- ✅ Checks code quality (linting)
-- ✅ Validates architecture (AST pattern checks)
-- ✅ Reviews best practices
-- ✅ AI code review (readability & maintainability)
-
-**Result:** Comprehensive, accurate, end-to-end evaluation
-
-## 📊 Progress Dashboard
-
-The **Progress Dashboard** is a web UI to view all courses and challenges, see progress, read instructions (with markdown formatting), and run reviews from the browser. **Code editing is done in your editor**; the dashboard is for viewing progress, instructions, and triggering reviews.
-
-### First-Time Setup
-
-**Prerequisites:**
-- Node.js v20+ installed
-- Repository cloned and at root directory
-
-**Steps:**
-
-1. **Install dashboard server dependencies** (one-time):
-   ```bash
-   cd dashboard
-   npm install
-   cd ..
-   ```
-
-2. **Build the dashboard UI** (one-time):
-   ```bash
-   npm run dashboard:build
-   ```
-   This installs UI dependencies and builds the React app. Takes 1-2 minutes.
-
-3. **Start the dashboard server**:
-   ```bash
-   npm run dashboard
-   ```
-
-4. **Open in browser:**
-   - Dashboard runs at: **http://localhost:7700**
-   - The UI loads automatically with all courses and challenges
-
-### What You Can Do in the Dashboard
-
-- ✅ **View pathway summary** – Overall score, completion %, badge level
-- ✅ **Browse courses** – Paginated list (20 per page), supports 50+ courses
-- ✅ **Browse challenges** – Per-course, paginated (50 per page), supports 100+ challenges
-- ✅ **Read instructions** – Challenge README rendered with **markdown formatting** (headings, code blocks, lists)
-- ✅ **View results** – Last review scores, test results, AI feedback
-- ✅ **Run reviews** – Click "Run review" button to trigger review for any challenge
-- ✅ **See progress** – Real-time updates after reviews run
-
-### Dashboard Port
-
-The dashboard uses **port 7700** by default to avoid conflicts with:
-- Course dev servers (Vite: 5173, Next.js: 3000)
-
-To use a different port:
-```bash
-DASHBOARD_PORT=8080 npm run dashboard
+```
+courses/01-react-fundamentals/
+├── project/              → Runnable app (your workspace)
+│   ├── src/              → Edit code here
+│   ├── challenges/       → Challenge instructions
+│   │   ├── 01-user-profile/
+│   │   │   ├── README.md        → Instructions (markdown)
+│   │   │   ├── requirements.md  → Exact requirements
+│   │   │   └── metadata.json    → Challenge config
+│   └── tests/            → Test files (don't edit)
+├── review-engine/        → Automated review system
+└── results/              → Auto-generated review results
 ```
 
-### Troubleshooting
+---
 
-**Dashboard won't start:**
-- Ensure you ran `npm run dashboard:build` first
-- Check if port 7700 is already in use
-- Verify Node.js v20+ is installed: `node --version`
+## 🛡️ Help vs Completion
 
-**UI shows "Build UI: cd dashboard/app && npm install && npm run build":**
-- Run `npm run dashboard:build` from repo root
+### We Help With:
+- ✅ Setup instructions
+- ✅ Workflow guidance
+- ✅ Requirements documentation
+- ✅ Challenge instructions (what to build)
+- ✅ Troubleshooting
 
-**API returns errors:**
-- Ensure you've run at least one review to generate progress data
-- Check that `learner-results/progress.json` exists (run `npm run progress:update` if needed)
+### We Do NOT Provide:
+- ❌ Solution code
+- ❌ Implementation examples
+- ❌ Step-by-step code walkthroughs
 
-For more details, see [dashboard/README.md](./dashboard/README.md).
+**Completion is strict**: Your code must pass the automated review (score ≥ 60%). See [LEARNER_GUIDE.md](./LEARNER_GUIDE.md) for details.
 
-## 📊 Results & Evidence
+---
 
-Results are automatically generated in JSON format:
+## 🔍 Review Results
 
-- **Challenge Level**: `courses/{course}/results/challenge-results.json`
-- **Course Level**: `courses/{course}/results/course-summary.json`
-- **Pathway Level**: `pathway-review/pathway-summary.json`
+After running a review, results are saved to:
 
-These files serve as **verifiable evidence** for skill badges.
+- **Challenge level**: `courses/{course}/results/challenge-results.json`
+- **Course level**: `courses/{course}/results/course-summary.json`
+- **AI feedback**: `courses/{course}/results/ai-feedback.json`
+- **Pathway level**: `pathway-review/pathway-summary.json`
+- **Progress**: `learner-results/progress.json` and `PROGRESS.md`
 
-## 🤖 Automation
+**View in dashboard** or open JSON files to see detailed scores.
 
-The system runs automatically on every push via GitHub Actions:
+---
 
-1. Checks out code
-2. Installs dependencies
-3. Runs global review engine
-4. Commits updated results files
+## 🚨 Troubleshooting
 
-## 🛡️ Tamper Resistance
+### Dashboard Issues
 
-- Result files are system-generated and overwritten on each review
-- Tests are protected and restored if deleted
-- Only automated workflows update results
+**"Build UI: cd dashboard/app && npm install && npm run build"**
+→ Run `npm run dashboard:build` first
 
-## 📚 Course Details
+**Port 7700 already in use**
+→ Use different port: `DASHBOARD_PORT=8080 npm run dashboard`
 
-### React Fundamentals
-Component-based UI development with modern React patterns, hooks, and state management.
+**No progress shown in dashboard**
+→ Run at least one review first, or: `npm run progress:update`
 
-### RTK Query
-Data fetching and caching with Redux Toolkit Query, including API integration and state management.
+### Review Issues
 
-### Next.js App Router
-Fullstack application development with Next.js 13+ App Router, including API routes and server components.
+**Tests fail to run**
+→ Install dependencies: `npm run setup` or `cd {course}/project && npm install`
 
-## 🔧 Development
+**E2E tests fail**
+→ Install Playwright browsers: `cd {course}/project && npx playwright install chromium`
 
-This system is designed for production scalability:
+**AI review shows 0%**
+→ Set `GROQ_API_KEY` in `.env` file (see "Enable AI Review" above)
 
-- Modular architecture
-- Config-driven scoring
-- Extensible evaluation layers
-- Comprehensive error handling
-- Clean logging and reporting
+**Review command not found**
+→ Make sure you're in the course project directory, or use root commands with `--course=` flag
+
+### Course App Issues
+
+**Port 5173 or 3000 already in use**
+→ Kill the process using that port, or change port in `vite.config.ts` / `next.config.js`
+
+**Hot reload not working**
+→ Check that `npm run dev` is running and browser console for errors
+
+**Changes not appearing**
+→ Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+
+---
+
+## 📖 More Documentation
+
+- **[LEARNER_GUIDE.md](./LEARNER_GUIDE.md)** - Help vs strict completion policy
+- **[QUICK_START.md](./QUICK_START.md)** - Quick workflow guide
+- **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Detailed setup instructions
+- **[COMMANDS.md](./COMMANDS.md)** - Complete command reference
+- **[ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md)** - Environment variables (GROQ_API_KEY)
+- **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Detailed troubleshooting
+- **[dashboard/README.md](./dashboard/README.md)** - Dashboard-specific docs
+
+---
+
+## 🎯 System Overview
+
+This system provides:
+
+- ✅ **3 courses** with real, runnable applications
+- ✅ **9 challenges** (3 per course) - basic to advanced progression
+- ✅ **Automated review** - 6-layer comprehensive evaluation
+- ✅ **Progress tracking** - Auto-updated progress.json and PROGRESS.md
+- ✅ **Dashboard UI** - View progress, instructions, run reviews
+- ✅ **AI review** - Qualitative feedback via Groq API (optional)
+- ✅ **Hot reload** - Instant feedback while coding
+- ✅ **Production-ready** - Scalable to 50+ courses, 100+ challenges per course
+
+---
 
 ## 📝 License
 
 This repository is part of the SOLO Challenge Engine system.
+
+---
+
+## 🚀 Ready to Start?
+
+1. **Start dashboard**: `npm run dashboard:build` then `npm run dashboard` (Terminal 1)
+2. **Open course**: `cd courses/01-react-fundamentals/project && npm install && npm run dev` (Terminal 2)
+3. **Work on challenge**: Edit code, see changes, run review from dashboard or command
+4. **See results**: Check dashboard or results files
+5. **Continue**: Fix issues, run review again, repeat until you pass
+
+**Happy coding! 🎉**
