@@ -1,0 +1,35 @@
+{
+  "courseId": "03-nextjs-app-router",
+  "courseName": "Next.js App Router",
+  "description": "Fullstack application development with Next.js 13+ App Router",
+  "version": "1.0.0",
+  "challenges": [
+    {
+      "id": "01-server-components",
+      "name": "Server Components and Basic Routing",
+      "weight": 0.33
+    },
+    {
+      "id": "02-data-fetching",
+      "name": "Data Fetching and API Routes",
+      "weight": 0.33
+    },
+    {
+      "id": "03-fullstack-features",
+      "name": "Fullstack Features and Metadata",
+      "weight": 0.34
+    }
+  ],
+  "scoring": {
+    "functionalTests": 0.35,
+    "codeQuality": 0.20,
+    "architecture": 0.15,
+    "bestPractices": 0.10,
+    "e2eTests": 0.15,
+    "aiReview": 0.05
+  },
+  "requirements": {
+    "minScore": 60,
+    "minCompletion": 100
+  }
+}

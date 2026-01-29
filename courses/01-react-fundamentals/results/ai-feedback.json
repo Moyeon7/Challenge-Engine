@@ -1,0 +1,18 @@
+[
+  {
+    "challengeId": "01-user-profile",
+    "challengeName": "User Profile Component",
+    "aiReview": {
+      "challengeId": "01-user-profile",
+      "timestamp": "2026-01-29T10:52:53.488Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "First argument to String.prototype.includes must not be a regular expression"
+    }
+  }
+]

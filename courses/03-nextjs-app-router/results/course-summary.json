@@ -1,0 +1,22 @@
+{
+  "courseId": "03-nextjs-app-router",
+  "courseName": "Next.js App Router",
+  "lastUpdated": "2026-01-29T10:46:14.755Z",
+  "totalChallenges": 3,
+  "completedChallenges": 0,
+  "averageScore": 26.82,
+  "completionPercentage": 0,
+  "badgeLevel": "none",
+  "challengeResults": [
+    {
+      "challengeId": "01-server-components",
+      "challengeName": "Server Components and Basic Routing",
+      "score": 26.82,
+      "passed": false
+    }
+  ],
+  "skillStrengths": [],
+  "improvementAreas": [
+    "Server Components and Basic Routing"
+  ]
+}

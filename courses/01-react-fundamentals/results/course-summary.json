@@ -1,0 +1,22 @@
+{
+  "courseId": "01-react-fundamentals",
+  "courseName": "React Fundamentals",
+  "lastUpdated": "2026-01-29T10:52:54.926Z",
+  "totalChallenges": 3,
+  "completedChallenges": 0,
+  "averageScore": 39,
+  "completionPercentage": 0,
+  "badgeLevel": "none",
+  "challengeResults": [
+    {
+      "challengeId": "01-user-profile",
+      "challengeName": "User Profile Component",
+      "score": 39,
+      "passed": false
+    }
+  ],
+  "skillStrengths": [],
+  "improvementAreas": [
+    "User Profile Component"
+  ]
+}
