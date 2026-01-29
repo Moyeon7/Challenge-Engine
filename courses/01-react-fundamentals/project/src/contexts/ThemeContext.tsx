@@ -4,7 +4,7 @@
  * Requirements: ThemeProvider, useTheme, theme state (light/dark), persist to localStorage.
  */
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -16,27 +16,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme | null;
-    if (stored === 'light' || stored === 'dark') setTheme(stored);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
-
+  // TODO: Implement per challenges/03-state-management/README.md
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: 'light', toggleTheme: () => {} }}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
 export function useTheme() {
+  // TODO: Implement per challenges/03-state-management/README.md
   const ctx = useContext(ThemeContext);
   if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
   return ctx;

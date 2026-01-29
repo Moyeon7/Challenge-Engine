@@ -1,4 +1,5 @@
 import './ChallengeList.css';
+import { Link } from 'react-router-dom';
 
 /**
  * Challenge List Component for RTK Query Course
@@ -9,19 +10,22 @@ export default function ChallengeList() {
       id: '01-api-setup',
       name: 'API Setup and Basic Fetching',
       difficulty: 'Beginner',
-      description: 'Set up RTK Query API and create your first data fetching endpoint'
+      description: 'Set up RTK Query API and create your first data fetching endpoint',
+      route: '/challenge/01-api-setup'
     },
     {
       id: '02-data-display',
       name: 'Data Display and Caching',
       difficulty: 'Intermediate',
-      description: 'Implement data caching, refetching, and display multiple data sources'
+      description: 'Implement data caching, refetching, and display multiple data sources',
+      route: '/challenge/02-data-display'
     },
     {
       id: '03-mutations',
       name: 'Mutations and Optimistic Updates',
       difficulty: 'Advanced',
-      description: 'Add mutations with optimistic updates for better UX'
+      description: 'Add mutations with optimistic updates for better UX',
+      route: '/challenge/03-mutations'
     }
   ];
 
@@ -40,13 +44,20 @@ export default function ChallengeList() {
             </div>
             <p className="challenge-description">{challenge.description}</p>
             <div className="challenge-actions">
+              <Link 
+                to={challenge.route}
+                className="btn btn-primary"
+              >
+                View Challenge UI
+              </Link>
               <a 
                 href={`./challenges/${challenge.id}/README.md`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-secondary"
+                style={{ marginLeft: '0.5rem' }}
               >
-                View Challenge
+                Read Instructions
               </a>
             </div>
           </div>

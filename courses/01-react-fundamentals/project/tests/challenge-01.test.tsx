@@ -1,7 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import UserProfile from '../src/components/UserProfile';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 describe('Challenge 01: User Profile Component', () => {
   const mockUser = {
@@ -41,8 +47,8 @@ describe('Challenge 01: User Profile Component', () => {
 
   it('should use useState for button state', () => {
     // This will be checked via AST parsing in review engine
-    const componentFile = require('fs').readFileSync(
-      require('path').join(__dirname, '../src/components/UserProfile.tsx'),
+    const componentFile = readFileSync(
+      join(__dirname, '../src/components/UserProfile.tsx'),
       'utf-8'
     );
     expect(componentFile).toContain('useState');

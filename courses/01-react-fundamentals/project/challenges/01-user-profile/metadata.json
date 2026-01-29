@@ -17,8 +17,7 @@
     "aiReview": 0.05
   },
   "filesToCheck": [
-    "src/components/UserProfile.tsx",
-    "src/App.tsx"
+    "src/components/UserProfile.tsx"
   ],
   "patternsRequired": [
     "functionalComponent",

@@ -59,11 +59,21 @@ npm test
 ```
 
 ### E2E Tests (Playwright)
+
+**First-time setup (required once):**
+```bash
+# Install Playwright browsers (required for E2E tests)
+npx playwright install
+```
+
+**Run E2E tests:**
 ```bash
 npm run test:e2e
 ```
 
 E2E tests verify visual output and user interactions that you can see in the browser.
+
+**Note:** If you see "Executable doesn't exist" errors, run `npx playwright install` to download the required browsers (Chromium, Firefox, WebKit).
 
 ### Review System
 

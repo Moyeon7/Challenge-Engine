@@ -28,9 +28,10 @@ Create a `UserProfile` component that displays:
 ## How to Verify
 
 1. Run `npm run dev` and open the app in your browser
-2. You should see the user profile displayed
-3. Click the follow button - it should toggle between "Follow" and "Following"
-4. The UI should look clean and professional
+2. Navigate to `/challenge/01-user-profile` (or click "View Challenge UI" from the home page)
+3. You should see the user profile displayed
+4. Click the follow button - it should toggle between "Follow" and "Following"
+5. The UI should look clean and professional
 
 ## Learning Hints (no solution code)
 
@@ -43,7 +44,10 @@ Create a `UserProfile` component that displays:
 
 - **Full learner guide**: See repo root [LEARNER_GUIDE.md](../../../../../LEARNER_GUIDE.md) — what help you get vs what you must do yourself.
 - **Exact requirements**: This folder's `requirements.md` defines what is scored. No solution code is provided; you must implement it.
+- **Setup**: If you haven't run setup yet, go to repo root and run `npm run setup` to install all dependencies and Playwright browsers.
 
-## Next Steps
+## Review & Scoring
 
 After you've verified it works visually, run `npm run review` to check if you've met all technical requirements.
+
+**Important**: The review will ONLY check what's specified in `requirements.md`. No hidden requirements. All code quality guidelines, best practices, and industry standards are clearly listed in the requirements file.

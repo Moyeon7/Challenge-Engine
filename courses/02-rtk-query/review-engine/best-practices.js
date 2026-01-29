@@ -2,10 +2,22 @@ import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
 /**
- * Checks best practices and code quality heuristics
+ * Checks best practices based ONLY on what's specified in challenge requirements
  */
 export async function checkBestPractices(challengeMetadata, projectDir) {
   const filesToCheck = challengeMetadata.filesToCheck || [];
+  const requirements = challengeMetadata.requirements?.bestPractices || [];
+  
+  // If no best practices requirements specified, return 100% (nothing to check)
+  if (requirements.length === 0) {
+    return {
+      score: 100,
+      passed: true,
+      issues: [],
+      details: [],
+      note: 'No best practices requirements specified in challenge'
+    };
+  }
   
   const results = {
     score: 0,
@@ -26,7 +38,7 @@ export async function checkBestPractices(challengeMetadata, projectDir) {
 
     try {
       const fileContent = readFileSync(filePath, 'utf-8');
-      const fileResults = checkFileBestPractices(fileContent, file);
+      const fileResults = checkFileBestPractices(fileContent, file, requirements);
       
       totalChecks += fileResults.totalChecks;
       passedChecks += fileResults.passedChecks;
@@ -47,94 +59,94 @@ export async function checkBestPractices(challengeMetadata, projectDir) {
   // Calculate score
   results.score = totalChecks > 0 
     ? Math.round((passedChecks / totalChecks) * 100 * 10) / 10
-    : 0;
+    : 100; // If no checks, assume passed
   
   results.passed = results.score >= 70;
 
   return results;
 }
 
-function checkFileBestPractices(content, fileName) {
+function checkFileBestPractices(content, fileName, requirements) {
   const issues = [];
   let totalChecks = 0;
   let passedChecks = 0;
 
-  // Check 1: No console.log in production code
-  totalChecks++;
-  const consoleLogMatches = content.match(/console\.(log|error|warn|debug)/g);
-  if (!consoleLogMatches || consoleLogMatches.length === 0) {
-    passedChecks++;
-  } else {
-    issues.push({
-      type: 'console-log',
-      message: `Found ${consoleLogMatches.length} console statement(s)`,
-      severity: 'warning'
-    });
-  }
-
-  // Check 2: Proper TypeScript usage (has type annotations)
-  totalChecks++;
-  if (fileName.endsWith('.tsx') || fileName.endsWith('.ts')) {
-    const hasTypeAnnotations = /:\s*\w+/.test(content) || /<[A-Z]\w+>/.test(content);
-    if (hasTypeAnnotations) {
-      passedChecks++;
-    } else {
-      issues.push({
-        type: 'typescript',
-        message: 'Missing type annotations',
-        severity: 'warning'
-      });
+  // Only check what's specified in requirements
+  for (const requirement of requirements) {
+    const reqLower = requirement.toLowerCase();
+    
+    // Check for console.log requirement
+    if (reqLower.includes('console') || reqLower.includes('no console')) {
+      totalChecks++;
+      const consoleLogMatches = content.match(/console\.(log|error|warn|debug)/g);
+      if (!consoleLogMatches || consoleLogMatches.length === 0) {
+        passedChecks++;
+      } else {
+        issues.push({
+          type: 'console-log',
+          message: `Found ${consoleLogMatches.length} console statement(s) - requirement: ${requirement}`,
+          severity: 'warning'
+        });
+      }
     }
-  } else {
-    passedChecks++; // Not applicable
-  }
-
-  // Check 3: No commented out code blocks (large blocks)
-  totalChecks++;
-  const largeCommentBlocks = (content.match(/\/\*[\s\S]{100,}?\*\//g) || []).length;
-  if (largeCommentBlocks === 0) {
-    passedChecks++;
-  } else {
-    issues.push({
-      type: 'commented-code',
-      message: `Found ${largeCommentBlocks} large comment block(s)`,
-      severity: 'info'
-    });
-  }
-
-  // Check 4: Proper component structure (exports)
-  totalChecks++;
-  if (fileName.includes('components/') || fileName.includes('api/')) {
-    const hasExport = /export\s+(default\s+)?(function|const|class)/.test(content);
-    if (hasExport) {
-      passedChecks++;
-    } else {
-      issues.push({
-        type: 'export',
-        message: 'Component/API should be exported',
-        severity: 'error'
-      });
+    
+    // Check for TypeScript requirement
+    if (reqLower.includes('typescript') || reqLower.includes('type')) {
+      totalChecks++;
+      if (fileName.endsWith('.tsx') || fileName.endsWith('.ts')) {
+        const hasTypeAnnotations = /:\s*\w+/.test(content) || /<[A-Z]\w+>/.test(content) || /interface\s+\w+/.test(content);
+        if (hasTypeAnnotations) {
+          passedChecks++;
+        } else {
+          issues.push({
+            type: 'typescript',
+            message: `Missing type annotations - requirement: ${requirement}`,
+            severity: 'warning'
+          });
+        }
+      } else {
+        passedChecks++; // Not applicable for non-TS files
+      }
     }
-  } else {
-    passedChecks++; // Not applicable
+    
+    // Check for functional component requirement
+    if (reqLower.includes('functional component') || reqLower.includes('functional component pattern')) {
+      totalChecks++;
+      const hasFunctionalComponent = /export\s+(default\s+)?(function|const)\s+[A-Z]/.test(content) || 
+                                      /const\s+[A-Z]\w+\s*=\s*\(/.test(content);
+      if (hasFunctionalComponent) {
+        passedChecks++;
+      } else {
+        issues.push({
+          type: 'functional-component',
+          message: `Must use functional component pattern - requirement: ${requirement}`,
+          severity: 'error'
+        });
+      }
+    }
+    
+    // Check for ESLint requirement
+    if (reqLower.includes('eslint') || reqLower.includes('lint')) {
+      // This is handled by the linter, so we skip here
+      // Just mark as passed since linter will check it
+      totalChecks++;
+      passedChecks++;
+    }
   }
 
-  // Check 5: No hardcoded values (basic check)
-  totalChecks++;
-  const hardcodedStrings = (content.match(/['"](https?:\/\/|localhost|127\.0\.0\.1)/g) || []).length;
-  if (hardcodedStrings === 0) {
-    passedChecks++;
-  } else {
-    issues.push({
-      type: 'hardcoded-values',
-      message: 'Consider extracting hardcoded URLs to constants',
-      severity: 'info'
-    });
+  // If no specific requirements, return 100% (nothing to check)
+  if (totalChecks === 0) {
+    return {
+      totalChecks: 0,
+      passedChecks: 0,
+      issues: [],
+      score: 100
+    };
   }
 
   const score = totalChecks > 0 
     ? Math.round((passedChecks / totalChecks) * 100 * 10) / 10
-    : 0;
+    : 100;
 
   return {
     totalChecks,

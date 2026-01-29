@@ -29,10 +29,11 @@ Create a todo list application with the following features:
 ## How to Verify
 
 1. Run `npm run dev` and open the app
-2. Add a new todo - it should appear in the list
-3. Check a todo - it should show as completed (strikethrough)
-4. Click delete - the todo should be removed
-5. All interactions should work smoothly
+2. Navigate to `/challenge/02-todo-list` (or click "View Challenge UI" from the home page)
+3. Add a new todo - it should appear in the list
+4. Check a todo - it should show as completed (strikethrough)
+5. Click delete - the todo should be removed
+6. All interactions should work smoothly
 
 ## Learning Hints (no solution code)
 

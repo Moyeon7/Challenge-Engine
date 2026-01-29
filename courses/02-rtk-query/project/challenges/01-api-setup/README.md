@@ -50,9 +50,10 @@ Create an RTK Query API slice that fetches users from the mock API. You'll need 
 ## How to Verify
 
 1. Run `npm run dev` and open the app
-2. You should see a list of users displayed
-3. Check the Redux DevTools to see the API state
-4. Verify loading states appear during fetch
+2. Navigate to `/challenge/01-api-setup` (or click "View Challenge UI" from the home page)
+3. You should see a list of users displayed
+4. Check the Redux DevTools to see the API state
+5. Verify loading states appear during fetch
 
 ## Learning Hints (no solution code)
 
