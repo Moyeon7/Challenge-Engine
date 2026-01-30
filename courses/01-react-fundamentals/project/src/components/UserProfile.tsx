@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './UserProfile.css';
 
+
+const BUTTON_TEXT_FOLLOW = 'Follow';
+const BUTTON_TEXT_FOLLOWING = 'Following';
+
 interface UserProfileProps {
   name: string;
   email: string;
@@ -39,3 +43,5 @@ export default function UserProfile({ name, email, avatar }: UserProfileProps) {
     </div>
   );
 }
+
+export default UserProfile;
