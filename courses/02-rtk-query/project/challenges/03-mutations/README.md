@@ -30,7 +30,7 @@ Add mutations (create, update, delete) and optional optimistic updates:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/03-mutations` create/update/delete flow. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

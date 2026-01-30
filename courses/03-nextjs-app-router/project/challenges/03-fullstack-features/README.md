@@ -30,7 +30,7 @@ Add a fullstack feature with Client Components, metadata, and form handling:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: form submit and feedback. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

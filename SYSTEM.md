@@ -261,7 +261,7 @@ totalScore = (
 )
 ```
 
-**Pass threshold**: 60% (configurable per course in `course-config.json`)
+**Pass threshold**: 80% (configurable per course in `course-config.json`)
 
 ---
 

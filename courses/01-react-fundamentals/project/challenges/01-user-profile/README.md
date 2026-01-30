@@ -30,7 +30,7 @@ Build a `UserProfile` component that shows:
 | **Best practices** | TypeScript types, functional component, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/01-user-profile` has profile, name, email, button, toggle, avatar/placeholder. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

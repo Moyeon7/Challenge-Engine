@@ -124,7 +124,7 @@ The course app opens in your browser (e.g. http://localhost:5173 or http://local
      ```bash
      npm run review -- --challenge=01-user-profile
      ```
-4. Check the score. Pass = 60% or higher. Fix issues and run review again until you pass.
+4. Check the score. Pass = 80% or higher. Fix issues and run review again until you pass.
 
 ---
 
@@ -231,7 +231,7 @@ Each challenge is scored by:
 - **E2E tests** (Playwright)
 - **AI review** (optional, needs API key)
 
-**Pass = 60% or higher.** Only what’s listed in each challenge’s README (Technical Requirements) is checked; there are no hidden requirements.
+**Pass = 80% or higher.** Only what’s listed in each challenge’s README (Technical Requirements) is checked; there are no hidden requirements.
 
 ---
 
@@ -244,3 +244,23 @@ Each challenge is scored by:
 ---
 
 **Happy learning.**
+
+## 📈 Progress Summary
+
+**Last updated:** 1/31/2026, 12:25:32 AM
+
+### Pathway
+
+| Metric | Value |
+|--------|-------|
+| Challenges completed | 0 / 9 (0%) |
+| Overall score | 0% |
+
+### By course
+
+| Course | Completed | Score | Status |
+|--------|-----------|-------|--------|
+| React Fundamentals | 0/3 (0%) | 0% | Fail |
+| RTK Query | 0/3 (0%) | 0% | Fail |
+| Next.js App Router | 0/3 (0%) | 0% | Fail |
+

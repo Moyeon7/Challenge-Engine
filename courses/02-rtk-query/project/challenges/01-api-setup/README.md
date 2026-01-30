@@ -30,7 +30,7 @@ Set up RTK Query and fetch users from the mock API:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/01-api-setup` shows users (or loading/error). |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

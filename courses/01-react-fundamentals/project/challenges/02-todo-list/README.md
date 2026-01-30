@@ -30,7 +30,7 @@ Build a `TodoList` component where users can:
 | **Best practices** | TypeScript, functional component, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/02-todo-list` add/toggle/delete, check visual distinction. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

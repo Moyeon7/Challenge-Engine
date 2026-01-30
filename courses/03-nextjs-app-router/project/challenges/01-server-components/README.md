@@ -30,7 +30,7 @@ Create a minimal Next.js App Router app with:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: navigation between home and about. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

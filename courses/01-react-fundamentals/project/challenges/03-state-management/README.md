@@ -29,7 +29,7 @@ Implement a theme switcher using React Context:
 | **Best practices** | TypeScript context type, custom hook, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/03-state-management` toggle, theme change and persistence. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 
