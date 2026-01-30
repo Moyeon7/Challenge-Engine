@@ -152,22 +152,35 @@ git push origin main
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 📈 Progress Summary
 
-**Last updated:** 1/29/2026, 11:54:26 PM
+**Last updated:** 1/30/2026, 6:08:53 PM
 
 ### Pathway
 
 | Metric | Value |
 |--------|-------|
 | Challenges completed | 0 / 9 (0%) |
-| Overall score | 34.2% |
+| Overall score | 40.1% |
 
 ### By course
 
 | Course | Completed | Score | Status |
 |--------|-----------|-------|--------|
-| React Fundamentals | 0/3 (0%) | 58.5% | Fail |
+| React Fundamentals | 0/3 (0%) | 76.5% | Fail |
 | RTK Query | 0/3 (0%) | 21.9% | Fail |
 | Next.js App Router | 0/3 (0%) | 22.5% | Fail |
 

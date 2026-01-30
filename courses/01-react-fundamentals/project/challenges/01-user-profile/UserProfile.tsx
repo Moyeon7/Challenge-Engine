@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import './UserProfile.css';
 
 /**
@@ -13,13 +13,13 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ name, email, avatar }: UserProfileProps) {
-  const [isFollowing, setIsFollowing] = useState(false);
+  const [isFollowing, setIsFollowing] = React.useState(false);
 
   const handleFollowClick = () => {
     setIsFollowing(!isFollowing);
   };
 
-  const placeholderAvatar = 'https://via.placeholder.com/120?text=' + encodeURIComponent(name[0] || 'U');
+  const placeholderAvatar = 'https://via.placeholder.com/120?text=';
 
   return (
     <div className="user-profile" data-testid="user-profile">
@@ -39,7 +39,7 @@ export default function UserProfile({ name, email, avatar }: UserProfileProps) {
         className={`follow-button ${isFollowing ? 'following' : ''}`}
         onClick={handleFollowClick}
       >
-        {isFollowing ? 'Following' : 'Follow'}
+        {isFollowing ? 'following' : 'follow'}
       </button>
     </div>
   );

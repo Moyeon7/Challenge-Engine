@@ -1,8 +1,5 @@
-/**
- * Challenge 01: User Profile Component
- * Replace this stub with your implementation.
- * Requirements: name, email, avatar (or placeholder), Follow button with toggle state.
- */
+import { useState } from 'react';
+import './UserProfile.css';
 
 interface UserProfileProps {
   name: string;
@@ -11,13 +8,34 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ name, email, avatar }: UserProfileProps) {
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  const handleFollowClick = () => {
+    setIsFollowing(!isFollowing);
+  };
+
+  const placeholderAvatar = 'https://via.placeholder.com/150?text=Avatar';
+
   return (
-    <div data-testid="user-profile">
-      {/* TODO: Implement per challenges/01-user-profile/README.md */}
-      <span>{name}</span>
-      <span>{email}</span>
-      {avatar && <img src={avatar} alt="" />}
-      <button type="button">Follow</button>
+    <div className="user-profile" data-testid="user-profile">
+      <div className="profile-container">
+        <img 
+          src={avatar || placeholderAvatar} 
+          alt={`${name}'s avatar`}
+          className="profile-avatar"
+        />
+        <div className="profile-info">
+          <h2 className="profile-name">{name}</h2>
+          <p className="profile-email">{email}</p>
+          <button
+            type="button"
+            className={`follow-button ${isFollowing ? 'following' : 'follow'}`}
+            onClick={handleFollowClick}
+          >
+            {isFollowing ? 'Following' : 'Follow'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
