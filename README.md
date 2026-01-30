@@ -1,84 +1,64 @@
-# Challenge Engine - Complete Guide
+# Challenge Engine – Learner Guide
 
-**Production-ready automated skill assessment system for hands-on developer learning.**
+**Step-by-step guide to run challenges, get scored, and keep your repo in sync with course updates.**
 
 ---
 
-## 🚀 Quick Start (3 Steps)
+## Step 1: Clone the repository
 
-### Step 0: Initial Setup (One-Time, After Cloning)
-
-**Run this once after cloning the repository:**
+Clone this repo to your computer (if you haven’t already):
 
 ```bash
-# Install all dependencies and Playwright browsers
+git clone https://github.com/sparkplustech/challenge-engine-react.git
+cd challenge-engine-react
+```
+
+---
+
+## Step 2: Create your own GitHub repo (for your work)
+
+You need a **personal GitHub repo** where you will push your challenge work. The course repo is **upstream** (read-only for you); your repo is **origin** (where you push).
+
+1. Go to [GitHub](https://github.com) and sign in.
+2. Click **“+”** (top right) → **“New repository”**.
+3. Choose a name (e.g. `my-challenge-engine`).
+4. Leave it **empty** (no README, no .gitignore).
+5. Click **“Create repository”**.
+6. On the new repo page, click the green **“Code”** button.
+7. Copy the **HTTPS URL** (e.g. `https://github.com/YOUR_USERNAME/my-challenge-engine.git`).  
+   You will use this as your **origin** URL.
+
+---
+
+## Step 3: Run setup (one time)
+
+From the **repo root** (the folder that contains `package.json`):
+
+```bash
 npm run setup
 ```
 
 This will:
-- ✅ Install dashboard dependencies
-- ✅ Install all course project dependencies
-- ✅ Install all review engine dependencies
-- ✅ Install Playwright browsers for E2E tests
-- ✅ **(Learners)** Configure git remotes: **upstream** = course repo, **origin** = your repo (you may be prompted for your repo URL)
 
-**Takes 3-5 minutes** - grab a coffee ☕
+- Install all dependencies (dashboard, course projects, review engines).
+- Install Playwright browsers (for E2E tests).
+- Add the **upstream** remote (course repo).
+- If you cloned the course repo, it will **ask you for your GitHub repo URL** — paste the URL you copied in Step 2. That sets **origin** to your repo.
 
-### Step 1: Start Dashboard (Keep Running)
+If setup doesn’t ask for your URL, set it manually after setup (see Step 4).
 
-Open **Terminal 1** (or Command Prompt) at the repository root:
-
-```bash
-# Build dashboard UI (one-time, takes 1-2 minutes)
-npm run dashboard:build
-
-# Start dashboard (keep this running)
-npm run dashboard
-```
-
-✅ Dashboard is now running at **http://localhost:7700**
-
-**Keep this terminal open** - the dashboard stays running.
-
-### Step 2: Work on a Course
-
-Open **Terminal 2** (new terminal) and pick a course:
-
-```bash
-# Course 1: React Fundamentals
-cd courses/01-react-fundamentals/project
-npm run dev
-
-# OR Course 2: RTK Query
-cd courses/02-rtk-query/project
-npm run dev
-
-# OR Course 3: Next.js App Router
-cd courses/03-nextjs-app-router/project
-npm run dev
-```
-
-✅ Course app opens in browser (Vite: http://localhost:5173, Next.js: http://localhost:3000)
-
-**Note**: Dependencies are already installed from Step 0, so you can directly run `npm run dev`
-
-**Now you have:**
-- ✅ Dashboard running at http://localhost:7700 (Terminal 1)
-- ✅ Course app running in browser (Terminal 2)
-- ✅ Hot reload enabled - changes appear instantly
+**Takes about 3–5 minutes.**
 
 ---
 
-## 👤 For learners: Git remotes (origin & upstream)
+## Step 4: Set Git remotes (if needed)
 
-If you’re a **learner** using this repo, set things up so:
+You want:
 
-- **origin** = your own repo (where you push your challenge work).
-- **upstream** = the course repo (where new courses and updates come from).
+- **origin** → your repo (where you push your work).
+- **upstream** → course repo (where you pull updates).
 
-`npm run setup` will add **upstream** automatically and, if you cloned the course repo, prompt you for **your repo URL** and set it as **origin**. You can also set or fix remotes manually as below.
-
-### Check your remotes
+Check your remotes:
 
 ```bash
 git remote -v
@@ -86,29 +66,71 @@ git remote -v
 
 You should see:
 
-- **origin** → your repo (e.g. `https://github.com/YOUR_USERNAME/your-repo.git`)
-- **upstream** → course repo (`https://github.com/sparkplustech/challenge-engine-react.git`)
+- **origin** → your repo URL (e.g. `https://github.com/YOUR_USERNAME/my-challenge-engine.git`)
+- **upstream** → `https://github.com/sparkplustech/challenge-engine-react.git`
 
-### Set remotes manually (if needed)
-
-**If you cloned the course repo** (so `origin` still points to us):
+**If origin still points to the course repo**, set it to your repo:
 
 ```bash
-# Add course repo as upstream
-git remote add upstream https://github.com/sparkplustech/challenge-engine-react.git
-
-# Point origin to YOUR repo (replace with your actual URL)
-git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 ```
 
-**If you forked first** (so `origin` already points to your fork):
+Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and repo name.
+
+**If upstream is missing**, add it:
 
 ```bash
-# Add course repo as upstream
 git remote add upstream https://github.com/sparkplustech/challenge-engine-react.git
 ```
 
-### Push your work to your repo (origin)
+---
+
+## Step 5: Start the dashboard and a course
+
+**Terminal 1 – Dashboard** (keep running):
+
+```bash
+npm run dashboard:build
+npm run dashboard
+```
+
+Dashboard runs at **http://localhost:7700**. Use it to browse challenges and run reviews.
+
+**Terminal 2 – Course app** (pick one):
+
+```bash
+cd courses/01-react-fundamentals/project
+npm run dev
+```
+
+Or for other courses:
+
+```bash
+cd courses/02-rtk-query/project && npm run dev
+cd courses/03-nextjs-app-router/project && npm run dev
+```
+
+The course app opens in your browser (e.g. http://localhost:5173 or http://localhost:3000).
+
+---
+
+## Step 6: Work on a challenge
+
+1. In the dashboard (http://localhost:7700), open a course and a challenge, or open the challenge README in your editor (e.g. `courses/01-react-fundamentals/project/challenges/01-user-profile/README.md`).
+2. Edit code in the course project (`src/` or `app/`). Save and see changes in the browser (hot reload).
+3. Run a review to get scored:
+   - **From dashboard:** Open the challenge → click **“Run review”**.
+   - **From terminal:** In the course project folder, run:
+     ```bash
+     npm run review -- --challenge=01-user-profile
+     ```
+4. Check the score. Pass = 60% or higher. Fix issues and run review again until you pass.
+
+---
+
+## Step 7: Push your work to your repo
+
+When you want to save your progress to **your** GitHub repo:
 
 ```bash
 git add .
@@ -116,430 +138,109 @@ git commit -m "Complete challenge 01-user-profile"
 git push -u origin main
 ```
 
-### Pull new courses or updates from the course repo (upstream)
+Use the branch name you use (e.g. `main` or `master`). After the first push with `-u origin main`, you can use:
 
 ```bash
-git fetch upstream
-git merge upstream/main
-# Optional: push the merged changes to your repo
+git push
+```
+
+---
+
+## Step 8: Get latest courses and updates (pull from upstream)
+
+When the course team adds new challenges or fixes and you want to **take all their changes** and **overwrite your copy** wherever there are conflicts, use the sync-upstream script.
+
+**Option A – One command (recommended):**
+
+```bash
+npm run sync-upstream
+```
+
+This script:
+
+1. Saves your current work in a commit (if you have uncommitted changes).
+2. Fetches and merges from upstream.
+3. On any conflict, **accepts upstream’s version** — your conflicting changes are **overwritten** by the course repo’s version. Use this when you want to always take the course team’s updates.
+
+Then push to your repo if you want:
+
+```bash
 git push origin main
 ```
 
----
+**Option B – Manual:**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 📈 Progress Summary
-
-**Last updated:** 1/30/2026, 6:32:50 PM
-
-### Pathway
-
-| Metric | Value |
-|--------|-------|
-| Challenges completed | 1 / 9 (11.1%) |
-| Overall score | 42.3% |
-
-### By course
-
-| Course | Completed | Score | Status |
-|--------|-----------|-------|--------|
-| React Fundamentals | 1/3 (0.3%) | 83.2% | Pass |
-| RTK Query | 0/3 (0%) | 21.9% | Fail |
-| Next.js App Router | 0/3 (0%) | 22.5% | Fail |
-
-
-## 📋 Your Workflow
-
-### 1. Pick a Challenge
-
-- **Option A**: Open dashboard → Click course → Click challenge → Read instructions
-- **Option B**: Open `project/challenges/01-xxx/README.md` in your editor
-
-### 2. Implement the Challenge
-
-- Edit code in `src/` (or `app/` for Next.js)
-- See changes instantly (hot reload)
-- Test visually in the browser
-
-### 3. Run Review (Get Scored)
-
-**Two ways to run review:**
-
-#### Option A: From Dashboard UI
-1. Open dashboard: http://localhost:7700
-2. Click course → Click challenge → Click **"Run review"** button
-3. Wait for review to complete (shows progress)
-4. See results immediately in dashboard
-
-#### Option B: From Command Line
-In Terminal 2 (course project directory):
 ```bash
-# Review all challenges in this course
-npm run review
-
-# Review one specific challenge
-npm run review -- --challenge=01-user-profile
+git add .
+git status
+git commit -m "WIP before pull"   # only if you have changes
+git fetch upstream
+git merge upstream/main -X theirs
 ```
 
-Or from repo root:
-```bash
-# Review one challenge
-npm run review:challenge -- --course=01-react-fundamentals --challenge=01-user-profile
+`-X theirs` means: when there’s a conflict, keep the upstream version.
 
-# Review only changed challenges (smart - only reviews what you modified)
-npm run review:changed
-```
-
-### 4. See Results
-
-- **Dashboard**: Refresh or results appear automatically
-- **Files**: Check `courses/01-react-fundamentals/results/challenge-results.json`
-
-**Note**: Review scores are based **ONLY** on what's specified in each challenge's `README.md` (Technical Requirements section).
-- **Progress**: Shown in this README (Progress Summary) and in `learner-results/progress.json` (auto-updated when you run review).
-
-### 5. Continue Working
-
-- Fix issues based on review feedback
-- Run review again
-- Repeat until you pass (score ≥ 60%)
-
----
-
-## 🎯 What Gets Evaluated
-
-Each challenge is scored using **6 layers**:
-
-| Layer | Weight | What It Checks |
-|-------|--------|----------------|
-| **Functional Tests** | 35% | Unit/integration tests (Vitest) |
-| **Code Quality** | 20% | ESLint checks |
-| **Architecture** | 15% | Pattern validation (AST parsing) |
-| **Best Practices** | 10% | Code standards & heuristics |
-| **E2E Tests** | 15% | Visual/interaction tests (Playwright) |
-| **AI Review** | 5% | Readability & maintainability (Groq AI) |
-
-**Total Score**: Weighted average of all layers. **Pass = 60%+**
-
----
-
-## 📊 Dashboard Features
-
-When dashboard is running (http://localhost:7700), you can:
-
-- ✅ **View pathway summary** - Overall score, completion %
-- ✅ **Browse all courses** - Paginated list (supports 50+ courses)
-- ✅ **Browse challenges** - Per-course, paginated (supports 100+ challenges)
-- ✅ **Read instructions** - Challenge README with **markdown formatting** (headings, code blocks, lists)
-- ✅ **View results** - Last review scores, test details, AI feedback
-- ✅ **Run reviews** - Click "Run review" button (no need to use terminal)
-- ✅ **Track progress** - See which challenges passed/failed, last run time
-
-**No code editing in dashboard** - edit in your editor, use dashboard to view progress and run reviews.
-
----
-
-## 🔧 Setup (First Time Only)
-
-### Install All Dependencies
-
-From repo root:
+**After pulling**, if new courses were added, run setup again so their dependencies are installed:
 
 ```bash
 npm run setup
 ```
 
-This installs:
-- All course project dependencies
-- All review engine dependencies
-- Playwright browsers (for E2E tests)
+---
 
-**Or manually:**
-```bash
-# Each course project
-cd courses/01-react-fundamentals/project && npm install && cd ../../..
-cd courses/02-rtk-query/project && npm install && cd ../../..
-cd courses/03-nextjs-app-router/project && npm install && cd ../../..
+## Quick reference
 
-# Each review engine
-cd courses/01-react-fundamentals/review-engine && npm install && cd ../../..
-cd courses/02-rtk-query/review-engine && npm install && cd ../../..
-cd courses/03-nextjs-app-router/review-engine && npm install && cd ../../..
-```
-
-### Enable AI Review (Optional)
-
-AI review provides qualitative feedback (5% of score). To enable:
-
-1. Get a Groq API key: https://console.groq.com
-2. Create `.env` file in repo root:
-   ```bash
-   GROQ_API_KEY=your_key_here
-   ```
-3. Test connection:
-   ```bash
-   npm run test:ai-review
-   ```
-
-If AI key is not set, AI review is skipped (score = 0) and other layers still run.
+| What you want to do        | Command |
+|----------------------------|--------|
+| First-time setup           | `npm run setup` |
+| Start dashboard            | `npm run dashboard:build` then `npm run dashboard` |
+| Start a course app         | `cd courses/01-react-fundamentals/project && npm run dev` |
+| Run review for one challenge | `npm run review -- --challenge=01-user-profile` (from course project) |
+| Push your work             | `git add . && git commit -m "..." && git push origin main` |
+| Get latest from course repo (merge and overwrite conflicts with upstream) | `npm run sync-upstream` |
 
 ---
 
-## 📝 Common Commands
+## Troubleshooting
 
-### From Repo Root
+**“concurrently” or “command not found”**  
+→ Run `npm run setup` from the repo root (installs root dependencies).
 
-| Command | What It Does |
-|---------|--------------|
-| `npm run dashboard:build` | Build dashboard UI (one-time) |
-| `npm run dashboard` | Start dashboard server (port 7700) |
-| `npm run dashboard:dev` | Dev mode: API on 7700 + UI with hot reload on 5174 |
-| `npm run review:all` | Review all courses (pathway-level) |
-| `npm run review:changed` | Review only challenges whose code changed (smart) |
-| `npm run review:course -- --course=01-react-fundamentals` | Review all challenges in one course |
-| `npm run review:challenge -- --course=01-react-fundamentals --challenge=01-user-profile` | Review one challenge |
-| `npm run progress:update` | Rebuild progress.json and README evidence |
-| `npm run test:ai-review` | Test AI review connection |
-| `npm run setup` | Install all dependencies (first-time setup) |
+**E2E tests fail or “Executable doesn’t exist”**  
+→ Run `npm run setup` again; it installs Playwright browsers. Or from a course project: `npx playwright install`.
 
-### From Course Project Directory
+**Review score 0% or tests fail**  
+→ Make sure you ran `npm run setup` and you’re in the correct course project folder when running `npm run review`.
 
-| Command | What It Does |
-|---------|--------------|
-| `npm run dev` | Start dev server (hot reload enabled) |
-| `npm run review` | Review all challenges in this course |
-| `npm run review -- --challenge=01-user-profile` | Review one challenge |
-| `npm test` | Run unit tests only |
-| `npm run test:e2e` | Run E2E tests only |
+**Origin / upstream wrong**  
+→ Use `git remote -v` to check. Set origin: `git remote set-url origin YOUR_REPO_URL`. Add upstream: `git remote add upstream https://github.com/sparkplustech/challenge-engine-react.git`.
+
+**Merge conflicts when pulling**  
+→ Use `npm run sync-upstream` to accept all upstream changes, or run `git merge upstream/main -X theirs` after `git fetch upstream`.
 
 ---
 
-## 🎓 How Challenges Work
+## What gets scored
 
-**Challenges are embedded in the project, not separate puzzles.**
+Each challenge is scored by:
 
-- Each course has **one runnable app**
-- Every challenge **adds or modifies functionality** inside that app
-- You work in the **real codebase** (`project/src/` or `project/app/`)
-- You **run the app** to see your changes (`npm run dev`)
-- Tests verify **technical requirements** (not visual behavior)
+- **Functional tests** (Vitest)
+- **Code quality** (ESLint)
+- **Architecture** (required patterns)
+- **Best practices**
+- **E2E tests** (Playwright)
+- **AI review** (optional, needs API key)
 
-**Workflow:**
-1. **Run app** (`npm run dev`) → See changes visually
-2. **Verify functionality** → Interact with features in browser
-3. **Run review** (dashboard or command) → Get comprehensive scoring
-
-**Important**: Review will **ONLY check what's specified** in each challenge's `README.md` file (Technical Requirements section). All code quality guidelines, best practices, and industry standards are clearly listed in the README. No hidden requirements!
+**Pass = 60% or higher.** Only what’s listed in each challenge’s README (Technical Requirements) is checked; there are no hidden requirements.
 
 ---
 
-## 📚 Course Structure
+## More info
 
-Each course has:
-
-```
-courses/01-react-fundamentals/
-├── project/              → Runnable app (your workspace)
-│   ├── src/              → Edit code here
-│   ├── challenges/       → Challenge instructions
-│   │   ├── 01-user-profile/
-│   │   │   ├── README.md        → Instructions (markdown)
-│   │   │   └── README.md  → Instructions + Technical Requirements (all in one file)
-│   │   │   └── metadata.json    → Challenge config
-│   └── tests/            → Test files (don't edit)
-├── review-engine/        → Automated review system
-└── results/              → Auto-generated review results
-```
+- **Dashboard:** [dashboard/README.md](./dashboard/README.md)
+- **Scripts:** [scripts/README.md](./scripts/README.md)
+- **AI review (optional):** Create `.env` in repo root with `GROQ_API_KEY=your_key`. Get a key at https://console.groq.com
 
 ---
 
-## 🛡️ Help vs Completion
-
-### We Help With:
-- ✅ Setup instructions
-- ✅ Workflow guidance
-- ✅ Requirements documentation
-- ✅ Challenge instructions (what to build)
-- ✅ Troubleshooting
-
-### We Do NOT Provide:
-- ❌ Solution code
-- ❌ Implementation examples
-- ❌ Step-by-step code walkthroughs
-
-**Completion is strict**: Your code must pass the automated review (score ≥ 60%).
-
----
-
-## 🔍 Review Results
-
-After running a review, results are saved to:
-
-- **Challenge level**: `courses/{course}/results/challenge-results.json`
-- **Course level**: `courses/{course}/results/course-summary.json`
-- **AI feedback**: `courses/{course}/results/ai-feedback.json`
-- **Pathway level**: `pathway-review/pathway-summary.json`
-- **Progress**: `learner-results/progress.json` and README evidence (this file + course project READMEs)
-
-**View in dashboard** or open JSON files to see detailed scores.
-
----
-
-## 🚨 Troubleshooting
-
-### Dashboard Issues
-
-**"Build UI: cd dashboard/app && npm install && npm run build"**
-→ Run `npm run dashboard:build` first
-
-**Port 7700 already in use**
-→ Use different port: `DASHBOARD_PORT=8080 npm run dashboard`
-
-**No progress shown in dashboard**
-→ Run at least one review first, or: `npm run progress:update`
-
-### Review Issues
-
-**Tests fail to run**
-→ Install dependencies: `npm run setup` or `cd {course}/project && npm install`
-
-**E2E tests fail**
-→ Install Playwright browsers: `cd {course}/project && npx playwright install`
-→ This is a one-time setup. After installation, E2E tests will work.
-→ E2E score can be 0% if Playwright browsers are not installed (`npx playwright install`)
-
-**Review scores seem low**
-→ Review **ONLY checks what's in challenge `README.md` (Technical Requirements section)** - no hidden requirements
-→ All code quality guidelines and best practices are listed in challenge README files
-
-**AI review shows 0%**
-→ Set `GROQ_API_KEY` in `.env` file (see "Enable AI Review" above)
-
-**Review command not found**
-→ Make sure you're in the course project directory, or use root commands with `--course=` flag
-
-### Course App Issues
-
-**Port 5173 or 3000 already in use**
-→ Kill the process using that port, or change port in `vite.config.ts` / `next.config.js`
-
-**Hot reload not working**
-→ Check that `npm run dev` is running and browser console for errors
-
-**Changes not appearing**
-→ Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
-
----
-
-## 📖 Other READMEs
-
-- **[dashboard/README.md](./dashboard/README.md)** - Dashboard setup and usage
-- **[scripts/README.md](./scripts/README.md)** - Scripts and commands
-
----
-
-## 🎯 System Overview
-
-This system provides:
-
-- ✅ **3 courses** with real, runnable applications
-- ✅ **9 challenges** (3 per course) - basic to advanced progression
-- ✅ **Automated review** - 6-layer comprehensive evaluation
-- ✅ **Progress tracking** - Auto-updated progress.json and README evidence
-- ✅ **Dashboard UI** - View progress, instructions, run reviews
-- ✅ **AI review** - Qualitative feedback via Groq API (optional)
-- ✅ **Hot reload** - Instant feedback while coding
-- ✅ **Production-ready** - Scalable to 50+ courses, 100+ challenges per course
-
----
-
-## 📝 License
-
-This repository is part of the SOLO Challenge Engine system.
-
----
-
-## 🚀 Ready to Start?
-
-1. **Start dashboard**: `npm run dashboard:build` then `npm run dashboard` (Terminal 1)
-2. **Open course**: `cd courses/01-react-fundamentals/project && npm install && npm run dev` (Terminal 2)
-3. **Work on challenge**: Edit code, see changes, run review from dashboard or command
-4. **See results**: Check dashboard or results files
-5. **Continue**: Fix issues, run review again, repeat until you pass
-
-**Happy coding! 🎉**
+**Happy learning.**

@@ -1,109 +1,71 @@
 # Challenge 01: Server Components and Basic Routing
 
-## Problem Statement
+## Goal
 
-Create your first Next.js App Router page with Server Components and basic routing. Build a simple Next.js app with:
-1. A home page using Server Components
-2. A basic navigation structure
-3. A simple about page
-4. Proper Next.js App Router structure
-
-## Instructions
-
-1. Create `app/page.tsx` as the home page (Server Component)
-2. Create `app/about/page.tsx` for the about page
-3. Add navigation between pages using Next.js `Link` component
-4. Use Server Components (default in App Router)
-5. Style the pages appropriately
-
-## Visual Requirements
-
-- Home page displays welcome message
-- Navigation links work between pages
-- About page displays information
-- Clean, professional layout
-- Proper Next.js routing structure
-
-## How to Verify
-
-1. Run `npm run dev` and open `http://localhost:3000`
-2. Navigate between home and about pages
-3. Verify pages load correctly
-4. Check that navigation works smoothly
+Create a minimal Next.js App Router app with:
+- A home page (`app/page.tsx`) and an about page (`app/about/page.tsx`)
+- Navigation between pages using Next.js `Link` (not plain `<a>`)
+- Server Components by default (no `'use client'` unless needed)
+- Correct App Router file structure
 
 ---
 
-## Technical Requirements (What Will Be Reviewed)
+## What to do
+
+1. **Home page:** Create or update `app/page.tsx` as the root page (Server Component). Default export. No `'use client'`.
+2. **About page:** Create `app/about/page.tsx` for the `/about` route. Server Component. Default export.
+3. **Navigation:** Use the `Link` component from `next/link` to link between home and about (e.g. in a layout or on each page).
+4. **Layout:** Ensure `app/layout.tsx` exists and wraps children (root layout). Can include shared nav with `Link`.
+5. **Code:** TypeScript, no `console.*`, pass ESLint.
+
+---
+
+## What the review checks
+
+| Step | What it does |
+|------|----------------|
+| **Functional tests** | Home and about pages exist and render; navigation works; Server Components used. |
+| **Code quality** | ESLint (no errors/warnings). |
+| **Architecture** | AST: Server Component (no 'use client' where not needed), Link, file-based routing, app directory structure. |
+| **Best practices** | TypeScript, no console, ESLint. |
+| **E2E** | Playwright: navigation between home and about. |
+
+Pass threshold: weighted score ≥ 60%. No hidden checks.
+
+---
+
+## Technical Requirements (what will be reviewed)
 
 ### Functional Requirements
 
-1. ✅ Must have `app/page.tsx` (home page)
-2. ✅ Must have `app/about/page.tsx` (about page)
-3. ✅ Must use Server Components (default, no 'use client')
-4. ✅ Must use Next.js `Link` component for navigation
-5. ✅ Must have proper App Router structure
-6. ✅ Pages must render correctly
-7. ✅ Navigation must work between pages
+- Have `app/page.tsx` (home page) and `app/about/page.tsx` (about page).
+- Use Server Components (default; no `'use client'` on these pages unless required).
+- Use Next.js `Link` component for navigation (not raw anchor tags for in-app links).
+- Pages render correctly; navigation works between home and about.
 
 ### Code Quality Requirements
 
-1. ✅ Must use TypeScript with proper type annotations
-2. ✅ Must follow Next.js conventions and best practices
-3. ✅ Code must pass ESLint checks (no errors, warnings allowed)
-4. ✅ No console.log, console.error, or console.warn statements in production code
-5. ✅ Code must be readable and well-structured
-6. ✅ Variable and function names must be descriptive and follow camelCase convention
+- TypeScript with type annotations.
+- Pass ESLint (no errors or warnings).
+- No `console.log`, `console.error`, or `console.warn`.
 
 ### Architecture Requirements
 
-1. ✅ Must use App Router structure (`app/` directory)
-2. ✅ Must use Server Components (no 'use client' directive unless needed)
-3. ✅ Must use Next.js `Link` component for navigation (not anchor tags)
-4. ✅ Must follow Next.js file-based routing conventions
-5. ✅ Must use proper folder structure (`app/page.tsx`, `app/about/page.tsx`)
-6. ✅ Components must be functional components (not class components)
+- Use App Router: `app/` directory; `app/page.tsx`, `app/about/page.tsx`, `app/layout.tsx` as expected by course config.
+- Server Components by default (no `'use client'` on page files unless needed).
+- Use `Link` from `next/link` for client-side navigation.
+- Function components (not class).
 
 ### Best Practices Requirements
 
-1. ✅ Must use Server Components by default (no 'use client' unless needed)
-2. ✅ Navigation must use Next.js `Link` component (not regular anchor tags)
-3. ✅ Page components must be properly exported (default export)
-4. ✅ Must follow Next.js App Router file naming conventions
-5. ✅ Code must be organized in proper folder structure
-6. ✅ Must use TypeScript for all components
-7. ✅ Must follow Next.js best practices for Server Components
-8. ✅ Code must be maintainable and follow single responsibility principle
-9. ✅ Must handle navigation properly (client-side routing)
-10. ✅ Components must be properly structured and readable
-
-### Industry Standards
-
-The following industry standards will be checked:
-
-- **TypeScript**: Proper type safety and type annotations
-- **Next.js Patterns**: App Router, Server Components, file-based routing
-- **Code Style**: ESLint compliance, consistent formatting
-- **Naming Conventions**: camelCase for variables/functions, PascalCase for components
-- **Component Design**: Server Components, proper Next.js structure
-- **Navigation**: Proper use of Next.js Link component
-- **File Structure**: Following Next.js App Router conventions
-
-**Important**: Review will **ONLY check what's specified above**. No hidden requirements.
+- Server Components by default; `Link` for navigation.
+- Default export for page components. TypeScript. No console. Pass ESLint.
 
 ---
 
-## Learning Hints (no solution code)
+## Verify and submit
 
-- **Server Components**: By default, all components in App Router are Server Components. No 'use client' directive needed.
-- **Navigation**: Use Next.js `Link` component from `next/link` for client-side navigation.
-- **File-based routing**: Create `app/about/page.tsx` to create `/about` route automatically.
+1. `npm run dev` → open `http://localhost:3000`, go to `/` and `/about`, confirm navigation works.
+2. `npm run review -- --challenge=01-server-components` to get scored.
 
-## Next Steps
-
-1. **Read this file** - All requirements are listed above
-2. **Implement the pages** - Follow the instructions and requirements
-3. **Verify visually** - Run `npm run dev` and check navigation
-4. **Run review** - `npm run review -- --challenge=01-server-components` to get scored
-
-**Setup**: If you haven't run setup yet, go to repo root and run `npm run setup` to install all dependencies and Playwright browsers.  
-**Full guide**: See repo root [README.md](../../../../../README.md) for setup, workflow, and completion policy.
+From repo root: `npm run setup` if you haven’t. See root [README.md](../../../../../README.md) for workflow.

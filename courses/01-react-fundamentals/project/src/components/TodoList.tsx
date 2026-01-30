@@ -6,7 +6,7 @@
 
 export default function TodoList() {
   return (
-    <div data-testid="todo-list">
+    <div id="todo-list">
       {/* TODO: Implement per challenges/02-todo-list/README.md */}
       <input placeholder="Add todo" type="text" readOnly />
       <ul />

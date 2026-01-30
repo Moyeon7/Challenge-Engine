@@ -7,7 +7,7 @@ import ThemeToggle from '../src/components/ThemeToggle';
 // Test component that uses theme
 const TestComponent = () => {
   const { theme } = useTheme();
-  return <div data-testid="theme-display">{theme}</div>;
+  return <div id="theme-display">{theme}</div>;
 };
 
 describe('Challenge 03: State Management with Context', () => {
@@ -16,40 +16,40 @@ describe('Challenge 03: State Management with Context', () => {
   });
 
   it('should provide theme context', () => {
-    render(
+    const { container } = render(
       <ThemeProvider>
         <TestComponent />
       </ThemeProvider>
     );
     
-    expect(screen.getByTestId('theme-display')).toBeInTheDocument();
+    expect(container.querySelector('#theme-display')).toBeInTheDocument();
   });
 
   it('should default to light theme', () => {
-    render(
+    const { container } = render(
       <ThemeProvider>
         <TestComponent />
       </ThemeProvider>
     );
     
-    expect(screen.getByTestId('theme-display')).toHaveTextContent('light');
+    expect(container.querySelector('#theme-display')).toHaveTextContent('light');
   });
 
   it('should toggle theme', async () => {
     const user = userEvent.setup();
-    render(
+    const { container } = render(
       <ThemeProvider>
         <TestComponent />
         <ThemeToggle />
       </ThemeProvider>
     );
     
-    expect(screen.getByTestId('theme-display')).toHaveTextContent('light');
+    expect(container.querySelector('#theme-display')).toHaveTextContent('light');
     
     const toggle = screen.getByRole('button');
     await user.click(toggle);
     
-    expect(screen.getByTestId('theme-display')).toHaveTextContent('dark');
+    expect(container.querySelector('#theme-display')).toHaveTextContent('dark');
   });
 
   it('should persist theme to localStorage', async () => {
@@ -70,12 +70,12 @@ describe('Challenge 03: State Management with Context', () => {
   it('should load theme from localStorage on mount', () => {
     localStorage.setItem('theme', 'dark');
     
-    render(
+    const { container } = render(
       <ThemeProvider>
         <TestComponent />
       </ThemeProvider>
     );
     
-    expect(screen.getByTestId('theme-display')).toHaveTextContent('dark');
+    expect(container.querySelector('#theme-display')).toHaveTextContent('dark');
   });
 });

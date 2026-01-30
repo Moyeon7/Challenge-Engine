@@ -14,7 +14,7 @@ test.describe('Challenge 01: User Profile Component - E2E', () => {
   });
 
   test('should display user profile component on the page', async ({ page }) => {
-    const profile = page.getByTestId('user-profile');
+    const profile = page.locator('#user-profile');
     await expect(profile).toBeVisible();
   });
 
@@ -44,7 +44,7 @@ test.describe('Challenge 01: User Profile Component - E2E', () => {
   });
 
   test('should have proper styling and layout', async ({ page }) => {
-    const profile = page.getByTestId('user-profile');
+    const profile = page.locator('#user-profile');
     const boundingBox = await profile.boundingBox();
     expect(boundingBox).not.toBeNull();
     expect(boundingBox!.width).toBeGreaterThan(0);
@@ -53,7 +53,7 @@ test.describe('Challenge 01: User Profile Component - E2E', () => {
 
   test('should display avatar or placeholder', async ({ page }) => {
     // README: "Profile picture (or placeholder)" - App passes no avatar, so placeholder is shown
-    const avatarOrPlaceholder = page.getByTestId('user-profile-avatar');
+    const avatarOrPlaceholder = page.locator('#user-profile-avatar');
     await expect(avatarOrPlaceholder).toBeVisible();
   });
 });

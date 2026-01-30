@@ -1,110 +1,70 @@
 # Challenge 02: Data Fetching and API Routes
 
-## Problem Statement
+## Goal
 
-Implement data fetching in Server Components and create API routes. Build a data-driven Next.js app that:
-1. Fetches data in Server Components using async/await
-2. Creates API routes for data endpoints
-3. Displays fetched data on pages
-4. Handles loading and error states
-
-## Instructions
-
-1. Create API route in `app/api/posts/route.ts`
-2. Fetch data in Server Component using async/await
-3. Display fetched data on a page
-4. Handle loading and error states appropriately
-5. Create a posts listing page
-
-## Visual Requirements
-
-- Posts page displays fetched data
-- Loading states are handled
-- Error states are handled gracefully
-- Clean data presentation
-- API routes work correctly
-
-## How to Verify
-
-1. Run `npm run dev`
-2. Navigate to posts page - should show data
-3. Test API route directly (`/api/posts`)
-4. Verify data fetching works correctly
-5. Check error handling
+Add data fetching and an API route:
+- An API route that returns JSON (e.g. `app/api/posts/route.ts`)
+- A page that fetches data in a Server Component using async/await
+- Loading and error handling
+- Display the fetched data on the page
 
 ---
 
-## Technical Requirements (What Will Be Reviewed)
+## What to do
+
+1. **API route:** Create `app/api/posts/route.ts` (or equivalent). Export a `GET` handler that returns JSON (e.g. list of posts). Use proper response (e.g. `Response.json(data)`).
+2. **Posts page:** Create `app/posts/page.tsx` (or equivalent path per course config). Make it an **async** Server Component. Inside, `await fetch(...)` your API route or data source. Handle errors (try/catch or error boundary).
+3. **Display:** Render the fetched data on the page. Show loading state if needed (e.g. loading.tsx or conditional in component).
+4. **Layout:** Ensure `app/layout.tsx` exists; add a link to the posts page if needed.
+5. **Code:** TypeScript (types for API response), no `console.*`, pass ESLint.
+
+---
+
+## What the review checks
+
+| Step | What it does |
+|------|----------------|
+| **Functional tests** | API route exists and returns JSON; Server Component fetches data (async/await); data displayed; loading/error handled. |
+| **Code quality** | ESLint (no errors/warnings). |
+| **Architecture** | AST: async Server Component, API route (app/api/.../route.ts), data fetching pattern, error handling. |
+| **Best practices** | TypeScript, no console, ESLint. |
+| **E2E** | Playwright: posts page shows data (or loading/error). |
+
+Pass threshold: weighted score ≥ 60%. No hidden checks.
+
+---
+
+## Technical Requirements (what will be reviewed)
 
 ### Functional Requirements
 
-1. ✅ Must have API route (`app/api/posts/route.ts` or similar)
-2. ✅ Must fetch data in Server Component using async/await
-3. ✅ Must display fetched data on page
-4. ✅ Must handle loading states
-5. ✅ Must handle error states
-6. ✅ API route must return JSON data
-7. ✅ Server Component must be async
+- Have an API route (e.g. `app/api/posts/route.ts`) that returns JSON (e.g. GET handler).
+- Have a page (e.g. `app/posts/page.tsx`) that is an async Server Component and fetches data (e.g. await fetch or direct async call).
+- Display the fetched data on the page.
+- Handle loading (e.g. loading.tsx or in-component) and error (try/catch or error boundary).
 
 ### Code Quality Requirements
 
-1. ✅ Must use TypeScript with proper type annotations
-2. ✅ API routes must be properly typed (request/response types)
-3. ✅ Code must pass ESLint checks (no errors, warnings allowed)
-4. ✅ No console.log, console.error, or console.warn statements in production code
-5. ✅ Code must be readable and well-structured
-6. ✅ Variable and function names must be descriptive and follow camelCase convention
+- TypeScript with type annotations; API request/response types.
+- Pass ESLint (no errors or warnings).
+- No `console.log`, `console.error`, or `console.warn`.
 
 ### Architecture Requirements
 
-1. ✅ Must use App Router API routes structure (`app/api/.../route.ts`)
-2. ✅ Must use async Server Components for data fetching
-3. ✅ Must use proper Next.js data fetching patterns (async/await in Server Components)
-4. ✅ Must follow Next.js conventions
-5. ✅ Must handle errors appropriately (try-catch or error boundaries)
-6. ✅ Components must be functional components (not class components)
+- API route under `app/api/.../route.ts` with correct export (e.g. GET).
+- Async Server Component for the page that fetches data.
+- Function components (not class).
 
 ### Best Practices Requirements
 
-1. ✅ API routes must use proper HTTP methods (GET, POST, etc.)
-2. ✅ API routes must return proper JSON responses
-3. ✅ Server Components must be async functions
-4. ✅ Must handle loading states appropriately
-5. ✅ Must handle error states gracefully
-6. ✅ Must use TypeScript interfaces/types for API responses
-7. ✅ Must follow Next.js data fetching best practices
-8. ✅ Code must be maintainable and follow single responsibility principle
-9. ✅ Error handling must be implemented (display error messages or fallback UI)
-10. ✅ Must use proper Next.js patterns for async Server Components
-
-### Industry Standards
-
-The following industry standards will be checked:
-
-- **TypeScript**: Proper type safety, API response types
-- **Next.js Patterns**: App Router, API routes, async Server Components
-- **Code Style**: ESLint compliance, consistent formatting
-- **Naming Conventions**: camelCase for variables/functions, PascalCase for components
-- **Data Fetching**: Proper async/await usage, error handling
-- **Error Handling**: Graceful handling of API errors
-- **Component Design**: Proper separation of concerns, Server Component patterns
-
-**Important**: Review will **ONLY check what's specified above**. No hidden requirements.
+- API route returns JSON (e.g. Response.json). Server Component is async.
+- TypeScript for API types. No console. Pass ESLint.
 
 ---
 
-## Learning Hints (no solution code)
+## Verify and submit
 
-- **API routes**: Create `app/api/posts/route.ts` with exported functions like `GET`, `POST` for HTTP methods.
-- **Server Components**: Make page components async and use `await` to fetch data directly.
-- **Error handling**: Use try-catch in Server Components or error boundaries.
+1. `npm run dev` → open the posts page and confirm data loads; optionally hit `/api/posts` directly.
+2. `npm run review -- --challenge=02-data-fetching` to get scored.
 
-## Next Steps
-
-1. **Read this file** - All requirements are listed above
-2. **Implement API routes and data fetching** - Follow the instructions and requirements
-3. **Verify visually** - Run `npm run dev` and check the posts page
-4. **Run review** - `npm run review -- --challenge=02-data-fetching` to get scored
-
-**Setup**: If you haven't run setup yet, go to repo root and run `npm run setup` to install all dependencies and Playwright browsers.  
-**Full guide**: See repo root [README.md](../../../../../README.md) for setup, workflow, and completion policy.
+From repo root: `npm run setup` if you haven’t. See root [README.md](../../../../../README.md) for workflow.
