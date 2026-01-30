@@ -19,27 +19,33 @@ export default function UserProfile({ name, email, avatar }: UserProfileProps) {
     setIsFollowing(!isFollowing);
   };
 
-  const placeholderAvatar = 'https://via.placeholder.com/120?text=';
+  // Get first letter of name for placeholder
+  const initials = name.charAt(0).toUpperCase();
+  
+  // Use avatar if provided, otherwise create a placeholder with initials
+  const displayAvatar = avatar || `https://via.placeholder.com/120?text=${initials}`;
 
   return (
     <div className="user-profile" data-testid="user-profile">
       <div className="profile-header">
         <img 
-          src={avatar || placeholderAvatar}
-          alt={name}
+          src={displayAvatar}
+          alt={`${name}'s avatar`}
           className="profile-avatar"
+          data-testid="profile-avatar"
         />
         <div className="profile-info">
-          <h2 className="profile-name">{name}</h2>
-          <p className="profile-email">{email}</p>
+          <h2 className="profile-name" data-testid="profile-name">{name}</h2>
+          <p className="profile-email" data-testid="profile-email">{email}</p>
         </div>
       </div>
       <button 
         type="button"
         className={`follow-button ${isFollowing ? 'following' : ''}`}
         onClick={handleFollowClick}
+        data-testid="follow-button"
       >
-        {isFollowing ? 'following' : 'follow'}
+        {isFollowing ? 'Following' : 'Follow'}
       </button>
     </div>
   );
