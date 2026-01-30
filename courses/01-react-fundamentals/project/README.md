@@ -48,12 +48,12 @@ npm run review -- --challenge=01-user-profile
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 1/30/2026, 8:44:03 PM*
+*Auto-updated when you run review. Last run: 1/30/2026, 9:56:22 PM*
 
 | Metric | Value |
 |--------|-------|
 | Challenges completed | 1 / 3 (33.3%) |
-| Average score | 99.1% |
+| Average score | 83.2% |
 
 | Challenge | Status |
 |-----------|--------|
