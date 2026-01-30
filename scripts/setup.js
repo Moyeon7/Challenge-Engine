@@ -117,7 +117,7 @@ runRemotesSetup()
     console.log('2. Start dashboard: npm run dashboard');
     console.log('3. Work on challenges in course projects');
     console.log('4. Push your work to your repo: git push -u origin main');
-    console.log('5. Pull new courses/updates: git fetch upstream && git merge upstream/main');
+    console.log('5. Pull new courses/updates: npm run sync-upstream (or git fetch upstream && git merge upstream/main -X theirs)');
     console.log('\n🎓 Happy learning!');
   })
   .catch((err) => {

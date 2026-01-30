@@ -28,8 +28,8 @@ describe('Challenge 01: User Profile Component', () => {
 
   it('should display avatar or placeholder', () => {
     // README: "Profile picture (or placeholder)" - either img (avatar) or placeholder must be present
-    const { rerender } = render(<UserProfile name={mockUser.name} email={mockUser.email} />);
-    expect(screen.getByTestId('user-profile-avatar')).toBeInTheDocument();
+    const { rerender, container } = render(<UserProfile name={mockUser.name} email={mockUser.email} />);
+    expect(container.querySelector('#user-profile-avatar')).toBeInTheDocument();
 
     rerender(<UserProfile name={mockUser.name} email={mockUser.email} avatar={mockUser.avatar} />);
     const avatarImg = screen.getByRole('img', { name: /profile/i });

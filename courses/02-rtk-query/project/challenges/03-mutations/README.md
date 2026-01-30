@@ -1,107 +1,72 @@
 # Challenge 03: Mutations and Optimistic Updates
 
-## Problem Statement
+## Goal
 
-Implement mutations (create, update, delete) with optimistic updates. Add mutation endpoints to create, update, and delete users or posts. Implement optimistic updates for better UX.
-
-## Instructions
-
-1. Add mutation endpoints (`createUser`, `updateUser`, `deleteUser`)
-2. Implement optimistic updates
-3. Create forms/components for mutations
-4. Handle success and error states
-5. Show how mutations invalidate cache tags
-
-## Visual Requirements
-
-- Form to create new users/posts
-- Ability to edit existing items
-- Delete functionality
-- Optimistic UI updates (immediate feedback)
-- Success/error notifications
-
-## How to Verify
-
-1. Run `npm run dev` and open the app
-2. Navigate to `/challenge/03-mutations` (or click "View Challenge UI" from the home page)
-3. Create a new user/post - should appear immediately (optimistic)
-4. Edit an item - should update optimistically
-5. Delete an item - should remove optimistically
-6. Check Redux DevTools for mutation state
+Add mutations (create, update, delete) and optional optimistic updates:
+- Mutation endpoints (e.g. createUser, updateUser, deleteUser or createPost, etc.)
+- Use `invalidatesTags` so related queries refetch after a mutation
+- Optional: optimistic updates via `onQueryStarted`
+- Forms/components that call mutation hooks and handle loading, error, success
 
 ---
 
-## Technical Requirements (What Will Be Reviewed)
+## What to do
+
+1. **Mutations:** In your API slice, add mutation endpoints (e.g. `addUser`, `updateUser`, `deleteUser` or equivalent for posts). Use `builder.mutation()`. Set `invalidatesTags` so lists refetch (e.g. invalidate `['Users']` or `['Posts']`).
+2. **Optimistic updates (optional):** In mutation endpoints, use `onQueryStarted` to update the cache optimistically before the server responds.
+3. **Forms:** Create or update components (e.g. `UserForm`, `EditUserForm`) that use generated mutation hooks (e.g. `useCreateUserMutation`). Handle loading, error, and success (e.g. reset form, show message).
+4. **App:** Render the form(s) on `/challenge/03-mutations` so create/update/delete can be tested.
+5. **Code:** TypeScript (payload and response types), no `console.*`, pass ESLint.
+
+---
+
+## What the review checks
+
+| Step | What it does |
+|------|----------------|
+| **Functional tests** | Mutation endpoints exist; invalidatesTags used; mutation hooks used; loading/error/success handled; UI updates (optimistic or after success). |
+| **Code quality** | ESLint (no errors/warnings). |
+| **Architecture** | AST: mutation endpoints, invalidatesTags, optional onQueryStarted/optimistic update, useMutation hook. |
+| **Best practices** | TypeScript, no console, ESLint. |
+| **E2E** | Playwright: `/challenge/03-mutations` create/update/delete flow. |
+
+Pass threshold: weighted score ≥ 60%. No hidden checks.
+
+---
+
+## Technical Requirements (what will be reviewed)
 
 ### Functional Requirements
 
-1. ✅ Must have mutation endpoints (create, update, delete)
-2. ✅ Must implement optimistic updates
-3. ✅ Must invalidate cache tags on mutation
-4. ✅ Must handle mutation loading states
-5. ✅ Must handle mutation error states
-6. ✅ Must handle mutation success states
-7. ✅ UI must update optimistically
+- Have mutation endpoints (e.g. create, update, delete) defined with `builder.mutation()`.
+- Use `invalidatesTags` so related query caches are invalidated after a mutation.
+- Use generated mutation hooks (e.g. `useCreateUserMutation`) in components.
+- Handle mutation loading, error, and success states in the UI.
+- UI updates after mutation (optimistic or on success).
 
 ### Code Quality Requirements
 
-1. ✅ Must use TypeScript with proper type annotations
-2. ✅ Mutations must be properly typed (request/response types)
-3. ✅ Code must pass ESLint checks (no errors, warnings allowed)
-4. ✅ No console.log, console.error, or console.warn statements in production code
-5. ✅ Code must be readable and well-structured
-6. ✅ Variable and function names must be descriptive and follow camelCase convention
+- TypeScript with type annotations; mutation payload and response types.
+- Pass ESLint (no errors or warnings).
+- No `console.log`, `console.error`, or `console.warn`.
 
 ### Architecture Requirements
 
-1. ✅ Must use `mutation` endpoints in RTK Query (not query endpoints)
-2. ✅ Must use `onQueryStarted` for optimistic updates (if required)
-3. ✅ Must use `invalidatesTags` for cache invalidation
-4. ✅ Must use generated mutation hooks (e.g., `useCreatePostMutation`)
-5. ✅ Must follow RTK Query mutation patterns
-6. ✅ Must use functional component pattern (not class component)
+- Mutation endpoints (not query) in the API slice.
+- `invalidatesTags` on mutation endpoints. Optional: `onQueryStarted` for optimistic updates.
+- Components use generated mutation hooks.
+- Function components (not class).
 
 ### Best Practices Requirements
 
-1. ✅ Mutation endpoints must be properly configured
-2. ✅ Optimistic updates must be implemented correctly (if required)
-3. ✅ Cache invalidation must use proper tag invalidation
-4. ✅ Must handle mutation loading, error, and success states
-5. ✅ Component must use destructured mutation hook results
-6. ✅ Must use TypeScript interfaces/types for mutation payloads and responses
-7. ✅ Error handling must be implemented (display error messages)
-8. ✅ Success handling must update UI appropriately
-9. ✅ Must follow RTK Query mutation best practices
-10. ✅ Code must be maintainable and follow single responsibility principle
-
-### Industry Standards
-
-The following industry standards will be checked:
-
-- **TypeScript**: Proper type safety, mutation payload types
-- **RTK Query Patterns**: Mutations, optimistic updates, cache invalidation
-- **Code Style**: ESLint compliance, consistent formatting
-- **Naming Conventions**: camelCase for variables/functions, PascalCase for components
-- **State Management**: Proper mutation handling, cache updates
-- **Error Handling**: Graceful handling of mutation errors
-- **Component Design**: Proper separation of concerns, reusable patterns
-
-**Important**: Review will **ONLY check what's specified above**. No hidden requirements.
+- Mutation hooks destructured (e.g. `const [createUser, { isLoading, error }] = useCreateUserMutation()`).
+- TypeScript for payloads and responses. No console. Pass ESLint.
 
 ---
 
-## Learning Hints (no solution code)
+## Verify and submit
 
-- **Mutations**: Use `builder.mutation()` instead of `builder.query()` for mutations. RTK Query generates hooks like `useCreatePostMutation`.
-- **Optimistic updates**: Use `onQueryStarted` in mutation endpoints to update cache optimistically before the server responds.
-- **Cache invalidation**: Use `invalidatesTags` to invalidate related cache entries when mutations succeed.
+1. `npm run dev` → open `/challenge/03-mutations` and test create/update/delete.
+2. `npm run review -- --challenge=03-mutations` to get scored.
 
-## Next Steps
-
-1. **Read this file** - All requirements are listed above
-2. **Implement mutations** - Follow the instructions and requirements
-3. **Verify visually** - Run `npm run dev` and check `/challenge/03-mutations`
-4. **Run review** - `npm run review -- --challenge=03-mutations` to get scored
-
-**Setup**: If you haven't run setup yet, go to repo root and run `npm run setup` to install all dependencies and Playwright browsers.  
-**Full guide**: See repo root [README.md](../../../../../README.md) for setup, workflow, and completion policy.
+From repo root: `npm run setup` if you haven’t. See root [README.md](../../../../../README.md) for workflow.
