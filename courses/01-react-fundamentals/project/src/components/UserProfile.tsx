@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React from 'react';
 import './UserProfile.css';
 
-
-const BUTTON_TEXT_FOLLOW = 'Follow';
-const BUTTON_TEXT_FOLLOWING = 'Following';
+/**
+ * Challenge 01: User Profile Component
+ * Displays user information with a toggleable Follow button
+ */
 
 interface UserProfileProps {
   name: string;
@@ -12,36 +13,34 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ name, email, avatar }: UserProfileProps) {
-  const [isFollowing, setIsFollowing] = useState(false);
+  const [isFollowing, setIsFollowing] = React.useState(false);
 
   const handleFollowClick = () => {
     setIsFollowing(!isFollowing);
   };
 
-  const placeholderAvatar = 'https://via.placeholder.com/150?text=Avatar';
+  const placeholderAvatar = 'https://via.placeholder.com/120?text=';
 
   return (
     <div className="user-profile" data-testid="user-profile">
-      <div className="profile-container">
+      <div className="profile-header">
         <img 
-          src={avatar || placeholderAvatar} 
-          alt={`${name}'s avatar`}
+          src={avatar || placeholderAvatar}
+          alt={name}
           className="profile-avatar"
         />
         <div className="profile-info">
           <h2 className="profile-name">{name}</h2>
           <p className="profile-email">{email}</p>
-          <button
-            type="button"
-            className={`follow-button ${isFollowing ? 'following' : 'follow'}`}
-            onClick={handleFollowClick}
-          >
-            {isFollowing ? 'Following' : 'Follow'}
-          </button>
         </div>
       </div>
+      <button 
+        type="button"
+        className={`follow-button ${isFollowing ? 'following' : ''}`}
+        onClick={handleFollowClick}
+      >
+        {isFollowing ? 'following' : 'follow'}
+      </button>
     </div>
   );
 }
-
-export default UserProfile;
