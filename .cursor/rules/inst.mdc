@@ -446,5 +446,3 @@ This repository is both a **learning environment** and a **verifiable engineerin
     provider: groq
     model: llama-3.1-8b-instant
     apiKey: YOUR_GROQ_API_KEY
-
-    the studnee t wil haveoptnto run reviw won sepcifc chalne or all chalnges
