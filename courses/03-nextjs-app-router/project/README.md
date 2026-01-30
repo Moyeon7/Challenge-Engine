@@ -6,6 +6,8 @@ This is a **real, runnable Next.js application** where you'll work on challenges
 
 ### 1. Install Dependencies
 
+**Note:** If you haven't run setup yet, go to repo root and run `npm run setup` first to install all dependencies and Playwright browsers.
+
 ```bash
 npm install
 ```
@@ -43,6 +45,20 @@ npm run review
 npm run review -- --challenge=01-server-components
 ```
 
+
+## 📊 Progress Evidence
+
+*Auto-updated when you run review. Last run: 1/29/2026, 6:36:33 PM*
+
+| Metric | Value |
+|--------|-------|
+| Challenges completed | 0 / 3 (0%) |
+| Average score | 22.5% |
+
+| Challenge | Status |
+|-----------|--------|
+| Server Components and Basic Routing | Fail |
+
 ## 📋 Challenge Workflow
 
 1. **Read the challenge** in `challenges/{challenge-id}/README.md`
@@ -59,11 +75,21 @@ npm test
 ```
 
 ### E2E Tests (Playwright)
+
+**First-time setup (required once):**
+```bash
+# Install Playwright browsers (required for E2E tests)
+npx playwright install
+```
+
+**Run E2E tests:**
 ```bash
 npm run test:e2e
 ```
 
 E2E tests verify visual output and user interactions that you can see in the browser.
+
+**Note:** If you see "Executable doesn't exist" errors, run `npx playwright install` to download the required browsers (Chromium, Firefox, WebKit).
 
 ### Review System
 

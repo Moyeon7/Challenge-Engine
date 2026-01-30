@@ -2,16 +2,16 @@
   {
     "challengeId": "01-user-profile",
     "challengeName": "User Profile Component",
-    "timestamp": "2026-01-29T10:52:45.206Z",
+    "timestamp": "2026-01-29T18:24:14.371Z",
     "scores": {
       "functionalTests": 60,
-      "codeQuality": 50,
+      "codeQuality": 100,
       "architecture": 0,
-      "bestPractices": 80,
+      "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 83
     },
-    "totalScore": 39,
+    "totalScore": 58.45,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -32,7 +32,7 @@
               "fullName": " Challenge 01: User Profile Component should render user name",
               "status": "passed",
               "title": "should render user name",
-              "duration": 22,
+              "duration": 21,
               "failureMessages": []
             },
             {
@@ -54,7 +54,7 @@
               "fullName": " Challenge 01: User Profile Component should render follow button",
               "status": "passed",
               "title": "should render follow button",
-              "duration": 79,
+              "duration": 75,
               "failureMessages": []
             },
             {
@@ -65,12 +65,12 @@
               "fullName": " Challenge 01: User Profile Component should toggle follow button state",
               "status": "failed",
               "title": "should toggle follow button state",
-              "duration": 75,
+              "duration": 96,
               "failureMessages": [
                 "expect(element).toHaveTextContent()\n\nExpected element to have text content:\n  /following/i\nReceived:\n  Follow"
               ],
               "location": {
-                "line": 36,
+                "line": 42,
                 "column": 20
               }
             },
@@ -82,18 +82,18 @@
               "fullName": " Challenge 01: User Profile Component should use useState for button state",
               "status": "failed",
               "title": "should use useState for button state",
-              "duration": 2,
+              "duration": 4,
               "failureMessages": [
-                "expected '/**\\n * Challenge 01: User Profile Co…' to contain 'useState'"
+                "expected '/**\\r\\n * Challenge 01: User Profile …' to contain 'useState'"
               ],
               "location": {
-                "line": 48,
+                "line": 54,
                 "column": 27
               }
             }
           ],
-          "startTime": 1769683967664,
-          "endTime": 1769683967846,
+          "startTime": 1769711057483,
+          "endTime": 1769711057683,
           "status": "failed",
           "message": "",
           "name": "D:/Workspace/Projects/SOLO/Challenge-Engine/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx"
@@ -102,19 +102,39 @@
       "error": "Command failed: npm test -- D:\\Workspace\\Projects\\SOLO\\Challenge-Engine\\courses\\01-react-fundamentals\\project\\tests\\challenge-01.test.tsx --run --reporter=json"
     },
     "lintResults": {
-      "score": 50,
-      "passed": false,
-      "error": "Could not parse linting results",
-      "details": []
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "D:\\Workspace\\Projects\\SOLO\\Challenge-Engine\\courses\\01-react-fundamentals\\project\\src\\components\\UserProfile.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
     },
     "architectureResults": {
       "score": 0,
       "passed": false,
       "patternsFound": [],
       "patternsMissing": [
-        "functionalComponent",
-        "useState",
-        "props",
         "functionalComponent",
         "useState",
         "props"
@@ -128,44 +148,18 @@
             "useState",
             "props"
           ]
-        },
-        {
-          "file": "src/App.tsx",
-          "patternsFound": [],
-          "patternsMissing": [
-            "functionalComponent",
-            "useState",
-            "props"
-          ]
         }
       ]
     },
     "bestPracticesResults": {
-      "score": 80,
+      "score": 100,
       "passed": true,
       "issues": [],
       "details": [
         {
           "file": "src/components/UserProfile.tsx",
-          "issues": [
-            {
-              "type": "commented-code",
-              "message": "Found 1 large comment block(s)",
-              "severity": "info"
-            }
-          ],
-          "score": 80
-        },
-        {
-          "file": "src/App.tsx",
-          "issues": [
-            {
-              "type": "typescript",
-              "message": "Missing type annotations",
-              "severity": "warning"
-            }
-          ],
-          "score": 80
+          "issues": [],
+          "score": 100
         }
       ]
     },
@@ -174,31 +168,45 @@
       "passed": false,
       "error": "Command failed: npx playwright test D:\\Workspace\\Projects\\SOLO\\Challenge-Engine\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts --reporter=json",
       "details": [],
-      "note": "E2E tests require the app to be running. Make sure to run \"npm run dev\" first, or tests will run automatically via Playwright webServer config."
+      "note": "E2E failed. The app is started automatically by Playwright (webServer in playwright.config)."
     },
     "aiReviewResults": {
       "challengeId": "01-user-profile",
-      "timestamp": "2026-01-29T10:52:53.488Z",
-      "score": 0,
+      "timestamp": "2026-01-29T18:24:25.155Z",
+      "score": 83,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "First argument to String.prototype.includes must not be a regular expression"
+      "strengths": [
+        "Proper use of TypeScript with type annotations for props and component",
+        "Use of functional component pattern with destructured props",
+        "Clear and concise code structure"
+      ],
+      "improvements": [
+        "Add state management for the follow button using React hooks (useState)",
+        "Implement toggle functionality for the follow button",
+        "Consider using a more robust solution for conditional rendering (e.g., ternary operator)"
+      ],
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The provided code is a good start for the UserProfile component. It demonstrates a clear understanding of TypeScript and functional component patterns. However, it lacks the implementation of state management and toggle functionality for the follow button, which are crucial for a dynamic user profile component."
     },
     "aiResults": {
       "challengeId": "01-user-profile",
-      "timestamp": "2026-01-29T10:52:53.488Z",
-      "score": 0,
+      "timestamp": "2026-01-29T18:24:25.155Z",
+      "score": 83,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "First argument to String.prototype.includes must not be a regular expression"
+      "strengths": [
+        "Proper use of TypeScript with type annotations for props and component",
+        "Use of functional component pattern with destructured props",
+        "Clear and concise code structure"
+      ],
+      "improvements": [
+        "Add state management for the follow button using React hooks (useState)",
+        "Implement toggle functionality for the follow button",
+        "Consider using a more robust solution for conditional rendering (e.g., ternary operator)"
+      ],
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The provided code is a good start for the UserProfile component. It demonstrates a clear understanding of TypeScript and functional component patterns. However, it lacks the implementation of state management and toggle functionality for the follow button, which are crucial for a dynamic user profile component."
     }
   }
 ]

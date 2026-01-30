@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-01-29T14:45:58.721Z",
+  "lastUpdated": "2026-01-29T18:24:26.887Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 35.3,
+    "overallScore": 34.2,
     "completionPercentage": 0,
     "badgeLevel": "none",
     "totalChallenges": 9,
@@ -13,7 +13,7 @@
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 39,
+      "averageScore": 58.5,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -23,15 +23,15 @@
           "challengeId": "01-user-profile",
           "challengeName": "User Profile Component",
           "passed": false,
-          "score": 39,
-          "lastRun": "2026-01-29T10:52:45.206Z",
+          "score": 58.45,
+          "lastRun": "2026-01-29T18:24:14.371Z",
           "scores": {
             "functionalTests": 60,
-            "codeQuality": 50,
+            "codeQuality": 100,
             "architecture": 0,
-            "bestPractices": 80,
+            "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 0
+            "aiReview": 83
           }
         }
       }
@@ -39,7 +39,7 @@
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 40.281666666666666,
+      "averageScore": 21.875,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -49,45 +49,15 @@
           "challengeId": "01-api-setup",
           "challengeName": "API Setup and Basic Fetching",
           "passed": false,
-          "score": 59.525,
-          "lastRun": "2026-01-29T14:44:41.111Z",
+          "score": 21.875,
+          "lastRun": "2026-01-29T13:05:49.695Z",
           "scores": {
-            "functionalTests": 100,
+            "functionalTests": 0,
             "codeQuality": 50,
             "architecture": 12.5,
-            "bestPractices": 85,
+            "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 83
-          }
-        },
-        "02-data-display": {
-          "challengeId": "02-data-display",
-          "challengeName": "Data Display and Caching",
-          "passed": false,
-          "score": 31.57,
-          "lastRun": "2026-01-29T14:45:38.160Z",
-          "scores": {
-            "functionalTests": 25,
-            "codeQuality": 50,
-            "architecture": 0,
-            "bestPractices": 86.7,
-            "e2eTests": 0,
-            "aiReview": 83
-          }
-        },
-        "03-mutations": {
-          "challengeId": "03-mutations",
-          "challengeName": "Mutations and Optimistic Updates",
-          "passed": false,
-          "score": 29.75,
-          "lastRun": "2026-01-29T14:45:48.298Z",
-          "scores": {
-            "functionalTests": 20,
-            "codeQuality": 50,
-            "architecture": 0,
-            "bestPractices": 90,
-            "e2eTests": 0,
-            "aiReview": 75
+            "aiReview": 0
           }
         }
       }
@@ -95,7 +65,7 @@
     "03-nextjs-app-router": {
       "courseId": "03-nextjs-app-router",
       "courseName": "Next.js App Router",
-      "averageScore": 26.82,
+      "averageScore": 22.464999999999996,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -105,13 +75,13 @@
           "challengeId": "01-server-components",
           "challengeName": "Server Components and Basic Routing",
           "passed": false,
-          "score": 26.82,
-          "lastRun": "2026-01-29T10:46:05.335Z",
+          "score": 22.464999999999996,
+          "lastRun": "2026-01-29T13:06:24.771Z",
           "scores": {
             "functionalTests": 0,
             "codeQuality": 50,
-            "architecture": 25,
-            "bestPractices": 86.7,
+            "architecture": 16.7,
+            "bestPractices": 55.6,
             "e2eTests": 0,
             "aiReview": 88
           }

@@ -1,12 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { usersApi } from '../api/usersApi'
 
 export const store = configureStore({
   reducer: {
-    [usersApi.reducerPath]: usersApi.reducer,
+    // Add your reducers here as you complete challenges
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(usersApi.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>

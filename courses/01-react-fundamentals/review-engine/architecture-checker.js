@@ -102,10 +102,27 @@ function checkFileForPatterns(content, patternsRequired, fileName) {
         }
       },
       
-      // Check for functional components
+      // Check for functional components (including export default)
       FunctionDeclaration(path) {
         if (path.node.id && /^[A-Z]/.test(path.node.id.name)) {
           foundPatterns.add('functionalComponent');
+        }
+        // Also check for props in same function
+        if (path.node.params.length > 0) {
+          foundPatterns.add('props');
+        }
+      },
+      
+      // Handle export default function declarations
+      ExportDefaultDeclaration(path) {
+        if (path.node.declaration.type === 'FunctionDeclaration') {
+          const func = path.node.declaration;
+          if (func.id && /^[A-Z]/.test(func.id.name)) {
+            foundPatterns.add('functionalComponent');
+          }
+          if (func.params.length > 0) {
+            foundPatterns.add('props');
+          }
         }
       },
       
@@ -116,16 +133,7 @@ function checkFileForPatterns(content, patternsRequired, fileName) {
             /^[A-Z]/.test(parent.id.name)) {
           foundPatterns.add('functionalComponent');
         }
-      },
-
-      // Check for props
-      FunctionDeclaration(path) {
-        if (path.node.params.length > 0) {
-          foundPatterns.add('props');
-        }
-      },
-
-      ArrowFunctionExpression(path) {
+        // Also check for props in same arrow function
         if (path.node.params.length > 0) {
           foundPatterns.add('props');
         }

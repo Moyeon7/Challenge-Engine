@@ -23,7 +23,7 @@ Or from root: `npm run dashboard` (after `npm run dashboard:build` once).
 
 ## What the dashboard does
 
-- **Pathway summary** – Overall score, completion %, badge, challenges completed
+- **Pathway summary** – Overall score, completion %, challenges completed
 - **Courses list** – Paginated (20 per page), supports 50+ courses
 - **Challenges per course** – Paginated (50 per page), supports 100+ challenges
 - **Challenge detail** – Instructions (README), last results, AI feedback
@@ -40,13 +40,17 @@ Code is edited in your editor; the dashboard is for progress, instructions, and 
 - `GET /api/courses/:courseId/challenges/:challengeId` – Challenge detail + instructions + results
 - `POST /api/review` – Body: `{ courseId, challengeId }` – Run review, returns updated progress
 
-## Dev (UI only)
+## Dev mode (hot reload)
 
-From `dashboard/app`:
+From **repository root** (runs API on 7700 + UI with HMR on 5174):
 
 ```bash
-npm install
-npm run dev
+npm run dashboard:dev
 ```
 
-UI runs on port 5173 with proxy to API at port 7700. Start the API separately from repo root: `npm run dashboard` (or `cd dashboard && node server.js`).
+- **API**: http://localhost:7700
+- **UI with hot reload**: http://localhost:5174 (open this in the browser; `/api` is proxied to 7700)
+
+Or run separately:
+- Terminal 1: `npm run dashboard:api` (API on 7700)
+- Terminal 2: `npm run dashboard:ui:dev` (Vite dev server on 5174 with HMR)
