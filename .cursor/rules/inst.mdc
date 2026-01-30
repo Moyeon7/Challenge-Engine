@@ -442,9 +442,3 @@ Do NOT write placeholder stubs. Implement working pipelines, scripts, and config
 
 This repository is both a **learning environment** and a **verifiable engineering assessment system**.
  for Ai integration use below credentials
- name: Groq Llama 3.1 8B (Fast)
-    provider: groq
-    model: llama-3.1-8b-instant
-    apiKey: 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
-
-    the studnee t wil haveoptnto run reviw won sepcifc chalne or all chalnges
