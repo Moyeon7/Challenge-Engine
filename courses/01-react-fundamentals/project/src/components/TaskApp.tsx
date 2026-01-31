@@ -44,6 +44,7 @@ interface TaskAppProps {
   onDelete?: (id: string | number) => void;
   showFilterBar?: boolean;
   showStatsPanel?: boolean;
+  linkToTaskDetail?: boolean;
 }
 
 function isOverdue(t: Task): boolean {
@@ -52,7 +53,7 @@ function isOverdue(t: Task): boolean {
   return !isNaN(ts) && ts < Date.now();
 }
 
-export default function TaskApp({ tasks, setTasks, dispatch, showForm = false, countFormat = 'tasks', onDelete, showFilterBar = false, showStatsPanel = false }: TaskAppProps) {
+export default function TaskApp({ tasks, setTasks, dispatch, showForm = false, countFormat = 'tasks', onDelete, showFilterBar = false, showStatsPanel = false, linkToTaskDetail = false }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterType>('all');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [sortOrder, setSortOrder] = useState<SortOrder>('recent');
@@ -152,7 +153,7 @@ export default function TaskApp({ tasks, setTasks, dispatch, showForm = false, c
           {debouncedSearch ? `No tasks found for "${debouncedSearch}"` : 'No tasks match this filter'}
         </p>
       )}
-      <TaskList tasks={showFilterBar ? displayedTasks : tasks} onToggle={handleToggle} onDelete={onDelete} countText={countText} />
+      <TaskList tasks={showFilterBar ? displayedTasks : tasks} onToggle={handleToggle} onDelete={onDelete} countText={countText} linkToTaskDetail={linkToTaskDetail} />
     </div>
   );
 }

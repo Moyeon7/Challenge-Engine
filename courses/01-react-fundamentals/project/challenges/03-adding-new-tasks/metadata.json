@@ -3,7 +3,7 @@
   "challengeName": "Adding New Tasks",
   "difficulty": "intermediate",
   "estimatedTime": "2-2.5 hours",
-  "skills": ["Controlled inputs", "Event handlers", "Form validation", "Immutable state"],
+  "skills": ["Controlled inputs", "Event handlers", "Form validation", "Form handling", "Immutable state"],
   "filesToCheck": [
     "src/components/TaskForm.tsx",
     "src/components/TaskList.tsx",

@@ -3,7 +3,7 @@
   "challengeName": "Task Editing",
   "difficulty": "intermediate",
   "estimatedTime": "3-3.5 hours",
-  "skills": ["Inline editing", "Conditional rendering", "Edit mode state", "Controlled inputs", "State synchronization"],
+  "skills": ["Inline editing", "Conditional rendering", "Edit mode state", "Controlled inputs", "Form handling", "State synchronization"],
   "filesToCheck": [
     "src/components/TaskCard.tsx",
     "src/components/TaskList.tsx",

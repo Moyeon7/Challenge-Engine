@@ -22,9 +22,10 @@ interface TaskListProps {
   countText?: string;
   onToggle?: (id: string | number) => void;
   onDelete?: (id: string | number) => void;
+  linkToTaskDetail?: boolean;
 }
 
-export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
+export default function TaskList({ tasks, countText, onToggle, onDelete, linkToTaskDetail = false }: TaskListProps) {
   const list = tasks ?? HARDCODED_TASKS;
   if (list.length === 0) {
     return <section id="task-list" />;
@@ -45,6 +46,7 @@ export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskL
           dueDate={task.dueDate}
           onToggle={onToggle != null ? () => onToggle(task.id) : undefined}
           onDelete={onDelete}
+          linkToTaskDetail={linkToTaskDetail}
         />
       ))}
     </section>

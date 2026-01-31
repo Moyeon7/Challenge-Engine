@@ -23,7 +23,10 @@
     { "id": "17-custom-hook-uselocalstorage", "name": "Custom Hook - useLocalStorage", "weight": 0.05 },
     { "id": "18-usereducer-complex-state", "name": "useReducer - Complex State Management", "weight": 0.05 },
     { "id": "19-performance-optimization", "name": "Performance Optimization", "weight": 0.05 },
-    { "id": "20-error-boundaries", "name": "Error Boundaries and Error Handling", "weight": 0.05 }
+    { "id": "20-error-boundaries", "name": "Error Boundaries and Error Handling", "weight": 0.05 },
+    { "id": "21-react-router", "name": "React Router - Routing and Navigation", "weight": 0.05 },
+    { "id": "22-data-fetching", "name": "Data Fetching - Loading and Error State", "weight": 0.05 },
+    { "id": "23-useref-focus-management", "name": "useRef - Focus Management", "weight": 0.05 }
   ],
   "scoring": {
     "functionalTests": 0.35,

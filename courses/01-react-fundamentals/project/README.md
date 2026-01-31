@@ -44,6 +44,9 @@ Do challenges **in order, one at a time**: read the first challenge README, solv
 - **Challenge 18**: `challenges/18-usereducer-complex-state/README.md`
 - **Challenge 19**: `challenges/19-performance-optimization/README.md`
 - **Challenge 20**: `challenges/20-error-boundaries/README.md`
+- **Challenge 21**: `challenges/21-react-router/README.md` — React Router, Link, useParams, useNavigate
+- **Challenge 22**: `challenges/22-data-fetching/README.md` — Data fetching, loading and error state
+- **Challenge 23**: `challenges/23-useref-focus-management/README.md` — useRef, focus management
 
 ### 4. Verify Your Work
 
@@ -65,18 +68,22 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 1/31/2026, 9:42:29 PM*
+*Auto-updated when you run review. Last run: 1/31/2026, 11:16:12 PM*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 3 / 20 (15%) |
-| Average score | 98.2% |
+| Challenges completed | 7 / 23 (30.4%) |
+| Average score | 97.5% |
 
 | Challenge | Status |
 |-----------|--------|
-| Static Task Display | Pass |
 | Dynamic Task Rendering | Pass |
 | Adding New Tasks | Pass |
+| Static Task Display | Pass |
+| Data Fetching - Loading and Error State | Pass |
+| useRef - Focus Management | Pass |
+| React Router - Routing and Navigation | Pass |
+| Task Completion Toggle | Pass |
 
 ## 📋 Challenge Workflow
 

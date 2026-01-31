@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface TaskCardProps {
   id?: string | number;
@@ -11,6 +12,7 @@ export interface TaskCardProps {
   dueDate?: string | number;
   onToggle?: () => void;
   onDelete?: (id: string | number) => void;
+  linkToTaskDetail?: boolean;
 }
 
 function getDueDateLabel(dueDate: string | number | undefined, completed: boolean | undefined): string | null {
@@ -30,12 +32,14 @@ function getDueDateLabel(dueDate: string | number | undefined, completed: boolea
   return null;
 }
 
-function TaskCard({ id, title, description, priority, completed, category, tags, dueDate, onToggle, onDelete }: TaskCardProps) {
+function TaskCard({ id, title, description, priority, completed, category, tags, dueDate, onToggle, onDelete, linkToTaskDetail = false }: TaskCardProps) {
   const cat = category ?? 'General';
   const tagList = tags ?? [];
   const dueLabel = getDueDateLabel(dueDate, completed);
   const isOverdue = dueLabel === 'Overdue';
   const dueDisplay = dueDate != null ? (typeof dueDate === 'number' ? new Date(dueDate) : new Date(dueDate)).toLocaleDateString() : null;
+  const taskDetailPath = id != null ? `/challenge/21-react-router/task/${id}` : null;
+  const titleNode = <h2 style={{ textDecoration: completed ? 'line-through' : undefined }}>{title}</h2>;
   return (
     <article
       id="task-card"
@@ -57,7 +61,7 @@ function TaskCard({ id, title, description, priority, completed, category, tags,
           aria-label={`Mark ${title} as ${completed ? 'incomplete' : 'complete'}`}
         />
       )}
-      <h2 style={{ textDecoration: completed ? 'line-through' : undefined }}>{title}</h2>
+      {linkToTaskDetail && taskDetailPath ? <Link to={taskDetailPath}>{titleNode}</Link> : titleNode}
       <p style={{ textDecoration: completed ? 'line-through' : undefined }}>{description}</p>
       <p>Priority: {priority}</p>
       <p id="task-category">{cat}</p>

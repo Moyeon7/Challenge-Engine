@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ChallengeList from './components/ChallengeList'
 import TaskList, { type Task } from './components/TaskList'
 import TaskApp from './components/TaskApp'
+import TaskDetailPage from './components/TaskDetailPage'
+import FetchDemoView from './components/FetchDemoView'
 import { ThemeProvider, ThemeContext } from './contexts/ThemeContext'
 import { taskReducer } from './reducers/taskReducer'
 
@@ -86,6 +88,10 @@ function AppContent() {
             <Route path="/challenge/18-usereducer-complex-state" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" />} />
             <Route path="/challenge/19-performance-optimization" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" />} />
             <Route path="/challenge/20-error-boundaries" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" />} />
+            <Route path="/challenge/21-react-router" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" linkToTaskDetail />} />
+            <Route path="/challenge/21-react-router/task/:id" element={<TaskDetailPage />} />
+            <Route path="/challenge/22-data-fetching" element={<FetchDemoView />} />
+            <Route path="/challenge/23-useref-focus-management" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" showFilterBar />} />
           </Routes>
         </main>
       </div>

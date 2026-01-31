@@ -545,19 +545,6 @@ export default function App() {
                           )}
                         </div>
                         <div className="card-actions">
-                          <button
-                            type="button"
-                            className="challenge-skills-tooltip-trigger"
-                            title={ch.skills?.length ? `Skills: ${ch.skills.join(', ')}` : 'No skills listed'}
-                            aria-label={ch.skills?.length ? `Skills: ${ch.skills.join(', ')}` : 'No skills listed'}
-                          >
-                            <i className="fa-solid fa-circle-info" aria-hidden />
-                            {ch.skills?.length ? (
-                              <span className="challenge-skills-tooltip" role="tooltip">
-                                {ch.skills.join(', ')}
-                              </span>
-                            ) : null}
-                          </button>
                           <button type="button" onClick={() => openDetail(ch.id)}>Details</button>
                         </div>
                       </div>
@@ -638,16 +625,19 @@ export default function App() {
                   <span className="detail-score">Last run: {new Date(detail.lastRun).toLocaleString()}</span>
                 )}
               </div>
-              {detail.skills?.length ? (
-                <div className="detail-skills">
-                  <span className="detail-skills-label">Skills:</span>
-                  <div className="skill-chips">
-                    {detail.skills.map((s) => (
-                      <span key={s} className="skill-chip">{s}</span>
-                    ))}
+              {(() => {
+                const skills = detail.skills ?? (detail as { metadata?: { skills?: string[] } }).metadata?.skills ?? [];
+                return skills.length > 0 ? (
+                  <div className="detail-skills">
+                    <span className="detail-skills-label">Skills:</span>
+                    <div className="skill-chips">
+                      {skills.map((s) => (
+                        <span key={s} className="skill-chip">{s}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : null}
+                ) : null;
+              })()}
               {detail.score != null && (
                 <div className="challenge-score-progress" style={{ marginTop: '0.75rem' }}>
                   <div className={`score-progress-bar ${getScoreColorClass(detail.score)}`}>

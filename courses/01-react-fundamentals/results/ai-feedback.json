@@ -1,28 +1,5 @@
 [
   {
-    "challengeId": "01-static-task-display",
-    "challengeName": "Static Task Display",
-    "aiReview": {
-      "challengeId": "01-static-task-display",
-      "timestamp": "2026-01-31T15:58:10.815Z",
-      "score": 88,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript and interfaces helps to ensure type safety and maintainability.",
-        "The code is well-commented, making it easy to understand the functionality and intent."
-      ],
-      "improvements": [
-        "Some of the functions, such as `getDueDateLabel`, are quite complex and could be broken down into smaller, more manageable functions.",
-        "The `TaskCard` component has a lot of props, which could be grouped into a more manageable set of props using a props object.",
-        "The `TaskList` component uses a hardcoded array of tasks, which could be replaced with a more dynamic data source, such as a database or API."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, with a good balance of complexity and simplicity. However, there are some areas where the code could be improved to make it more efficient and scalable."
-    }
-  },
-  {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
     "aiReview": {
@@ -66,6 +43,121 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and effectively utilizes React and TypeScript features. However, there are opportunities for improvement in terms of code readability and validation mechanisms."
+    }
+  },
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-01-31T16:56:16.458Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code includes proper type definitions and interfaces, making it easier to understand and maintain."
+      ],
+      "improvements": [
+        "Some of the functions, such as `getDueDateLabel`, are quite complex and could be broken down into smaller, more manageable functions.",
+        "The `TaskCard` component has a lot of props, which can make it harder to understand and maintain. Consider using a more modular approach, such as using separate components for each section of the card.",
+        "The code could benefit from more comments and explanations, especially in complex areas like the `getDueDateLabel` function."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some areas that could be improved for better maintainability and readability."
+    }
+  },
+  {
+    "challengeId": "22-data-fetching",
+    "challengeName": "Data Fetching - Loading and Error State",
+    "aiReview": {
+      "challengeId": "22-data-fetching",
+      "timestamp": "2026-01-31T17:36:40.491Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between the FetchDemoView component and the useEffect hook.",
+        "The use of TypeScript and functional components makes the code more maintainable and scalable.",
+        "The code includes a good amount of comments and explanations, making it easier for others to understand the implementation."
+      ],
+      "improvements": [
+        "Consider using a more robust error handling mechanism, such as a try-catch block or a dedicated error handling function, to handle potential errors in the useEffect hook.",
+        "The code could benefit from more descriptive variable names, especially in the useEffect hook where the variable names are quite generic.",
+        "Consider adding a loading indicator or a spinner to the UI when the data is being fetched, to provide a better user experience."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good balance between simplicity and functionality. However, there are some areas for improvement, such as error handling and UI enhancements, to make the code more robust and user-friendly."
+    }
+  },
+  {
+    "challengeId": "23-useref-focus-management",
+    "challengeName": "useRef - Focus Management",
+    "aiReview": {
+      "challengeId": "23-useref-focus-management",
+      "timestamp": "2026-01-31T17:41:14.765Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and easier to read.",
+        "The code is well-documented with clear and concise comments."
+      ],
+      "improvements": [
+        "Some of the functions in the TaskApp component are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The useEffect hook in the TaskApp component has a long dependency array. Consider using a more efficient approach to handle dependencies.",
+        "The code could benefit from more type annotations and interfaces to make it easier to understand and maintain."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements to make it even more efficient and easier to understand."
+    }
+  },
+  {
+    "challengeId": "21-react-router",
+    "challengeName": "React Router - Routing and Navigation",
+    "aiReview": {
+      "challengeId": "21-react-router",
+      "timestamp": "2026-01-31T17:43:41.754Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and React hooks is well-implemented.",
+        "The code is well-commented and easy to understand."
+      ],
+      "improvements": [
+        "Some of the functions are quite long and could be broken down into smaller, more manageable functions.",
+        "There are some repeated code patterns that could be extracted into reusable components or functions.",
+        "The use of magic strings (e.g. '/challenge/21-react-router/task/:id') could be avoided by using a more robust routing system."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and maintainable, but could benefit from some refactoring to improve readability and reusability."
+    }
+  },
+  {
+    "challengeId": "04-task-completion-toggle",
+    "challengeName": "Task Completion Toggle",
+    "aiReview": {
+      "challengeId": "04-task-completion-toggle",
+      "timestamp": "2026-01-31T17:46:11.389Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-organized and follows a consistent structure.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is well-documented with clear and concise comments."
+      ],
+      "improvements": [
+        "Some of the functions, such as `getDueDateLabel`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `TaskCard` component has a lot of props. Consider using a prop type definition to make it easier to understand and maintain.",
+        "The `TaskList` component uses the `HARDCODED_TASKS` array. Consider replacing it with a more robust data source, such as a database or API."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
     }
   }
 ]

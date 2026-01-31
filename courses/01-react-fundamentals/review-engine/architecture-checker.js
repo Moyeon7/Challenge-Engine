@@ -211,6 +211,9 @@ function checkFileForPatterns(content, patternsRequired, fileName) {
     if (patternsRequired.includes('arrayMethods')) {
       if (/\.map\s*\(/.test(content) || /\.filter\s*\(/.test(content)) fallbackFound.add('arrayMethods');
     }
+    if (patternsRequired.includes('useRef')) {
+      if (/useRef\s*\(/.test(content)) fallbackFound.add('useRef');
+    }
     for (const pattern of patternsRequired) {
       if (fallbackFound.has(pattern) || content.includes(pattern) || content.includes(pattern.replace(/([A-Z])/g, '-$1').toLowerCase())) {
         patternsFound.push(pattern);

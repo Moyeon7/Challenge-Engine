@@ -1,19 +1,13 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-01-31T16:12:29.177Z",
-  "totalChallenges": 20,
-  "completedChallenges": 3,
-  "averageScore": 98.2,
-  "completionPercentage": 15,
+  "lastUpdated": "2026-01-31T17:46:12.626Z",
+  "totalChallenges": 23,
+  "completedChallenges": 7,
+  "averageScore": 97.5,
+  "completionPercentage": 30.4,
   "badgeLevel": "none",
   "challengeResults": [
-    {
-      "challengeId": "01-static-task-display",
-      "challengeName": "Static Task Display",
-      "score": 98.2,
-      "passed": true
-    },
     {
       "challengeId": "02-dynamic-task-rendering",
       "challengeName": "Dynamic Task Rendering",
@@ -25,12 +19,46 @@
       "challengeName": "Adding New Tasks",
       "score": 98.2,
       "passed": true
+    },
+    {
+      "challengeId": "01-static-task-display",
+      "challengeName": "Static Task Display",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "22-data-fetching",
+      "challengeName": "Data Fetching - Loading and Error State",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "23-useref-focus-management",
+      "challengeName": "useRef - Focus Management",
+      "score": 93.205,
+      "passed": true
+    },
+    {
+      "challengeId": "21-react-router",
+      "challengeName": "React Router - Routing and Navigation",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "04-task-completion-toggle",
+      "challengeName": "Task Completion Toggle",
+      "score": 98.2,
+      "passed": true
     }
   ],
   "skillStrengths": [
-    "Static Task Display",
     "Dynamic Task Rendering",
-    "Adding New Tasks"
+    "Adding New Tasks",
+    "Static Task Display",
+    "Data Fetching - Loading and Error State",
+    "useRef - Focus Management",
+    "React Router - Routing and Navigation",
+    "Task Completion Toggle"
   ],
   "improvementAreas": []
 }
