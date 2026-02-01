@@ -48,16 +48,18 @@ npm run review -- --challenge=01-server-components
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 1/29/2026, 6:36:33 PM*
+*Auto-updated when you run review. Last run: 2/1/2026, 3:21:10 PM*
 
 | Metric | Value |
 |--------|-------|
 | Challenges completed | 0 / 3 (0%) |
-| Average score | 22.5% |
+| Average score | 0% |
 
-| Challenge | Status |
-|-----------|--------|
-| Server Components and Basic Routing | Fail |
+| Challenge | Skills covered | Status |
+|-----------|----------------|--------|
+| Server Components and Basic Routing | Next.js App Router, Server Components, File-based Routing, Link Component, Page Structure | — |
+| Data Fetching and API Routes | Server Component Data Fetching, API Routes, Async Components, Error Handling, Loading States | — |
+| Fullstack Features and Metadata | Client Components, Server Actions, Metadata API, Form Handling, Dynamic Routing, SEO Optimization | — |
 
 ## 📋 Challenge Workflow
 

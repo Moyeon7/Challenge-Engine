@@ -1,20 +1,13 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-01-30T20:47:52.731Z",
-  "totalChallenges": 3,
+  "lastUpdated": null,
+  "totalChallenges": 23,
   "completedChallenges": 0,
-  "averageScore": 74.5,
+  "averageScore": 0,
   "completionPercentage": 0,
   "badgeLevel": "none",
-  "challengeResults": [
-    {
-      "challengeId": "02-todo-list",
-      "challengeName": "Todo List Application",
-      "score": 74.45,
-      "passed": false
-    }
-  ],
+  "challengeResults": [],
   "skillStrengths": [],
   "improvementAreas": []
 }

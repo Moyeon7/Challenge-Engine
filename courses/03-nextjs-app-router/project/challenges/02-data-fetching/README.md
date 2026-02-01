@@ -30,7 +30,7 @@ Add data fetching and an API route:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: posts page shows data (or loading/error). |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

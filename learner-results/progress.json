@@ -1,92 +1,44 @@
 {
-  "lastUpdated": "2026-01-30T20:47:53.330Z",
+  "lastUpdated": "2026-02-01T09:51:10.496Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 39.4,
+    "overallScore": 0,
     "completionPercentage": 0,
     "badgeLevel": "none",
-    "totalChallenges": 9,
+    "totalChallenges": 29,
     "completedChallenges": 0
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 74.5,
+      "averageScore": 0,
       "completionPercentage": 0,
       "badgeLevel": "none",
-      "totalChallenges": 3,
+      "totalChallenges": 23,
       "completedChallenges": 0,
-      "challenges": {
-        "02-todo-list": {
-          "challengeId": "02-todo-list",
-          "challengeName": "Todo List Application",
-          "passed": false,
-          "score": 74.45,
-          "lastRun": "2026-01-30T20:46:20.822Z",
-          "scores": {
-            "functionalTests": 100,
-            "codeQuality": 100,
-            "architecture": 12.5,
-            "bestPractices": 100,
-            "e2eTests": 0,
-            "aiReview": 88
-          }
-        }
-      }
+      "challenges": {}
     },
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 21.875,
+      "averageScore": 0,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
       "completedChallenges": 0,
-      "challenges": {
-        "01-api-setup": {
-          "challengeId": "01-api-setup",
-          "challengeName": "API Setup and Basic Fetching",
-          "passed": false,
-          "score": 21.875,
-          "lastRun": "2026-01-29T13:05:49.695Z",
-          "scores": {
-            "functionalTests": 0,
-            "codeQuality": 50,
-            "architecture": 12.5,
-            "bestPractices": 100,
-            "e2eTests": 0,
-            "aiReview": 0
-          }
-        }
-      }
+      "challenges": {}
     },
     "03-nextjs-app-router": {
       "courseId": "03-nextjs-app-router",
       "courseName": "Next.js App Router",
-      "averageScore": 22.464999999999996,
+      "averageScore": 0,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
       "completedChallenges": 0,
-      "challenges": {
-        "01-server-components": {
-          "challengeId": "01-server-components",
-          "challengeName": "Server Components and Basic Routing",
-          "passed": false,
-          "score": 22.464999999999996,
-          "lastRun": "2026-01-29T13:06:24.771Z",
-          "scores": {
-            "functionalTests": 0,
-            "codeQuality": 50,
-            "architecture": 16.7,
-            "bestPractices": 55.6,
-            "e2eTests": 0,
-            "aiReview": 88
-          }
-        }
-      }
+      "challenges": {}
     }
   }
 }

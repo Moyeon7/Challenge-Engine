@@ -116,15 +116,15 @@ The course app opens in your browser (e.g. http://localhost:5173 or http://local
 
 ## Step 6: Work on a challenge
 
-1. In the dashboard (http://localhost:7700), open a course and a challenge, or open the challenge README in your editor (e.g. `courses/01-react-fundamentals/project/challenges/01-user-profile/README.md`).
+1. In the dashboard (http://localhost:7700), open a course and a challenge, or open the challenge README in your editor (e.g. `courses/01-react-fundamentals/project/challenges/01-static-task-display/README.md`).
 2. Edit code in the course project (`src/` or `app/`). Save and see changes in the browser (hot reload).
 3. Run a review to get scored:
    - **From dashboard:** Open the challenge → click **“Run review”**.
    - **From terminal:** In the course project folder, run:
      ```bash
-     npm run review -- --challenge=01-user-profile
+     npm run review -- --challenge=01-static-task-display
      ```
-4. Check the score. Pass = 60% or higher. Fix issues and run review again until you pass.
+4. Check the score. Pass = 80% or higher. Fix issues and run review again until you pass.
 
 ---
 
@@ -134,7 +134,7 @@ When you want to save your progress to **your** GitHub repo:
 
 ```bash
 git add .
-git commit -m "Complete challenge 01-user-profile"
+git commit -m "Complete challenge 01-static-task-display"
 git push -u origin main
 ```
 
@@ -195,7 +195,7 @@ npm run setup
 | First-time setup           | `npm run setup` |
 | Start dashboard            | `npm run dashboard:build` then `npm run dashboard` |
 | Start a course app         | `cd courses/01-react-fundamentals/project && npm run dev` |
-| Run review for one challenge | `npm run review -- --challenge=01-user-profile` (from course project) |
+| Run review for one challenge | `npm run review -- --challenge=01-static-task-display` (from course project) |
 | Push your work             | `git add . && git commit -m "..." && git push origin main` |
 | Get latest from course repo (merge and overwrite conflicts with upstream) | `npm run sync-upstream` |
 
@@ -231,7 +231,7 @@ Each challenge is scored by:
 - **E2E tests** (Playwright)
 - **AI review** (optional, needs API key)
 
-**Pass = 60% or higher.** Only what’s listed in each challenge’s README (Technical Requirements) is checked; there are no hidden requirements.
+**Pass = 80% or higher.** Only what’s listed in each challenge’s README (Technical Requirements) is checked; there are no hidden requirements.
 
 ---
 
@@ -263,22 +263,71 @@ Each challenge is scored by:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 📈 Progress Summary
 
-**Last updated:** 1/31/2026, 2:17:53 AM
+**Last updated:** 2/1/2026, 3:21:10 PM
 
 ### Pathway
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 0 / 9 (0%) |
-| Overall score | 39.4% |
+| Challenges completed | 0 / 29 (0%) |
+| Overall score | 0% |
 
 ### By course
 
 | Course | Completed | Score | Status |
 |--------|-----------|-------|--------|
-| React Fundamentals | 0/3 (0%) | 74.5% | Fail |
-| RTK Query | 0/3 (0%) | 21.9% | Fail |
-| Next.js App Router | 0/3 (0%) | 22.5% | Fail |
+| React Fundamentals | 0/23 (0%) | 0% | Pass |
+| RTK Query | 0/3 (0%) | 0% | Pass |
+| Next.js App Router | 0/3 (0%) | 0% | Pass |
 

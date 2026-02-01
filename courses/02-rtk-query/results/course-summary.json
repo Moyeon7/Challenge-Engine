@@ -1,22 +1,13 @@
 {
   "courseId": "02-rtk-query",
   "courseName": "RTK Query",
-  "lastUpdated": "2026-01-29T13:05:55.276Z",
+  "lastUpdated": null,
   "totalChallenges": 3,
   "completedChallenges": 0,
-  "averageScore": 21.875,
+  "averageScore": 0,
   "completionPercentage": 0,
   "badgeLevel": "none",
-  "challengeResults": [
-    {
-      "challengeId": "01-api-setup",
-      "challengeName": "API Setup and Basic Fetching",
-      "score": 21.875,
-      "passed": false
-    }
-  ],
+  "challengeResults": [],
   "skillStrengths": [],
-  "improvementAreas": [
-    "API Setup and Basic Fetching"
-  ]
+  "improvementAreas": []
 }

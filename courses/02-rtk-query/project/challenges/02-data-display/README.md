@@ -30,7 +30,7 @@ Add a second endpoint and use RTK Query’s tag-based caching:
 | **Best practices** | TypeScript, no console, ESLint. |
 | **E2E** | Playwright: `/challenge/02-data-display` shows users and posts. |
 
-Pass threshold: weighted score ≥ 60%. No hidden checks.
+Pass threshold: weighted score ≥ 80%. No hidden checks.
 
 ---
 

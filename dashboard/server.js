@@ -7,13 +7,18 @@
 import express from 'express';
 import cors from 'cors';
 import { readFileSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const ROOT = join(__dirname, '..');
+// Repo root: server runs from dashboard/, so __dirname is dashboard; repo root is parent.
+// Fallback: if "courses" not found from __dirname/.., try cwd/.. (when run as "cd dashboard && node server.js", cwd is dashboard).
+let ROOT = resolve(join(__dirname, '..'));
+if (!existsSync(join(ROOT, 'courses'))) {
+  ROOT = resolve(process.cwd(), '..');
+}
 // Use 7700 by default to avoid conflict with course dev servers (Vite 5173, Next 3000, etc.)
 const PORT = process.env.DASHBOARD_PORT || 7700;
 
@@ -40,9 +45,28 @@ function getCourseConfig(courseId) {
 }
 
 function getChallengeMetadata(courseId, challengeId) {
-  const path = join(ROOT, 'courses', courseId, 'project', 'challenges', challengeId, 'metadata.json');
-  if (!existsSync(path)) return null;
-  return JSON.parse(readFileSync(path, 'utf-8'));
+  const filePath = resolve(ROOT, 'courses', courseId, 'project', 'challenges', challengeId, 'metadata.json');
+  let contents = null;
+  if (existsSync(filePath)) {
+    try {
+      contents = readFileSync(filePath, 'utf-8');
+    } catch (_) {}
+  }
+  // Fallback when server runs from dashboard/ and ROOT might not be repo root
+  if (!contents) {
+    const altPath = resolve(process.cwd(), '..', 'courses', courseId, 'project', 'challenges', challengeId, 'metadata.json');
+    if (existsSync(altPath)) {
+      try {
+        contents = readFileSync(altPath, 'utf-8');
+      } catch (_) {}
+    }
+  }
+  if (!contents) return null;
+  try {
+    return JSON.parse(contents);
+  } catch (_) {
+    return null;
+  }
 }
 
 function getChallengeReadme(courseId, challengeId) {
@@ -117,6 +141,7 @@ app.get('/api/courses/:courseId/challenges', (req, res) => {
   const slice = challenges.slice(start, start + limit);
   const progress = getProgress();
   const courseChallenges = progress?.courses?.[req.params.courseId]?.challenges || {};
+  const courseId = req.params.courseId;
   const withProgress = slice.map(c => ({
     ...c,
     passed: courseChallenges[c.id]?.passed,
@@ -150,6 +175,7 @@ app.get('/api/courses/:courseId/challenges/:challengeId', (req, res) => {
   res.json({
     ...challenge,
     metadata: metadata || {},
+    skills: metadata?.skills ?? [],
     instructions: readme || '',
     result: result || null,
     aiFeedback: ai,
