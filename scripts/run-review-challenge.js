@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
  * Run review for a single challenge. Updates progress after.
+ * The course review engine loads existing challenge-results.json, runs only this challenge,
+ * merges (keeps other challenges' results, replaces this one), and writes back—so other challenges are not affected.
  * Usage: node scripts/run-review-challenge.js --course=01-react-fundamentals --challenge=01-static-task-display
  */
 

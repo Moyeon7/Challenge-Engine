@@ -86,10 +86,14 @@ async function main() {
     console.log(`   Score: ${result.totalScore.toFixed(1)}%`);
   }
 
-  // Merge: keep existing results for challenges we did not run; replace with new results for those we ran
+  // Merge: keep existing results for challenges we did not run; replace with new results for those we ran.
+  // This ensures workflow, dashboard, or single-challenge CLI runs only update the reviewed challenges without affecting others.
   const mergedResults = existingResults
     .filter(r => !reviewedIds.has(r.challengeId))
     .concat(newResults);
+  // Stable order: same as course config so file is predictable
+  const orderMap = new Map(config.challenges.map((c, i) => [c.id, i]));
+  mergedResults.sort((a, b) => (orderMap.get(a.challengeId) ?? 999) - (orderMap.get(b.challengeId) ?? 999));
 
   // Generate course summary from full merged results
   const courseSummary = generateCourseSummary(mergedResults, config);
