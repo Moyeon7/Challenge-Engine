@@ -1,3 +1,5 @@
+import "./TaskCard.css"
+
 interface TaskCardProps {
   title?: string
   description?: string
@@ -12,5 +14,21 @@ interface TaskCardProps {
 }
 
 export default function TaskCard(_props: TaskCardProps) {
-  return <article id="task-card" />
+  return(
+    <div className={`container ${_props.completed ? "completed" : ""}`}>
+      <article id="task-card" data-completed={_props.completed ? "true" : "false"}>
+        <h2 style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.title}</h2>
+        <p style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.description}</p>
+        <p>Priority: {_props.priority}</p>
+      </article>
+      {_props.onToggle && (
+          <input
+            type="checkbox"
+            id="task-complete"
+            checked={Boolean(_props.completed)}
+            onChange={() => _props.onToggle?.(_props.taskId ?? 0)}
+          />
+      )}  
+    </div>
+  )
 }

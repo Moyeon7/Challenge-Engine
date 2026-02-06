@@ -32,7 +32,7 @@ function AppContent() {
         <main>
           <Routes>
             <Route path="/" element={<ChallengeList />} />
-            <Route path="/challenge/01-static-task-display" element={<TaskList />} />
+            <Route path="/challenge/01-static-task-display" element={<TaskList/>} />
             <Route path="/challenge/02-dynamic-task-rendering" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm={false} countFormat="tasks" />} />
             <Route path="/challenge/03-adding-new-tasks" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" />} />
             <Route path="/challenge/04-task-completion-toggle" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="completed" />} />
