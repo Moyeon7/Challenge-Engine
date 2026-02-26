@@ -21,9 +21,9 @@ function AppContent() {
   const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS)
 
   const handleDelete = (id: string | number) => {
-    if (window.confirm('Are you sure?')) {
+    // if (window.confirm('Are you sure?')) {
       setTasks((prev) => prev.filter((t) => t.id !== id))
-    }
+    // }
   }
 
   return (

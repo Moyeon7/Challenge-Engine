@@ -1,6 +1,7 @@
 import "./TaskCard.css"
 
 interface TaskCardProps {
+  id?: string | number
   title?: string
   description?: string
   priority?: string
@@ -14,6 +15,14 @@ interface TaskCardProps {
 }
 
 export default function TaskCard(_props: TaskCardProps) {
+  const handleDelete = () => {
+    if (!_props.onDelete) return
+
+    if (window.confirm("Are you sure?")) {
+      _props.onDelete(_props.id as string | number)
+    }
+  }
+
   return(
     <div className={`container ${_props.completed ? "completed" : ""}`}>
       <article id="task-card" data-completed={_props.completed ? "true" : "false"}>
@@ -26,9 +35,14 @@ export default function TaskCard(_props: TaskCardProps) {
             type="checkbox"
             id="task-complete"
             checked={Boolean(_props.completed)}
-            onChange={() => _props.onToggle?.(_props.taskId ?? 0)}
+            onChange={() => _props.onToggle?.(_props.id as string | number)}
           />
       )}  
+      {_props.onDelete && (
+        <button id="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
+      )}
     </div>
   )
 }

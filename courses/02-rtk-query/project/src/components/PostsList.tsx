@@ -4,12 +4,27 @@
  * Requirements: Use RTK Query to fetch and display posts with caching.
  */
 
+import { useGetPostsQuery } from "../api/usersApi";
+
 export default function PostsList() {
+  const { data, isLoading, error } = useGetPostsQuery();
+
+  if(isLoading){
+    return <p>Loading...</p>
+  }
+
+  if(error){
+    return <p>Error...</p>
+  }
+
   return (
     <div data-testid="posts-list">
-      {/* TODO: Implement per challenges/02-data-display/README.md */}
-      {/* Use useGetPostsQuery from your API slice */}
-      <p>Posts list - implement using RTK Query</p>
+      {data?.map((post) =>(
+        <div key={post.id} style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '0.5rem' }}>
+          <h1><strong>Title: </strong>{post.title}</h1>
+          <p><strong>Body: </strong>{post.body}</p>
+        </div>
+      ))}
     </div>
   );
 }

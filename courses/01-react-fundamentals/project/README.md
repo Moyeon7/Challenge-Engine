@@ -68,12 +68,12 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 2/3/2026, 1:57:14 AM*
+*Auto-updated when you run review. Last run: 2/19/2026, 7:42:39 PM*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 4 / 23 (17.4%) |
-| Average score | 90.9% |
+| Challenges completed | 7 / 23 (30.4%) |
+| Average score | 97.7% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -81,9 +81,9 @@ npm run review -- --challenge=01-static-task-display
 | Dynamic Task Rendering | useState, map(), key prop, Lists in JSX | Passed |
 | Adding New Tasks | Controlled inputs, Event handlers, Form validation, Form handling, Immutable state | Passed |
 | Task Completion Toggle | Updating array state, Event handlers with params, Conditional styling | Passed |
-| Task Deletion | filter, Immutable state, Confirmation patterns, Prop functions with arguments | — |
-| Task Filtering | Derived state, Conditional rendering, Filter logic composition | — |
-| Priority-Based Sorting | Array sort, Sort stability, Multiple sort criteria, Select dropdowns | — |
+| Task Deletion | filter, Immutable state, Confirmation patterns, Prop functions with arguments | Passed |
+| Task Filtering | Derived state, Conditional rendering, Filter logic composition | Passed |
+| Priority-Based Sorting | Array sort, Sort stability, Multiple sort criteria, Select dropdowns | Passed |
 | Task Editing | Inline editing, Conditional rendering, Edit mode state, Controlled inputs, Form handling, State synchronization | — |
 | Search Functionality | Text search, Combining filters, String methods, Search UI patterns | — |
 | useEffect - Local Storage Persistence | useEffect, Side effects, localStorage, JSON serialization, Effect dependencies | — |

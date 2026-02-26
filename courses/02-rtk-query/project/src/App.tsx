@@ -4,6 +4,41 @@ import ChallengeList from './components/ChallengeList'
 import UsersList from './components/UsersList'
 import PostsList from './components/PostsList'
 
+// ✅ ADD THESE IMPORTS
+import UserForm from './components/UserForm'
+import EditUserForm from './components/EditUserForm'
+import { useGetUsersQuery, useDeleteUserMutation } from './api/usersApi'
+
+// ✅ small wrapper component for challenge 3
+function MutationsPage() {
+  const { data: users, isLoading } = useGetUsersQuery()
+  const [deleteUser] = useDeleteUserMutation()
+
+  if (isLoading) return <p>Loading...</p>
+
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>Challenge 03: Mutations and Optimistic Updates</h2>
+
+      {/* CREATE */}
+      <UserForm />
+
+      <hr />
+
+      {/* UPDATE + DELETE */}
+      {users?.slice(0, 2).map((user) => (
+        <div key={user.id} style={{ marginTop: '1rem' }}>
+          <EditUserForm user={user} />
+
+          <button onClick={() => deleteUser(user.id)}>
+            Delete User
+          </button>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,27 +53,27 @@ function App() {
             <Link to="/challenge/03-mutations" style={{ margin: '0 1rem', color: 'inherit' }}>Challenge 3</Link>
           </nav>
         </header>
+
         <main>
           <Routes>
             <Route path="/" element={<ChallengeList />} />
+
             <Route path="/challenge/01-api-setup" element={
               <div style={{ padding: '2rem' }}>
                 <h2>Challenge 01: API Setup and Basic Fetching</h2>
                 <UsersList />
               </div>
             } />
+
             <Route path="/challenge/02-data-display" element={
               <div style={{ padding: '2rem' }}>
                 <h2>Challenge 02: Data Display and Caching</h2>
                 <PostsList />
               </div>
             } />
-            <Route path="/challenge/03-mutations" element={
-              <div style={{ padding: '2rem' }}>
-                <h2>Challenge 03: Mutations and Optimistic Updates</h2>
-                <p>This challenge will involve mutations. Implement according to the challenge instructions.</p>
-              </div>
-            } />
+
+            {/* ✅ REPLACED */}
+            <Route path="/challenge/03-mutations" element={<MutationsPage />} />
           </Routes>
         </main>
       </div>

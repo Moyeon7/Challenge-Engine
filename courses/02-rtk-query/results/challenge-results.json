@@ -1,1 +1,914 @@
-[]
+[
+  {
+    "challengeId": "01-api-setup",
+    "challengeName": "API Setup and Basic Fetching",
+    "timestamp": "2026-02-24T14:26:04.286Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 18.8,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 86
+    },
+    "totalScore": 74.78,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 5,
+      "passedTests": 5,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: API Setup and Basic Fetching"
+              ],
+              "fullName": " Challenge 01: API Setup and Basic Fetching should have usersApi with createApi",
+              "status": "passed",
+              "title": "should have usersApi with createApi",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: API Setup and Basic Fetching"
+              ],
+              "fullName": " Challenge 01: API Setup and Basic Fetching should have getUsers endpoint",
+              "status": "passed",
+              "title": "should have getUsers endpoint",
+              "duration": 0,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: API Setup and Basic Fetching"
+              ],
+              "fullName": " Challenge 01: API Setup and Basic Fetching should integrate API reducer into store",
+              "status": "passed",
+              "title": "should integrate API reducer into store",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: API Setup and Basic Fetching"
+              ],
+              "fullName": " Challenge 01: API Setup and Basic Fetching should use fetchBaseQuery or custom baseQuery",
+              "status": "passed",
+              "title": "should use fetchBaseQuery or custom baseQuery",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: API Setup and Basic Fetching"
+              ],
+              "fullName": " Challenge 01: API Setup and Basic Fetching should have useGetUsersQuery hook usage in UsersList",
+              "status": "passed",
+              "title": "should have useGetUsersQuery hook usage in UsersList",
+              "duration": 0,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1771943167220,
+          "endTime": 1771943167224,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-rtk-query/project/tests/challenge-01.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\api\\usersApi.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\components\\UsersList.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\store\\store.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 18.8,
+      "passed": false,
+      "patternsFound": [
+        "createApi",
+        "fetchBaseQuery",
+        "endpoints"
+      ],
+      "patternsMissing": [
+        "useQueryHook",
+        "createApi",
+        "fetchBaseQuery",
+        "endpoints",
+        "useQueryHook",
+        "createApi",
+        "fetchBaseQuery",
+        "endpoints",
+        "useQueryHook",
+        "createApi",
+        "fetchBaseQuery",
+        "endpoints",
+        "useQueryHook"
+      ],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "patternsFound": [
+            "createApi",
+            "fetchBaseQuery",
+            "endpoints"
+          ],
+          "patternsMissing": [
+            "useQueryHook"
+          ]
+        },
+        {
+          "file": "src/store/store.ts",
+          "patternsFound": [],
+          "patternsMissing": [
+            "createApi",
+            "fetchBaseQuery",
+            "endpoints",
+            "useQueryHook"
+          ]
+        },
+        {
+          "file": "src/components/UsersList.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "createApi",
+            "fetchBaseQuery",
+            "endpoints",
+            "useQueryHook"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "createApi",
+            "fetchBaseQuery",
+            "endpoints",
+            "useQueryHook"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/store/store.ts",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/components/UsersList.tsx",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/App.tsx",
+          "issues": [],
+          "score": 100
+        }
+      ]
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "details": [],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-01.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "01-api-setup",
+      "timestamp": "2026-02-24T14:26:12.683Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "TypeScript usage is correct",
+        "Code is well-organized",
+        "RTK Query usage is correct"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, baseQuery function should be typed",
+        "In src/store/store.ts, configureStore function should be typed",
+        "In src/components/UsersList.tsx, useGetUsersQuery hook should be destructured",
+        "In src/components/PostsList.tsx, useGetPostsQuery hook should be destructured"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the requirements and uses RTK Query correctly. However, there are some areas where improvements can be made for better readability and maintainability.",
+      "requirementCompliance": 90
+    },
+    "aiResults": {
+      "challengeId": "01-api-setup",
+      "timestamp": "2026-02-24T14:26:12.683Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "TypeScript usage is correct",
+        "Code is well-organized",
+        "RTK Query usage is correct"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, baseQuery function should be typed",
+        "In src/store/store.ts, configureStore function should be typed",
+        "In src/components/UsersList.tsx, useGetUsersQuery hook should be destructured",
+        "In src/components/PostsList.tsx, useGetPostsQuery hook should be destructured"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the requirements and uses RTK Query correctly. However, there are some areas where improvements can be made for better readability and maintainability.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "02-data-display",
+    "challengeName": "Data Display and Caching",
+    "timestamp": "2026-02-24T14:24:17.684Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 16.7,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 86
+    },
+    "totalScore": 74.57000000000001,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 4,
+      "passedTests": 4,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Data Display and Caching"
+              ],
+              "fullName": " Challenge 02: Data Display and Caching should have getPosts endpoint",
+              "status": "passed",
+              "title": "should have getPosts endpoint",
+              "duration": 12,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Data Display and Caching"
+              ],
+              "fullName": " Challenge 02: Data Display and Caching should implement tag-based caching",
+              "status": "passed",
+              "title": "should implement tag-based caching",
+              "duration": 0,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Data Display and Caching"
+              ],
+              "fullName": " Challenge 02: Data Display and Caching should have PostsList component",
+              "status": "passed",
+              "title": "should have PostsList component",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Data Display and Caching"
+              ],
+              "fullName": " Challenge 02: Data Display and Caching should use tag types in API",
+              "status": "passed",
+              "title": "should use tag types in API",
+              "duration": 0,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1771943060434,
+          "endTime": 1771943060448,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-rtk-query/project/tests/challenge-02.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\api\\usersApi.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\components\\PostsList.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 16.7,
+      "passed": false,
+      "patternsFound": [
+        "providesTags",
+        "tagTypes"
+      ],
+      "patternsMissing": [
+        "invalidatesTags",
+        "multipleEndpoints",
+        "providesTags",
+        "invalidatesTags",
+        "tagTypes",
+        "multipleEndpoints",
+        "providesTags",
+        "invalidatesTags",
+        "tagTypes",
+        "multipleEndpoints"
+      ],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "patternsFound": [
+            "providesTags",
+            "tagTypes"
+          ],
+          "patternsMissing": [
+            "invalidatesTags",
+            "multipleEndpoints"
+          ]
+        },
+        {
+          "file": "src/api/postsApi.ts",
+          "error": "File does not exist",
+          "patternsFound": [],
+          "patternsMissing": [
+            "providesTags",
+            "invalidatesTags",
+            "tagTypes",
+            "multipleEndpoints"
+          ]
+        },
+        {
+          "file": "src/components/PostsList.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "providesTags",
+            "invalidatesTags",
+            "tagTypes",
+            "multipleEndpoints"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "providesTags",
+            "invalidatesTags",
+            "tagTypes",
+            "multipleEndpoints"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/components/PostsList.tsx",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/App.tsx",
+          "issues": [],
+          "score": 100
+        }
+      ]
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "details": [],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-02.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "02-data-display",
+      "timestamp": "2026-02-24T14:24:25.981Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Proper use of createApi and fetchBaseQuery",
+        "Correct implementation of tag-based caching",
+        "Well-structured code with logical separation of concerns"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, consider adding a more robust error handling mechanism for the fetchBaseQuery",
+        "In src/components/PostsList.tsx, consider adding a loading indicator for the posts list",
+        "In src/components/UsersList.tsx, consider adding a loading indicator for the users list",
+        "In src/main.tsx, consider adding a check for the store before rendering the App component"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, particularly in error handling and loading indicators.",
+      "requirementCompliance": 90
+    },
+    "aiResults": {
+      "challengeId": "02-data-display",
+      "timestamp": "2026-02-24T14:24:25.981Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Proper use of createApi and fetchBaseQuery",
+        "Correct implementation of tag-based caching",
+        "Well-structured code with logical separation of concerns"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, consider adding a more robust error handling mechanism for the fetchBaseQuery",
+        "In src/components/PostsList.tsx, consider adding a loading indicator for the posts list",
+        "In src/components/UsersList.tsx, consider adding a loading indicator for the users list",
+        "In src/main.tsx, consider adding a check for the store before rendering the App component"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, particularly in error handling and loading indicators.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "03-mutations",
+    "challengeName": "Mutations and Optimistic Updates",
+    "timestamp": "2026-02-24T18:53:52.952Z",
+    "scores": {
+      "functionalTests": 80,
+      "codeQuality": 100,
+      "architecture": 20,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 55,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 80,
+      "passed": false,
+      "totalTests": 5,
+      "passedTests": 4,
+      "failedTests": 1,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Mutations and Optimistic Updates"
+              ],
+              "fullName": " Challenge 03: Mutations and Optimistic Updates should have mutation endpoints",
+              "status": "passed",
+              "title": "should have mutation endpoints",
+              "duration": 4,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Mutations and Optimistic Updates"
+              ],
+              "fullName": " Challenge 03: Mutations and Optimistic Updates should implement optimistic updates",
+              "status": "passed",
+              "title": "should implement optimistic updates",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Mutations and Optimistic Updates"
+              ],
+              "fullName": " Challenge 03: Mutations and Optimistic Updates should invalidate cache tags on mutation",
+              "status": "passed",
+              "title": "should invalidate cache tags on mutation",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Mutations and Optimistic Updates"
+              ],
+              "fullName": " Challenge 03: Mutations and Optimistic Updates should have UserForm component",
+              "status": "passed",
+              "title": "should have UserForm component",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Mutations and Optimistic Updates"
+              ],
+              "fullName": " Challenge 03: Mutations and Optimistic Updates should use mutation hooks",
+              "status": "failed",
+              "title": "should use mutation hooks",
+              "duration": 18,
+              "failureMessages": [
+                "expected false to be true // Object.is equality"
+              ],
+              "location": {
+                "line": 61,
+                "column": 31
+              }
+            }
+          ],
+          "startTime": 1771959238613,
+          "endTime": 1771959238638,
+          "status": "failed",
+          "message": "",
+          "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-rtk-query/project/tests/challenge-03.test.tsx"
+        }
+      ],
+      "error": "Command failed: npm test -- C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\tests\\challenge-03.test.tsx --run --reporter=json"
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\api\\usersApi.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\components\\EditUserForm.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-rtk-query\\project\\src\\components\\UserForm.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 20,
+      "passed": false,
+      "patternsFound": [
+        "mutation",
+        "onQueryStarted",
+        "invalidatesTags",
+        "mutation"
+      ],
+      "patternsMissing": [
+        "optimisticUpdate",
+        "useMutationHook",
+        "mutation",
+        "onQueryStarted",
+        "optimisticUpdate",
+        "invalidatesTags",
+        "useMutationHook",
+        "mutation",
+        "onQueryStarted",
+        "optimisticUpdate",
+        "invalidatesTags",
+        "useMutationHook",
+        "onQueryStarted",
+        "optimisticUpdate",
+        "invalidatesTags",
+        "useMutationHook"
+      ],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "patternsFound": [
+            "mutation",
+            "onQueryStarted",
+            "invalidatesTags"
+          ],
+          "patternsMissing": [
+            "optimisticUpdate",
+            "useMutationHook"
+          ]
+        },
+        {
+          "file": "src/components/UserForm.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "mutation",
+            "onQueryStarted",
+            "optimisticUpdate",
+            "invalidatesTags",
+            "useMutationHook"
+          ]
+        },
+        {
+          "file": "src/components/EditUserForm.tsx",
+          "patternsFound": [],
+          "patternsMissing": [
+            "mutation",
+            "onQueryStarted",
+            "optimisticUpdate",
+            "invalidatesTags",
+            "useMutationHook"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "mutation"
+          ],
+          "patternsMissing": [
+            "onQueryStarted",
+            "optimisticUpdate",
+            "invalidatesTags",
+            "useMutationHook"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [
+        {
+          "file": "src/api/usersApi.ts",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/components/UserForm.tsx",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/components/EditUserForm.tsx",
+          "issues": [],
+          "score": 100
+        },
+        {
+          "file": "src/App.tsx",
+          "issues": [],
+          "score": 100
+        }
+      ]
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "details": [],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-03.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "error": "Functional tests must pass first (4/5 passed)",
+      "score": 0,
+      "skipped": true
+    }
+  }
+]
