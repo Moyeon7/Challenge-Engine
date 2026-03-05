@@ -34,22 +34,6 @@ export const usersApi = createApi({
         method: "POST",
         body: newPost
       }), 
-      async onQueryStarted(newUser, { dispatch, queryFulfilled }) {
-        const patchResult = dispatch(
-          usersApi.util.updateQueryData("getUsers", undefined, (draft) => {
-            draft.push({
-              id: Date.now(),
-              ...newUser,
-            } as User)
-          })
-        )
-
-        try {
-          await queryFulfilled
-        } catch {
-          patchResult.undo()
-        }
-      },
       invalidatesTags: ['Users'],
     }),
     updateUser: builder.mutation<User, Partial<User> & { id: number }>({

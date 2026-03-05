@@ -53,7 +53,7 @@
     "challengeId": "03-mutations",
     "challengeName": "Mutations and Optimistic Updates",
     "aiReview": {
-      "error": "Functional tests must pass first (4/5 passed)",
+      "error": "Functional tests must pass first (3/5 passed)",
       "score": 0,
       "skipped": true
     }

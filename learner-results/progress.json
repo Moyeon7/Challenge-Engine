@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-24T18:54:12.907Z",
+  "lastUpdated": "2026-02-26T10:03:27.151Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 54.7,
+    "overallScore": 55.1,
     "completionPercentage": 24.1,
     "badgeLevel": "none",
     "totalChallenges": 29,
@@ -129,7 +129,7 @@
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 68.1,
+      "averageScore": 69.4,
       "completionPercentage": 0,
       "badgeLevel": "none",
       "totalChallenges": 3,
@@ -169,14 +169,14 @@
           "challengeId": "03-mutations",
           "challengeName": "Mutations and Optimistic Updates",
           "passed": false,
-          "score": 55,
-          "lastRun": "2026-02-24T18:53:52.952Z",
+          "score": 58.75,
+          "lastRun": "2026-02-26T10:01:46.570Z",
           "scores": {
-            "functionalTests": 80,
+            "functionalTests": 60,
             "codeQuality": 100,
-            "architecture": 20,
+            "architecture": 15,
             "bestPractices": 100,
-            "e2eTests": 0,
+            "e2eTests": 75,
             "aiReview": 0
           }
         }
