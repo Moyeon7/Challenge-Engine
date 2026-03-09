@@ -1,4 +1,5 @@
 import "./TaskCard.css"
+import { useState } from "react"
 
 interface TaskCardProps {
   id?: string | number
@@ -22,9 +23,11 @@ export default function TaskCard(_props: TaskCardProps) {
       _props.onDelete(_props.id as string | number)
     }
   }
+  const [isEditing, setIsEditing] = useState(false)
 
   return(
     <div className={`container ${_props.completed ? "completed" : ""}`}>
+      <button onClick={() => setIsEditing(true)}>Edit</button>
       <article id="task-card" data-completed={_props.completed ? "true" : "false"}>
         <h2 style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.title}</h2>
         <p style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.description}</p>
