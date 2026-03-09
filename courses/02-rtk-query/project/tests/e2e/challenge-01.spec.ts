@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Challenge 01: API Setup - E2E', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/challenge/01-api-setup');
   });
 
   test('should display users list', async ({ page }) => {

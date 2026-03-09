@@ -28,12 +28,30 @@ export const usersApi = createApi({
       query: () => "posts",
       providesTags: ['Posts'],
     }),
-    addUser: builder.mutation<User, Partial<User>>({
-      query: (newPost) => ({
+    createUser: builder.mutation<User, Partial<User>>({
+      query: (newUser) => ({
         url: "users",
         method: "POST",
-        body: newPost
+        body: newUser
       }), 
+      async onQueryStarted(newUser, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          usersApi.util.updateQueryData("getUsers", undefined, (draft) => {
+            draft.push({
+              id: Date.now(),
+              name: newUser.name ?? "",
+              email: newUser.email ?? "",
+              username: newUser.username,
+            });
+          })
+        );
+
+        try {
+          await queryFulfilled;
+        } catch {
+          patchResult.undo();
+        }
+      },
       invalidatesTags: ['Users'],
     }),
     updateUser: builder.mutation<User, Partial<User> & { id: number }>({
@@ -42,6 +60,22 @@ export const usersApi = createApi({
         method: "PUT",
         body: updateUser,
       }),
+      async onQueryStarted(updatedUser, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          usersApi.util.updateQueryData("getUsers", undefined, (draft) => {
+            const user = draft.find((u) => u.id === updatedUser.id)
+            if (user) {
+              Object.assign(user, updatedUser)
+            }
+          })
+        )
+
+        try {
+          await queryFulfilled
+        } catch {
+          patchResult.undo()
+        }
+      },
       invalidatesTags: ['Users'],
     }),
     deleteUser: builder.mutation<void, number>({
@@ -49,9 +83,22 @@ export const usersApi = createApi({
         url: `users/${id}`,
         method: "DELETE",
       }),
+      async onQueryStarted(id, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          usersApi.util.updateQueryData("getUsers", undefined, (draft) => {
+            return draft.filter((user) => user.id !== id)
+          })
+        )
+
+        try {
+          await queryFulfilled
+        } catch {
+          patchResult.undo()
+        }
+      },
       invalidatesTags: ['Users'],
     }),
   })
 })
 
-export const { useGetUsersQuery, useGetPostsQuery, useDeleteUserMutation, useAddUserMutation, useUpdateUserMutation } = usersApi
+export const { useGetUsersQuery, useGetPostsQuery, useDeleteUserMutation, useCreateUserMutation, useUpdateUserMutation } = usersApi

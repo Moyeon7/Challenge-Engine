@@ -12,7 +12,7 @@ Add mutations (create, update, delete) and optional optimistic updates:
 
 ## What to do
 
-1. **Mutations:** In your API slice, add mutation endpoints (e.g. `addUser`, `updateUser`, `deleteUser` or equivalent for posts). Use `builder.mutation()`. Set `invalidatesTags` so lists refetch (e.g. invalidate `['Users']` or `['Posts']`).
+1. **Mutations:** In your API slice, add mutation endpoints (e.g. `createUser`, `updateUser`, `deleteUser` or equivalent for posts). Use `builder.mutation()`. Set `invalidatesTags` so lists refetch (e.g. invalidate `['Users']` or `['Posts']`).
 2. **Optimistic updates (optional):** In mutation endpoints, use `onQueryStarted` to update the cache optimistically before the server responds.
 3. **Forms:** Create or update components (e.g. `UserForm`, `EditUserForm`) that use generated mutation hooks (e.g. `useCreateUserMutation`). Handle loading, error, and success (e.g. reset form, show message).
 4. **App:** Render the form(s) on `/challenge/03-mutations` so create/update/delete can be tested.

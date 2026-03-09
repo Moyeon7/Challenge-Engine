@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useAddUserMutation } from '../api/usersApi';
+import { useCreateUserMutation } from '../api/usersApi';
 
 export default function UserForm(){
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [addUser, { isLoading, isSuccess, isError }] = useAddUserMutation();
+    const [addUser, { isLoading, isSuccess, isError }] = useCreateUserMutation();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

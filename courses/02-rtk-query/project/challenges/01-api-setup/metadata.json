@@ -22,11 +22,5 @@
     "src/store/store.ts",
     "src/components/UsersList.tsx",
     "src/App.tsx"
-  ],
-  "patternsRequired": [
-    "createApi",
-    "fetchBaseQuery",
-    "endpoints",
-    "useQueryHook"
   ]
 }
