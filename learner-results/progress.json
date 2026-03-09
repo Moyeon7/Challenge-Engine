@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-03-09T11:57:35.219Z",
+  "lastUpdated": "2026-03-09T12:27:11.620Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 59.4,
-    "completionPercentage": 34.5,
+    "overallScore": 56.6,
+    "completionPercentage": 27.6,
     "badgeLevel": "none",
     "totalChallenges": 29,
-    "completedChallenges": 10
+    "completedChallenges": 8
   },
   "courses": {
     "01-react-fundamentals": {
@@ -129,40 +129,40 @@
     "02-rtk-query": {
       "courseId": "02-rtk-query",
       "courseName": "RTK Query",
-      "averageScore": 82.3,
-      "completionPercentage": 100,
-      "badgeLevel": "silver",
+      "averageScore": 73.7,
+      "completionPercentage": 33.3,
+      "badgeLevel": "none",
       "totalChallenges": 3,
-      "completedChallenges": 3,
+      "completedChallenges": 1,
       "challenges": {
         "01-api-setup": {
           "challengeId": "01-api-setup",
           "challengeName": "API Setup and Basic Fetching",
-          "passed": true,
-          "score": 81.23,
-          "lastRun": "2026-03-09T11:50:29.117Z",
+          "passed": false,
+          "score": 68.33,
+          "lastRun": "2026-03-09T12:26:48.945Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,
             "architecture": 83.3,
             "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 86
+            "aiReview": 0
           }
         },
         "02-data-display": {
           "challengeId": "02-data-display",
           "challengeName": "Data Display and Caching",
-          "passed": true,
-          "score": 82.9,
-          "lastRun": "2026-03-09T11:54:32.358Z",
+          "passed": false,
+          "score": 70,
+          "lastRun": "2026-03-09T12:27:02.879Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 86
+            "aiReview": 0
           }
         },
         "03-mutations": {
@@ -170,7 +170,7 @@
           "challengeName": "Mutations and Optimistic Updates",
           "passed": true,
           "score": 82.9,
-          "lastRun": "2026-03-09T11:57:19.157Z",
+          "lastRun": "2026-03-09T12:26:26.724Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,

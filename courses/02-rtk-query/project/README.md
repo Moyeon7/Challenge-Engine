@@ -48,17 +48,17 @@ npm run review -- --challenge=01-api-setup
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 3/9/2026, 5:27:34 PM*
+*Auto-updated when you run review. Last run: 3/9/2026, 5:57:11 PM*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 3 / 3 (100%) |
-| Average score | 82.3% |
+| Challenges completed | 1 / 3 (33.3%) |
+| Average score | 73.7% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
-| API Setup and Basic Fetching | RTK Query Setup, createApi, fetchBaseQuery, Query Endpoints, Generated Hooks | Passed |
-| Data Display and Caching | Tag-based Caching, Multiple Endpoints, Cache Invalidation, Query Refetching, RTK Query Tags | Passed |
+| API Setup and Basic Fetching | RTK Query Setup, createApi, fetchBaseQuery, Query Endpoints, Generated Hooks | Not passed |
+| Data Display and Caching | Tag-based Caching, Multiple Endpoints, Cache Invalidation, Query Refetching, RTK Query Tags | Not passed |
 | Mutations and Optimistic Updates | RTK Query Mutations, Optimistic Updates, Cache Invalidation, Mutation Hooks, Error Handling | Passed |
 
 ## 📋 Challenge Workflow
