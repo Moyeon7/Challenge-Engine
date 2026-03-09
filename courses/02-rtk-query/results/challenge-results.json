@@ -2,17 +2,17 @@
   {
     "challengeId": "01-api-setup",
     "challengeName": "API Setup and Basic Fetching",
-    "timestamp": "2026-03-09T12:26:48.945Z",
+    "timestamp": "2026-03-09T12:30:38.905Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 100,
       "architecture": 83.3,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 86
     },
-    "totalScore": 68.33,
-    "passed": false,
+    "totalScore": 81.23,
+    "passed": true,
     "errors": [],
     "warnings": [],
     "testResults": {
@@ -54,7 +54,7 @@
               "fullName": " Challenge 01: API Setup and Basic Fetching should integrate API reducer into store",
               "status": "passed",
               "title": "should integrate API reducer into store",
-              "duration": 1,
+              "duration": 0,
               "failureMessages": []
             },
             {
@@ -65,7 +65,7 @@
               "fullName": " Challenge 01: API Setup and Basic Fetching should use fetchBaseQuery or custom baseQuery",
               "status": "passed",
               "title": "should use fetchBaseQuery or custom baseQuery",
-              "duration": 0,
+              "duration": 1,
               "failureMessages": []
             },
             {
@@ -76,12 +76,12 @@
               "fullName": " Challenge 01: API Setup and Basic Fetching should have useGetUsersQuery hook usage in UsersList",
               "status": "passed",
               "title": "should have useGetUsersQuery hook usage in UsersList",
-              "duration": 0,
+              "duration": 1,
               "failureMessages": []
             }
           ],
-          "startTime": 1773059212192,
-          "endTime": 1773059212196,
+          "startTime": 1773059441701,
+          "endTime": 1773059441706,
           "status": "passed",
           "message": "",
           "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-rtk-query/project/tests/challenge-01.test.tsx"
@@ -252,43 +252,59 @@
     },
     "aiReviewResults": {
       "challengeId": "01-api-setup",
-      "timestamp": "2026-03-09T12:26:57.787Z",
-      "score": 0,
+      "timestamp": "2026-03-09T12:30:47.277Z",
+      "score": 86,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kgktje9jeh18z6yftxjsp1kb` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 3837, Requested 5295. Please try again in 31.32s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "Proper use of createApi, fetchBaseQuery, and endpoints",
+        "Correct hook usage (useGetUsersQuery, etc.)",
+        "Store integration and reducer setup are well-implemented"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, consider using a more robust error handling mechanism for the baseQuery",
+        "In src/components/UsersList.tsx, add a loading indicator for the user list",
+        "In src/components/EditUserForm.tsx, consider adding input validation for the user data"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, such as error handling and input validation.",
+      "requirementCompliance": 90
     },
     "aiResults": {
       "challengeId": "01-api-setup",
-      "timestamp": "2026-03-09T12:26:57.787Z",
-      "score": 0,
+      "timestamp": "2026-03-09T12:30:47.277Z",
+      "score": 86,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kgktje9jeh18z6yftxjsp1kb` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 3837, Requested 5295. Please try again in 31.32s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "Proper use of createApi, fetchBaseQuery, and endpoints",
+        "Correct hook usage (useGetUsersQuery, etc.)",
+        "Store integration and reducer setup are well-implemented"
+      ],
+      "improvements": [
+        "In src/api/usersApi.ts, consider using a more robust error handling mechanism for the baseQuery",
+        "In src/components/UsersList.tsx, add a loading indicator for the user list",
+        "In src/components/EditUserForm.tsx, consider adding input validation for the user data"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, such as error handling and input validation.",
+      "requirementCompliance": 90
     }
   },
   {
     "challengeId": "02-data-display",
     "challengeName": "Data Display and Caching",
-    "timestamp": "2026-03-09T12:27:02.879Z",
+    "timestamp": "2026-03-09T12:28:35.617Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 100,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 79
     },
-    "totalScore": 70,
-    "passed": false,
+    "totalScore": 81.85,
+    "passed": true,
     "errors": [],
     "warnings": [],
     "testResults": {
@@ -341,12 +357,12 @@
               "fullName": " Challenge 02: Data Display and Caching should use tag types in API",
               "status": "passed",
               "title": "should use tag types in API",
-              "duration": 0,
+              "duration": 1,
               "failureMessages": []
             }
           ],
-          "startTime": 1773059225756,
-          "endTime": 1773059225759,
+          "startTime": 1773059318524,
+          "endTime": 1773059318529,
           "status": "passed",
           "message": "",
           "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-rtk-query/project/tests/challenge-02.test.tsx"
@@ -488,27 +504,61 @@
     },
     "aiReviewResults": {
       "challengeId": "02-data-display",
-      "timestamp": "2026-03-09T12:27:11.321Z",
-      "score": 0,
+      "timestamp": "2026-03-09T12:28:44.097Z",
+      "score": 79,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kgktje9jeh18z6yftxjsp1kb` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 2484, Requested 5108. Please try again in 15.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "Correct implementation of tag-based caching with providesTags and tagTypes",
+        "Proper usage of RTK Query hooks (useGetUsersQuery, useGetPostsQuery)",
+        "Clear and well-structured code organization"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Missing file: src/api/postsApi.ts",
+          "file reference": "src/api/postsApi.ts"
+        },
+        {
+          "specific improvement": "Consider adding error handling for API requests in usersApi.ts",
+          "file reference": "src/api/usersApi.ts"
+        },
+        {
+          "specific improvement": "Code organization could be improved by separating API endpoints into separate files",
+          "file reference": "src/api/usersApi.ts"
+        }
+      ],
+      "readability": 80,
+      "maintainability": 70,
+      "overall": "The code meets most requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, such as missing files and code organization.",
+      "requirementCompliance": 85
     },
     "aiResults": {
       "challengeId": "02-data-display",
-      "timestamp": "2026-03-09T12:27:11.321Z",
-      "score": 0,
+      "timestamp": "2026-03-09T12:28:44.097Z",
+      "score": 79,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kgktje9jeh18z6yftxjsp1kb` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 2484, Requested 5108. Please try again in 15.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "Correct implementation of tag-based caching with providesTags and tagTypes",
+        "Proper usage of RTK Query hooks (useGetUsersQuery, useGetPostsQuery)",
+        "Clear and well-structured code organization"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Missing file: src/api/postsApi.ts",
+          "file reference": "src/api/postsApi.ts"
+        },
+        {
+          "specific improvement": "Consider adding error handling for API requests in usersApi.ts",
+          "file reference": "src/api/usersApi.ts"
+        },
+        {
+          "specific improvement": "Code organization could be improved by separating API endpoints into separate files",
+          "file reference": "src/api/usersApi.ts"
+        }
+      ],
+      "readability": 80,
+      "maintainability": 70,
+      "overall": "The code meets most requirements and demonstrates good understanding of RTK Query. However, there are some areas for improvement, such as missing files and code organization.",
+      "requirementCompliance": 85
     }
   },
   {
