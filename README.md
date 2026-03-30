@@ -106,7 +106,7 @@ npm run dev
 Or for other courses:
 
 ```bash
-cd courses/02-rtk-query/project && npm run dev
+cd courses/02-redux-rtk-query/project && npm run dev
 cd courses/03-nextjs-app-router/project && npm run dev
 ```
 
