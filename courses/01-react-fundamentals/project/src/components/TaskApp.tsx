@@ -1,7 +1,7 @@
-import { useEffect, useState, type Dispatch, type SetStateAction } from 'react'
+import { useEffect, useState, useMemo, type Dispatch, type SetStateAction } from 'react'
 import type { Task } from './TaskList'
 import TaskCard from './TaskCard'
-import { TaskForm } from '.'
+import { StatsPanel, TaskForm } from '.'
 import FilterBar  from './FilterBar'
 
 type Filter = 'all' | 'active' | 'completed'
@@ -29,7 +29,7 @@ const HARDCODED_TASKS: Task[] = [
   { id: 3, title: 'Task Three', description: 'First hardcoded task', priority: 'High', completed: false },
 ]
 
-export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilterBar}: TaskAppProps) {
+export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilterBar, showStatsPanel}: TaskAppProps) {
   const list = tasks ?? HARDCODED_TASKS
   const [filter, setFilter] = useState<Filter>('all')
   const [search, setSearch] = useState<string>("");
@@ -86,7 +86,7 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
   })
 
   const searchedTasks = filteredList.filter((task) => {
-    const searchLower = search.toLowerCase();
+    const searchLower = debouncedSearch.toLowerCase();
 
     return (
       task.title.toLowerCase().includes(searchLower) ||
@@ -126,6 +126,31 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
     }
   })
 
+const stats = useMemo(() => {
+  const total = list.length;
+  const completed = list.filter(t => t.completed).length;
+  const active = total - completed;
+
+  const now = new Date();
+
+  const overdue = list.filter(t => {
+    if (!t.dueDate || t.completed) return false;
+    return new Date(t.dueDate) < now;
+  }).length;
+
+  const completionRate = total === 0
+    ? 0
+    : Math.round((completed / total) * 100);
+
+  return {
+    total,
+    completed,
+    active,
+    overdue,
+    completionRate,
+  };
+}, [list]);
+
   return (
     <section id="task-list">
       {/* <h1 id="task-count" style={{fontSize: '1rem', color: '#333'}}>{list.length} Tasks</h1> */}
@@ -144,7 +169,7 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
       )}
 
       {sortedList.length === 0 ? (
-        <p style={{ textAlign: 'center', color: '#0d0202', fontSize: '1rem', fontWeight: 'bold' }} id='filter-empty-message'>No tasks to show</p>
+        <p style={{ textAlign: 'center', color: '#0d0202', fontSize: '1rem', fontWeight: 'bold' }} id='filter-empty-message'>No tasks for "{debouncedSearch}"</p>
       ) : (
         sortedList.map((t) => (
           <TaskCard 
@@ -165,6 +190,16 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
             dueDate={t.dueDate}
           />
         ))
+      )}
+
+      {showStatsPanel && (
+        <StatsPanel
+          total={stats.total}
+          completed={stats.completed}
+          active={stats.active}
+          overdue={stats.overdue}
+          completedPercentage={stats.completionRate}
+        />
       )}
     </section>
   )

@@ -5578,5 +5578,324 @@
       "overall": "",
       "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kgktje9jeh18z6yftxjsp1kb` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 2294, Requested 4304. Please try again in 5.98s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
     }
+  },
+  {
+    "challengeId": "14-task-statistics-dashboard",
+    "challengeName": "Task Statistics Dashboard",
+    "timestamp": "2026-04-27T14:05:18.671Z",
+    "scores": {
+      "functionalTests": 66.7,
+      "codeQuality": 98,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 83
+    },
+    "totalScore": 85.495,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 66.7,
+      "passed": false,
+      "totalTests": 3,
+      "passedTests": 2,
+      "failedTests": 1,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 14: Task Statistics Dashboard"
+              ],
+              "fullName": " Challenge 14: Task Statistics Dashboard StatsPanel should have id=\"stats-panel\"",
+              "status": "passed",
+              "title": "StatsPanel should have id=\"stats-panel\"",
+              "duration": 52,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 14: Task Statistics Dashboard"
+              ],
+              "fullName": " Challenge 14: Task Statistics Dashboard StatsPanel should display total and completed",
+              "status": "failed",
+              "title": "StatsPanel should display total and completed",
+              "duration": 33,
+              "failureMessages": [
+                "Unable to find an element with the text: /total:\\s*2/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"stats-panel\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mTotal Tasks: \u001b[0m\n        \u001b[0m2\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mCompleted: \u001b[0m\n        \u001b[0m1\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mActive: \u001b[0m\n        \u001b[0m1\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mOverdue: \u001b[0m\n        \u001b[0m0\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mCompletion: \u001b[0m\n        \u001b[0m%\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mrole\u001b[39m=\u001b[32m\"progressbar\"\u001b[39m\n        \u001b[33mstyle\u001b[39m=\u001b[32m\"width: 100%; height: 10px; background: rgb(238, 238, 238); border-radius: 6px; overflow: hidden;\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mstyle\u001b[39m=\u001b[32m\"height: 100%; background: green;\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+              ],
+              "location": {
+                "line": 37,
+                "column": 19
+              }
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 14: Task Statistics Dashboard"
+              ],
+              "fullName": " Challenge 14: Task Statistics Dashboard TaskList should render tasks",
+              "status": "passed",
+              "title": "TaskList should render tasks",
+              "duration": 19,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1777298722603,
+          "endTime": 1777298722707,
+          "status": "failed",
+          "message": "",
+          "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/01-react-fundamentals/project/tests/challenge-14.test.tsx"
+        }
+      ],
+      "error": "Command failed: npm test -- C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\01-react-fundamentals\\project\\tests\\challenge-14.test.tsx --run --reporter=json"
+    },
+    "lintResults": {
+      "score": 98,
+      "passed": true,
+      "totalIssues": 1,
+      "errors": 0,
+      "warnings": 1,
+      "details": [
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\01-react-fundamentals\\project\\src\\components\\StatsPanel.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\01-react-fundamentals\\project\\src\\components\\TaskApp.tsx",
+          "messages": [
+            {
+              "ruleId": "react-hooks/exhaustive-deps",
+              "severity": 1,
+              "message": "React Hook useEffect has a missing dependency: 'setTasks'. Either include it or remove the dependency array. If 'setTasks' changes too often, find the parent component that defines it and wrap that definition in useCallback.",
+              "line": 75,
+              "column": 6,
+              "nodeType": "ArrayExpression",
+              "endLine": 75,
+              "endColumn": 8,
+              "suggestions": [
+                {
+                  "desc": "Update the dependencies array to be: [setTasks]",
+                  "fix": {
+                    "range": [
+                      2656,
+                      2658
+                    ],
+                    "text": "[setTasks]"
+                  }
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { useEffect, useState, useMemo, type Dispatch, type SetStateAction } from 'react'\r\nimport type { Task } from './TaskList'\r\nimport TaskCard from './TaskCard'\r\nimport { StatsPanel, TaskForm } from '.'\r\nimport FilterBar  from './FilterBar'\r\n\r\ntype Filter = 'all' | 'active' | 'completed'\r\nconst priorityRank: Record<string, number> = {\r\n  'High': 1,\r\n  'Medium': 2,\r\n  'Low': 3\r\n}\r\n\r\ninterface TaskAppProps {\r\n  tasks?: Task[]\r\n  setTasks: Dispatch<SetStateAction<Task[]>>\r\n  dispatch?: (action: { type: string; payload?: unknown }) => void\r\n  showForm?: boolean\r\n  countFormat?: string\r\n  showFilterBar?: boolean\r\n  showStatsPanel?: boolean\r\n  onDelete?: (id: string | number) => void\r\n  linkToTaskDetail?: boolean\r\n}\r\n\r\nconst HARDCODED_TASKS: Task[] = [\r\n  { id: 1, title: 'Task One', description: 'First hardcoded task', priority: 'High', completed: false },\r\n  { id: 2, title: 'Task Two', description: 'First hardcoded task', priority: 'High', completed: false },\r\n  { id: 3, title: 'Task Three', description: 'First hardcoded task', priority: 'High', completed: false },\r\n]\r\n\r\nexport default function TaskApp({tasks, setTasks, showForm, onDelete, showFilterBar, showStatsPanel}: TaskAppProps) {\r\n  const list = tasks ?? HARDCODED_TASKS\r\n  const [filter, setFilter] = useState<Filter>('all')\r\n  const [search, setSearch] = useState<string>(\"\");\r\n  const [debouncedSearch, setDebouncedSearch] = useState<string>(\"\");\r\n  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'high' | 'low' | 'alphabetical'>('newest')\r\n  const [editingId, setEditingId] = useState<string | number | null>(null)\r\n  const handleUpdateTask = (id, updates) =>{\r\n    setTasks(prev => prev.map(task => task.id === id ? {...task, ...updates} : task))\r\n  }\r\n\r\n  function handleAddTask(task: Task) {\r\n    setTasks(prev => [...prev, task])\r\n  }\r\n\r\n  const handleDelete = (id: string | number) => {\r\n    setTasks(prev => prev.filter(t => t.id !== id))\r\n  }\r\n\r\n  const handleToggle = (id: string | number) => {\r\n    setTasks(prev =>\r\n      prev.map(t =>\r\n        t.id === id ? { ...t, completed: !t.completed } : t\r\n      )\r\n    )\r\n  }\r\n\r\n// Single effect for loading and saving - eliminates race conditions\r\n  useEffect(() => {\r\n    try {\r\n      const stored = localStorage.getItem(\"task-app-tasks\");\r\n      if (stored) {\r\n        const parsed = JSON.parse(stored);\r\n        const normalized = parsed.map((task: Task) => ({\r\n          ...task,\r\n          category: task.category ?? \"General\",\r\n          tags: task.tags ?? [],\r\n        }));\r\n        setTasks(normalized);\r\n      }\r\n    } catch (err) {\r\n      console.error(\"Failed to load tasks:\", err);\r\n    }\r\n  }, []); // Only run on mount\r\n\r\n  // Separate effect for saving - runs after every tasks change\r\n  useEffect(() => {\r\n    localStorage.setItem(\"task-app-tasks\", JSON.stringify(tasks));\r\n  }, [tasks]);\r\n\r\n  const filteredList = list.filter(t => {\r\n    if (filter === 'active') return !t.completed\r\n    if (filter === 'completed') return t.completed\r\n    return true\r\n  })\r\n\r\n  const searchedTasks = filteredList.filter((task) => {\r\n    const searchLower = debouncedSearch.toLowerCase();\r\n\r\n    return (\r\n      task.title.toLowerCase().includes(searchLower) ||\r\n      task.description.toLowerCase().includes(searchLower)\r\n    );\r\n  });\r\n\r\n  useEffect(() => {\r\n    const timeout = setTimeout(() => {\r\n      setDebouncedSearch(search);\r\n    }, 300);\r\n\r\n    return () => {\r\n      clearTimeout(timeout);\r\n    };\r\n  }, [search]);\r\n\r\n  const isSearching = search !== debouncedSearch;\r\n\r\n  const sortedList = [...searchedTasks].sort((a, b) => {\r\n    switch (sortOrder) {\r\n      case 'high':\r\n        return priorityRank[a.priority] - priorityRank[b.priority]\r\n\r\n      case 'low':\r\n        return priorityRank[b.priority] - priorityRank[a.priority]\r\n\r\n      case 'alphabetical':\r\n        return a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })\r\n\r\n      case 'oldest':\r\n        return Number(a.id) - Number(b.id)\r\n\r\n      case 'newest':\r\n      default:\r\n        return Number(b.id) - Number(a.id)\r\n    }\r\n  })\r\n\r\nconst stats = useMemo(() => {\r\n  const total = list.length;\r\n  const completed = list.filter(t => t.completed).length;\r\n  const active = total - completed;\r\n\r\n  const now = new Date();\r\n\r\n  const overdue = list.filter(t => {\r\n    if (!t.dueDate || t.completed) return false;\r\n    return new Date(t.dueDate) < now;\r\n  }).length;\r\n\r\n  const completionRate = total === 0\r\n    ? 0\r\n    : Math.round((completed / total) * 100);\r\n\r\n  return {\r\n    total,\r\n    completed,\r\n    active,\r\n    overdue,\r\n    completionRate,\r\n  };\r\n}, [list]);\r\n\r\n  return (\r\n    <section id=\"task-list\">\r\n      {/* <h1 id=\"task-count\" style={{fontSize: '1rem', color: '#333'}}>{list.length} Tasks</h1> */}\r\n      <h1 id=\"task-count\">\r\n        Showing {sortedList.length} of {list.length} tasks\r\n      </h1>\r\n\r\n      {showForm && <TaskForm onAddTask={handleAddTask} />}\r\n\r\n      {isSearching && (\r\n        <p id=\"searching-indicator\">Searching...</p>\r\n      )}\r\n\r\n      {showFilterBar && (\r\n        <FilterBar filter={filter} onFilterChange={setFilter} sortOrder={sortOrder} onSortChange={setSortOrder} search={search} setSearch={setSearch} />\r\n      )}\r\n\r\n      {sortedList.length === 0 ? (\r\n        <p style={{ textAlign: 'center', color: '#0d0202', fontSize: '1rem', fontWeight: 'bold' }} id='filter-empty-message'>No tasks for \"{debouncedSearch}\"</p>\r\n      ) : (\r\n        sortedList.map((t) => (\r\n          <TaskCard \r\n            key={t.id} \r\n            id={t.id} \r\n            title={t.title} \r\n            description={t.description} \r\n            priority={t.priority} \r\n            completed={t.completed} \r\n            onToggle={handleToggle} \r\n            taskId={t.id} \r\n            onDelete={onDelete ?? handleDelete} \r\n            onUpdateTask={handleUpdateTask}\r\n            editingId={editingId}\r\n            setEditingId={setEditingId}\r\n            category={t.category ?? \"General\"}\r\n            tags={t.tags ?? []}\r\n            dueDate={t.dueDate}\r\n          />\r\n        ))\r\n      )}\r\n\r\n      {showStatsPanel && (\r\n        <StatsPanel\r\n          total={stats.total}\r\n          completed={stats.completed}\r\n          active={stats.active}\r\n          overdue={stats.overdue}\r\n          completedPercentage={stats.completionRate}\r\n        />\r\n      )}\r\n    </section>\r\n  )\r\n}\r\n",
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useMemo",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/StatsPanel.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": [
+            "useMemo"
+          ]
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useMemo",
+            "props"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-14.spec.ts",
+          "file": "challenge-14.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 14: Task Statistics Dashboard - E2E",
+              "file": "challenge-14.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 779,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-04-27T14:05:35.651Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "be2334d46d68155f57f3-364480833597fd92a242",
+                  "file": "challenge-14.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should display stats panel when implemented",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 398,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-04-27T14:05:36.709Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "be2334d46d68155f57f3-3e6d44d38890e704d251",
+                  "file": "challenge-14.spec.ts",
+                  "line": 12,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "14-task-statistics-dashboard",
+      "timestamp": "2026-04-27T14:05:37.619Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "Effective use of React hooks and functional components",
+        "Proper use of memoization with `useMemo` to optimize performance",
+        "Clear and concise code structure"
+      ],
+      "improvements": [
+        "Consider adding type annotations for the `stats` object in `useMemo` to improve code clarity and TypeScript type checking",
+        "The `StatsPanel` component can be improved by using a more robust way to calculate the completion percentage, such as using a library like `react-progress-bar` to handle the progress bar rendering",
+        "The `TaskApp` component has a large number of state variables and effects; consider breaking it down into smaller, more focused components to improve maintainability and reusability"
+      ],
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The code is well-structured and effectively uses React hooks and functional components. However, there are some areas for improvement, such as adding type annotations and breaking down the `TaskApp` component into smaller components. With some refactoring, this code can be even more maintainable and efficient."
+    },
+    "aiResults": {
+      "challengeId": "14-task-statistics-dashboard",
+      "timestamp": "2026-04-27T14:05:37.619Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "Effective use of React hooks and functional components",
+        "Proper use of memoization with `useMemo` to optimize performance",
+        "Clear and concise code structure"
+      ],
+      "improvements": [
+        "Consider adding type annotations for the `stats` object in `useMemo` to improve code clarity and TypeScript type checking",
+        "The `StatsPanel` component can be improved by using a more robust way to calculate the completion percentage, such as using a library like `react-progress-bar` to handle the progress bar rendering",
+        "The `TaskApp` component has a large number of state variables and effects; consider breaking it down into smaller, more focused components to improve maintainability and reusability"
+      ],
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The code is well-structured and effectively uses React hooks and functional components. However, there are some areas for improvement, such as adding type annotations and breaking down the `TaskApp` component into smaller components. With some refactoring, this code can be even more maintainable and efficient."
+    }
   }
 ]
