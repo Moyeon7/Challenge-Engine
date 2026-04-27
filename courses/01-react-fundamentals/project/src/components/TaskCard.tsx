@@ -59,6 +59,14 @@ export default function TaskCard(_props: TaskCardProps) {
             <h2 style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.title}</h2>
             <p style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.description}</p>
             <p>Priority: {_props.priority}</p>
+            {_props.dueDate && (
+              <p id="task-due-date" data-overdue={isOverdue ? "true" : "false"}>
+                Due: {new Date(_props.dueDate).toLocaleDateString()}
+                {isOverdue && <span className="overdue"> (Overdue)</span>}
+                {isToday && <span className="today"> (Due Today)</span>}
+                {isSoon && <span className="soon"> (Due Soon)</span>}
+              </p>
+            )}
           </article>
           {_props.onToggle && (
               <input

@@ -56,38 +56,28 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
     )
   }
 
+// Single effect for loading and saving - eliminates race conditions
   useEffect(() => {
-  try {
-    const stored = localStorage.getItem("task-app-tasks");
-
-    if (stored) {
-      const parsed = JSON.parse(stored);
-
-      const normalized = parsed.map((task: Task) => ({
-        ...task,
-        category: task.category ?? "General",
-        tags: task.tags ?? [],
-      }));
-
-      setTasks(normalized);
+    try {
+      const stored = localStorage.getItem("task-app-tasks");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        const normalized = parsed.map((task: Task) => ({
+          ...task,
+          category: task.category ?? "General",
+          tags: task.tags ?? [],
+        }));
+        setTasks(normalized);
+      }
+    } catch (err) {
+      console.error("Failed to load tasks:", err);
     }
-  } catch {}
-});
+  }, []); // Only run on mount
 
-useEffect(() => {
-  try {
-    const stored = localStorage.getItem("task-app-tasks");
-    if (stored) {
-      setTasks(JSON.parse(stored));
-    }
-  } catch (err) {
-    console.error("Failed to load tasks:", err);
-  }
-});
-
-useEffect(() => {
-  localStorage.setItem("task-app-tasks", JSON.stringify(tasks));
-}, [tasks]);
+  // Separate effect for saving - runs after every tasks change
+  useEffect(() => {
+    localStorage.setItem("task-app-tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const filteredList = list.filter(t => {
     if (filter === 'active') return !t.completed
@@ -170,6 +160,9 @@ useEffect(() => {
             onUpdateTask={handleUpdateTask}
             editingId={editingId}
             setEditingId={setEditingId}
+            category={t.category ?? "General"}
+            tags={t.tags ?? []}
+            dueDate={t.dueDate}
           />
         ))
       )}
