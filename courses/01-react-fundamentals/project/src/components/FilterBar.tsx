@@ -6,9 +6,11 @@ interface FilterBarProps {
   onFilterChange: (filter: Filter) => void;
   sortOrder: SortOrder
   onSortChange: (sortOrder: SortOrder) => void
+  search: string;
+  setSearch: (value: string) => void;
 }
 
-export default function FilterBar({ filter, onFilterChange, sortOrder, onSortChange }: FilterBarProps & { onSortChange: (sortOrder: SortOrder) => void }) {
+export default function FilterBar({ filter, onFilterChange, sortOrder, onSortChange, search, setSearch }: FilterBarProps & { onSortChange: (sortOrder: SortOrder) => void }) {
   return (
     <>
       <div className="filter-bar" id="filter-bar">
@@ -16,6 +18,13 @@ export default function FilterBar({ filter, onFilterChange, sortOrder, onSortCha
         <button data-active={filter === 'active'} onClick={() => onFilterChange('active')}>Active</button>
         <button data-active={filter === 'completed'} onClick={() => onFilterChange('completed')}>Completed</button>
       </div>
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search tasks..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <select name="sort" id="sort-order" value={sortOrder} onChange={(e) => onSortChange(e.target.value as SortOrder)}>
         <option value="newest">Recently Added</option>
         <option value="oldest">Oldest</option>

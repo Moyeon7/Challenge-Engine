@@ -1,5 +1,5 @@
 import "./TaskCard.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface TaskCardProps {
   id?: string | number
@@ -10,12 +10,18 @@ interface TaskCardProps {
   onToggle?: (id: string | number) => void
   onDelete?: (id: string | number) => void
   onUpdateTask?: (id: string | number, updates: Record<string, unknown>) => void
-  editingId?: string | number | null
   linkToTaskDetail?: boolean
   taskId?: string | number
+  editingId?: string | number | null
+  setEditingId?: (id: string | number | null) => void
 }
 
 export default function TaskCard(_props: TaskCardProps) {
+  const isEditing = _props.id !== undefined && _props.editingId === _props.id
+  const [title, setTitle] = useState(_props.title || "")
+  const [description, setDescription] = useState(_props.description || "")
+  const [priority, setPriority] = useState(_props.priority || "Low")
+
   const handleDelete = () => {
     if (!_props.onDelete) return
 
@@ -23,28 +29,79 @@ export default function TaskCard(_props: TaskCardProps) {
       _props.onDelete(_props.id as string | number)
     }
   }
-  const [isEditing, setIsEditing] = useState(false)
+  useEffect(() => {
+    setTitle(_props.title || "")
+    setDescription(_props.description || "")
+    setPriority(_props.priority || "Low")
+  }, [_props.title, _props.description, _props.priority])
 
   return(
     <div className={`container ${_props.completed ? "completed" : ""}`}>
-      <button onClick={() => setIsEditing(true)}>Edit</button>
-      <article id="task-card" data-completed={_props.completed ? "true" : "false"}>
-        <h2 style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.title}</h2>
-        <p style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.description}</p>
-        <p>Priority: {_props.priority}</p>
-      </article>
-      {_props.onToggle && (
+      {!isEditing ? (
+        <>
+          <button onClick={() => _props.setEditingId?.(_props.id!)}>Edit</button>
+          <article id="task-card" data-completed={_props.completed ? "true" : "false"}>
+            <h2 style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.title}</h2>
+            <p style={{ textDecoration: _props.completed ? "line-through" : "none" }}>{_props.description}</p>
+            <p>Priority: {_props.priority}</p>
+          </article>
+          {_props.onToggle && (
+              <input
+                type="checkbox"
+                id="task-complete"
+                checked={Boolean(_props.completed)}
+                onChange={() => _props.onToggle?.(_props.id as string | number)}
+              />
+          )}  
+          {_props.onDelete && (
+            <button id="delete-button" onClick={handleDelete}>
+              Delete
+            </button>
+          )}
+        </>
+      ):(
+        <>
           <input
-            type="checkbox"
-            id="task-complete"
-            checked={Boolean(_props.completed)}
-            onChange={() => _props.onToggle?.(_props.id as string | number)}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
           />
-      )}  
-      {_props.onDelete && (
-        <button id="delete-button" onClick={handleDelete}>
-          Delete
-        </button>
+
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Description"
+          />
+
+          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <button
+            onClick={() => {
+              if (!title.trim()) {
+                alert("Title cannot be empty")
+                return
+              }
+
+              _props.onUpdateTask?.(_props.id!, {
+                title,
+                description,
+                priority,
+              })
+
+              _props.setEditingId?.(null)
+            }}
+          >
+            Save
+          </button>
+
+          <button onClick={() => _props.setEditingId?.(null)}>
+            Cancel
+          </button>
+        </>
       )}
     </div>
   )

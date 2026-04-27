@@ -1,24 +1,23 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-<<<<<<< HEAD
-  "lastUpdated": "2026-02-19T14:12:39.332Z",
+  "lastUpdated": "2026-04-27T09:21:49.586Z",
   "totalChallenges": 23,
-  "completedChallenges": 7,
-  "averageScore": 97.7,
-  "completionPercentage": 30.4,
+  "completedChallenges": 11,
+  "averageScore": 93.8,
+  "completionPercentage": 47.8,
   "badgeLevel": "none",
   "challengeResults": [
     {
       "challengeId": "01-static-task-display",
       "challengeName": "Static Task Display",
-      "score": 95.2,
+      "score": 94.45,
       "passed": true
     },
     {
       "challengeId": "02-dynamic-task-rendering",
       "challengeName": "Dynamic Task Rendering",
-      "score": 98.2,
+      "score": 92.2,
       "passed": true
     },
     {
@@ -30,7 +29,7 @@
     {
       "challengeId": "04-task-completion-toggle",
       "challengeName": "Task Completion Toggle",
-      "score": 97.45,
+      "score": 86.2,
       "passed": true
     },
     {
@@ -50,6 +49,30 @@
       "challengeName": "Priority-Based Sorting",
       "score": 98.2,
       "passed": true
+    },
+    {
+      "challengeId": "08-task-editing",
+      "challengeName": "Task Editing",
+      "score": 97.45,
+      "passed": true
+    },
+    {
+      "challengeId": "09-search-functionality",
+      "challengeName": "Search Functionality",
+      "score": 89.95,
+      "passed": true
+    },
+    {
+      "challengeId": "10-useeffect-local-storage",
+      "challengeName": "useEffect - Local Storage Persistence",
+      "score": 93.2,
+      "passed": true
+    },
+    {
+      "challengeId": "11-useeffect-debounced-search",
+      "challengeName": "useEffect - Debounced Search",
+      "score": 85,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -59,27 +82,11 @@
     "Task Completion Toggle",
     "Task Deletion",
     "Task Filtering",
-    "Priority-Based Sorting"
+    "Priority-Based Sorting",
+    "Task Editing",
+    "Search Functionality",
+    "useEffect - Local Storage Persistence",
+    "useEffect - Debounced Search"
   ],
   "improvementAreas": []
-=======
-  "lastUpdated": "2026-02-06T11:31:54.754Z",
-  "totalChallenges": 23,
-  "completedChallenges": 0,
-  "averageScore": 51.5,
-  "completionPercentage": 0,
-  "badgeLevel": "none",
-  "challengeResults": [
-    {
-      "challengeId": "02-dynamic-task-rendering",
-      "challengeName": "Dynamic Task Rendering",
-      "score": 51.45,
-      "passed": false
-    }
-  ],
-  "skillStrengths": [],
-  "improvementAreas": [
-    "Dynamic Task Rendering"
-  ]
->>>>>>> 7bedb465e2d816e1b55271afad596b316c265bad
 }

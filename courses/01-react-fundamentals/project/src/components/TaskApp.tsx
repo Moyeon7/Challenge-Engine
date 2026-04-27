@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from 'react'
+import { useEffect, useState, type Dispatch, type SetStateAction } from 'react'
 import type { Task } from './TaskList'
 import TaskCard from './TaskCard'
 import { TaskForm } from '.'
@@ -32,7 +32,13 @@ const HARDCODED_TASKS: Task[] = [
 export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilterBar}: TaskAppProps) {
   const list = tasks ?? HARDCODED_TASKS
   const [filter, setFilter] = useState<Filter>('all')
+  const [search, setSearch] = useState<string>("");
+  const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'high' | 'low' | 'alphabetical'>('newest')
+  const [editingId, setEditingId] = useState<string | number | null>(null)
+  const handleUpdateTask = (id, updates) =>{
+    setTasks(prev => prev.map(task => task.id === id ? {...task, ...updates} : task))
+  }
 
   function handleAddTask(task: Task) {
     setTasks(prev => [...prev, task])
@@ -50,13 +56,49 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
     )
   }
 
+useEffect(() => {
+  try {
+    const stored = localStorage.getItem("task-app-tasks");
+    if (stored) {
+      setTasks(JSON.parse(stored));
+    }
+  } catch (err) {
+    console.error("Failed to load tasks:", err);
+  }
+});
+
+useEffect(() => {
+  localStorage.setItem("task-app-tasks", JSON.stringify(tasks));
+}, [tasks]);
+
   const filteredList = list.filter(t => {
     if (filter === 'active') return !t.completed
     if (filter === 'completed') return t.completed
     return true
   })
 
-  const sortedList = [...filteredList].sort((a, b) => {
+  const searchedTasks = filteredList.filter((task) => {
+    const searchLower = search.toLowerCase();
+
+    return (
+      task.title.toLowerCase().includes(searchLower) ||
+      task.description.toLowerCase().includes(searchLower)
+    );
+  });
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 300);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [search]);
+
+  const isSearching = search !== debouncedSearch;
+
+  const sortedList = [...searchedTasks].sort((a, b) => {
     switch (sortOrder) {
       case 'high':
         return priorityRank[a.priority] - priorityRank[b.priority]
@@ -85,15 +127,32 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
 
       {showForm && <TaskForm onAddTask={handleAddTask} />}
 
+      {isSearching && (
+        <p id="searching-indicator">Searching...</p>
+      )}
+
       {showFilterBar && (
-        <FilterBar filter={filter} onFilterChange={setFilter} sortOrder={sortOrder} onSortChange={setSortOrder} />
+        <FilterBar filter={filter} onFilterChange={setFilter} sortOrder={sortOrder} onSortChange={setSortOrder} search={search} setSearch={setSearch} />
       )}
 
       {sortedList.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#0d0202', fontSize: '1rem', fontWeight: 'bold' }} id='filter-empty-message'>No tasks to show</p>
       ) : (
         sortedList.map((t) => (
-          <TaskCard key={t.id} id={t.id} title={t.title} description={t.description} priority={t.priority} completed={t.completed} onToggle={handleToggle} taskId={t.id} onDelete={onDelete ?? handleDelete} />
+          <TaskCard 
+            key={t.id} 
+            id={t.id} 
+            title={t.title} 
+            description={t.description} 
+            priority={t.priority} 
+            completed={t.completed} 
+            onToggle={handleToggle} 
+            taskId={t.id} 
+            onDelete={onDelete ?? handleDelete} 
+            onUpdateTask={handleUpdateTask}
+            editingId={editingId}
+            setEditingId={setEditingId}
+          />
         ))
       )}
     </section>
