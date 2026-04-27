@@ -20,6 +20,7 @@ interface TaskListProps {
   linkToTaskDetail?: boolean
 }
 
+
 const HARDCODED_TASKS: Task[] = [
   { id: 1, title: 'Task One', description: 'First hardcoded task', priority: 'High', completed: false },
   { id: 2, title: 'Task Two', description: 'First hardcoded task', priority: 'High', completed: false },
@@ -36,7 +37,8 @@ export default function TaskList({tasks, onToggle, onDelete, countText}: TaskLis
         {countText ?? `${completedCount} of ${list.length} completed`}
       </p>
       {list.map((t) => (
-        <TaskCard key={t.id} id={t.id} title={t.title} description={t.description} priority={t.priority} completed={t.completed} onToggle={onToggle} onDelete={onDelete}/>
+        <TaskCard key={t.id} id={t.id} title={t.title} description={t.description} priority={t.priority} completed={t.completed} category={t.category ?? "General"}
+        tags={t.tags ?? []} onToggle={onToggle} onDelete={onDelete} dueDate={t.dueDate}/>
       ))}
     </section>
   )

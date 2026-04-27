@@ -56,6 +56,24 @@ export default function TaskApp({tasks, setTasks, showForm, onDelete, showFilter
     )
   }
 
+  useEffect(() => {
+  try {
+    const stored = localStorage.getItem("task-app-tasks");
+
+    if (stored) {
+      const parsed = JSON.parse(stored);
+
+      const normalized = parsed.map((task: Task) => ({
+        ...task,
+        category: task.category ?? "General",
+        tags: task.tags ?? [],
+      }));
+
+      setTasks(normalized);
+    }
+  } catch {}
+});
+
 useEffect(() => {
   try {
     const stored = localStorage.getItem("task-app-tasks");

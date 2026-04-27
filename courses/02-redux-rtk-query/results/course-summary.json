@@ -1,49 +1,22 @@
 {
-<<<<<<< HEAD:courses/02-rtk-query/results/course-summary.json
-  "courseId": "02-rtk-query",
-  "courseName": "RTK Query",
-  "lastUpdated": "2026-03-09T12:30:48.896Z",
-  "totalChallenges": 3,
-  "completedChallenges": 3,
-  "averageScore": 82,
-  "completionPercentage": 100,
-  "badgeLevel": "silver",
+  "courseId": "02-redux-rtk-query",
+  "courseName": "Redux & RTK Query",
+  "lastUpdated": "2026-03-30T08:53:14.149Z",
+  "totalChallenges": 13,
+  "completedChallenges": 1,
+  "averageScore": 82.9,
+  "completionPercentage": 7.7,
+  "badgeLevel": "none",
   "challengeResults": [
     {
-      "challengeId": "01-api-setup",
-      "challengeName": "API Setup and Basic Fetching",
-      "score": 81.23,
-      "passed": true
-    },
-    {
-      "challengeId": "02-data-display",
-      "challengeName": "Data Display and Caching",
-      "score": 81.85,
-      "passed": true
-    },
-    {
-      "challengeId": "03-mutations",
-      "challengeName": "Mutations and Optimistic Updates",
+      "challengeId": "01-store-setup",
+      "challengeName": "Store Setup with configureStore",
       "score": 82.9,
       "passed": true
     }
   ],
   "skillStrengths": [
-    "API Setup and Basic Fetching",
-    "Data Display and Caching",
-    "Mutations and Optimistic Updates"
+    "Store Setup with configureStore"
   ],
-=======
-  "courseId": "02-redux-rtk-query",
-  "courseName": "Redux & RTK Query",
-  "lastUpdated": null,
-  "totalChallenges": 13,
-  "completedChallenges": 0,
-  "averageScore": 0,
-  "completionPercentage": 0,
-  "badgeLevel": "none",
-  "challengeResults": [],
-  "skillStrengths": [],
->>>>>>> 7bedb465e2d816e1b55271afad596b316c265bad:courses/02-redux-rtk-query/results/course-summary.json
   "improvementAreas": []
 }

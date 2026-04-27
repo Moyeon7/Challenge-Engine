@@ -1,1 +1,204 @@
-[]
+[
+  {
+    "challengeId": "01-store-setup",
+    "challengeName": "Store Setup with configureStore",
+    "timestamp": "2026-03-30T08:52:56.521Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 86
+    },
+    "totalScore": 82.9,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Store Setup with configureStore"
+              ],
+              "fullName": " Challenge 01: Store Setup with configureStore store uses configureStore",
+              "status": "passed",
+              "title": "store uses configureStore",
+              "duration": 4,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Store Setup with configureStore"
+              ],
+              "fullName": " Challenge 01: Store Setup with configureStore store exports RootState and AppDispatch",
+              "status": "passed",
+              "title": "store exports RootState and AppDispatch",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Store Setup with configureStore"
+              ],
+              "fullName": " Challenge 01: Store Setup with configureStore main.tsx wraps App with Provider and passes store",
+              "status": "passed",
+              "title": "main.tsx wraps App with Provider and passes store",
+              "duration": 1,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1774860780983,
+          "endTime": 1774860780989,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/SPARKPLUS/Sakshi/challenge-engine/courses/02-redux-rtk-query/project/tests/challenge-01.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-redux-rtk-query\\project\\src\\main.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\SPARKPLUS\\Sakshi\\challenge-engine\\courses\\02-redux-rtk-query\\project\\src\\store\\store.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "reducer",
+        "middleware",
+        "Provider"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/store/store.ts",
+          "patternsFound": [
+            "reducer",
+            "middleware"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/main.tsx",
+          "patternsFound": [
+            "Provider"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "details": [],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-01.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "01-store-setup",
+      "timestamp": "2026-03-30T08:53:11.342Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct implementation of configureStore and Provider",
+        "Proper usage of createApi and fetchBaseQuery",
+        "Logical structure and separation of concerns"
+      ],
+      "improvements": [
+        "In src/store/store.ts, consider adding a reducer for the root state. Currently, it's empty.",
+        "In src/main.tsx, consider adding a check for store existence before rendering the App component.",
+        "In src/store/hooks.ts, consider adding a type for the useQueryHook. Currently, it's missing.",
+        "In src/App.tsx, consider adding a loading state for the UsersList component. Currently, it's not handled."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good RTK Query best practices. However, there are some areas for improvement, such as adding a reducer for the root state and handling loading states.",
+      "requirementCompliance": 90
+    },
+    "aiResults": {
+      "challengeId": "01-store-setup",
+      "timestamp": "2026-03-30T08:53:11.342Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct implementation of configureStore and Provider",
+        "Proper usage of createApi and fetchBaseQuery",
+        "Logical structure and separation of concerns"
+      ],
+      "improvements": [
+        "In src/store/store.ts, consider adding a reducer for the root state. Currently, it's empty.",
+        "In src/main.tsx, consider adding a check for store existence before rendering the App component.",
+        "In src/store/hooks.ts, consider adding a type for the useQueryHook. Currently, it's missing.",
+        "In src/App.tsx, consider adding a loading state for the UsersList component. Currently, it's not handled."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good RTK Query best practices. However, there are some areas for improvement, such as adding a reducer for the root state and handling loading states.",
+      "requirementCompliance": 90
+    }
+  }
+]

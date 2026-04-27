@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-04-27T09:21:49.971Z",
+  "lastUpdated": "2026-04-27T13:42:29.352Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 58.3,
-    "completionPercentage": 22.6,
+    "overallScore": 58.1,
+    "completionPercentage": 26.4,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 12
+    "completedChallenges": 14
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 93.8,
-      "completionPercentage": 47.8,
-      "badgeLevel": "none",
+      "averageScore": 93.2,
+      "completionPercentage": 56.5,
+      "badgeLevel": "bronze",
       "totalChallenges": 23,
-      "completedChallenges": 11,
+      "completedChallenges": 13,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -178,6 +178,36 @@
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 0
+          }
+        },
+        "12-categories-and-tags": {
+          "challengeId": "12-categories-and-tags",
+          "challengeName": "Categories and Tags",
+          "passed": true,
+          "score": 97.45,
+          "lastRun": "2026-04-27T13:29:48.733Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 83
+          }
+        },
+        "13-due-dates-and-sorting": {
+          "challengeId": "13-due-dates-and-sorting",
+          "challengeName": "Due Dates and Sorting",
+          "passed": true,
+          "score": 83.5,
+          "lastRun": "2026-04-27T13:42:05.998Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 90,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 100,

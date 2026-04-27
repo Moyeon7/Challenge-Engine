@@ -68,12 +68,12 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 4/27/2026, 2:51:49 PM*
+*Auto-updated when you run review. Last run: 4/27/2026, 7:12:29 PM*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 11 / 23 (47.8%) |
-| Average score | 93.8% |
+| Challenges completed | 13 / 23 (56.5%) |
+| Average score | 93.2% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -88,8 +88,8 @@ npm run review -- --challenge=01-static-task-display
 | Search Functionality | Text search, Combining filters, String methods, Search UI patterns | Passed |
 | useEffect - Local Storage Persistence | useEffect, Side effects, localStorage, JSON serialization, Effect dependencies | Passed |
 | useEffect - Debounced Search | useEffect cleanup, setTimeout, Debouncing, Memory leak prevention | Passed |
-| Categories and Tags | Complex state, Array fields, Multi-select/tags input, Nested data, Filtering by array membership | — |
-| Due Dates and Sorting | Date handling, Date objects and formatting, Date comparison, Overdue detection | — |
+| Categories and Tags | Complex state, Array fields, Multi-select/tags input, Nested data, Filtering by array membership | Passed |
+| Due Dates and Sorting | Date handling, Date objects and formatting, Date comparison, Overdue detection | Passed |
 | Task Statistics Dashboard | Computed statistics, useMemo, Performance optimization, Data aggregation | — |
 | Component Organization with Props | Component extraction, Props interface design, Single Responsibility, Reusability, Props destructuring | — |
 | Context API - Theme Management | React Context, createContext, Provider, useContext, Global state, Custom hook | — |

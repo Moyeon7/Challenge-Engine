@@ -1,4 +1,4 @@
-import "./TaskCard.css"
+import "./TaskCard.css";
 import { useState, useEffect } from "react"
 
 interface TaskCardProps {
@@ -14,6 +14,7 @@ interface TaskCardProps {
   taskId?: string | number
   editingId?: string | number | null
   setEditingId?: (id: string | number | null) => void
+  dueDate?: string | number
 }
 
 export default function TaskCard(_props: TaskCardProps) {
@@ -21,6 +22,20 @@ export default function TaskCard(_props: TaskCardProps) {
   const [title, setTitle] = useState(_props.title || "")
   const [description, setDescription] = useState(_props.description || "")
   const [priority, setPriority] = useState(_props.priority || "Low")
+  const due = _props.dueDate ? new Date(_props.dueDate) : null;
+  const now = new Date();
+
+  const isOverdue =
+    due && due < now && !_props.completed;
+
+  const isToday =
+    due && due.toDateString() === now.toDateString();
+
+  const isSoon =
+    due &&
+    !isOverdue &&
+    !isToday &&
+    (due.getTime() - now.getTime()) / (1000 * 60 * 60 * 24) <= 3;
 
   const handleDelete = () => {
     if (!_props.onDelete) return
@@ -78,6 +93,19 @@ export default function TaskCard(_props: TaskCardProps) {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
+
+          {_props.dueDate && (
+            <p
+              id="task-due-date"
+              data-overdue={isOverdue ? "true" : "false"}
+            >
+              {new Date(_props.dueDate).toLocaleDateString()}
+            </p>
+          )}
+
+          {isOverdue && <span className="overdue">Overdue</span>}
+          {isToday && <span className="today">Due Today</span>}
+          {isSoon && <span className="soon">Due Soon</span>}
 
           <button
             onClick={() => {
