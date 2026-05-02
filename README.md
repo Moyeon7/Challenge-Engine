@@ -1,4 +1,4 @@
-# Challenge Engine – Learner Guide for user
+# Challenge Engine – Learner Guide
 
 **Step-by-step guide to run challenges, get scored, and keep your repo in sync with course updates.**
 
