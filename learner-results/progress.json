@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-04-27T14:05:38.584Z",
+  "lastUpdated": "2026-05-12T11:01:53.651Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
     "overallScore": 57.9,
-    "completionPercentage": 28.3,
+    "completionPercentage": 30.2,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 15
+    "completedChallenges": 16
   },
   "courses": {
     "01-react-fundamentals": {
@@ -234,11 +234,11 @@
     "02-redux-rtk-query": {
       "courseId": "02-redux-rtk-query",
       "courseName": "Redux & RTK Query",
-      "averageScore": 82.9,
-      "completionPercentage": 7.7,
+      "averageScore": 82.7,
+      "completionPercentage": 15.4,
       "badgeLevel": "none",
       "totalChallenges": 13,
-      "completedChallenges": 1,
+      "completedChallenges": 2,
       "challenges": {
         "01-store-setup": {
           "challengeId": "01-store-setup",
@@ -253,6 +253,21 @@
             "bestPractices": 100,
             "e2eTests": 0,
             "aiReview": 86
+          }
+        },
+        "02-first-slice": {
+          "challengeId": "02-first-slice",
+          "challengeName": "First Slice with createSlice",
+          "passed": true,
+          "score": 82.5,
+          "lastRun": "2026-05-12T10:58:25.447Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 75,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 0
           }
         }
       }
